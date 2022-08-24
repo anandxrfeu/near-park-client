@@ -1,5 +1,14 @@
 const DashboardPage = (props) => {
-    return (<p>DashboardPage..</p>)
+    return (
+
+      <div>
+            <p>DashboardPage..</p>
+
+      </div>
+
+
+
+    )
 }
 
-export default DashboardPage; 
+export default DashboardPage;

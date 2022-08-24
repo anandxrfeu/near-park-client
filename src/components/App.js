@@ -14,6 +14,7 @@ import ReservationPage from "../pages/ReservationPage";
 import SubscriptionPage from "../pages/SubscriptionPage";
 import SupportPage from "../pages/SupportPage";
 import SaasHomePage from "../pages/SaasHomePage";
+import OneReservationPage from '../pages/OneReservationPage'
 
 
 import { AuthContextComponent } from "../contexts/authContext";
@@ -34,49 +35,57 @@ function App() {
                                       <Sidebar />
                                       <SaasHomePage />
                                     </Container>
-                                    )} 
+                                    )}
               />
             <Route path='dashboard' element={(
                                                   <Container>
                                                     <Sidebar />
                                                     <DashboardPage />
                                                   </Container>
-                                                  )} 
+                                                  )}
               />
             <Route path='reservations' element={(
                                                   <Container>
                                                     <Sidebar />
                                                     <ReservationPage />
                                                   </Container>
-                                                  )} 
+                                                  )}
+              />
+
+            <Route path='reservation/:id' element={(
+                                                  <Container>
+                                                    <Sidebar />
+                                                    <OneReservationPage />
+                                                  </Container>
+                                                  )}
               />
             <Route path='parkinglots' element={(
                                                   <Container>
                                                     <Sidebar />
                                                     <ParkingLotPage />
                                                   </Container>
-                                                  )} 
+                                                  )}
             />
             <Route path='subscription' element={(
                                                 <Container>
                                                   <Sidebar />
                                                   <SubscriptionPage />
                                                 </Container>
-                                                )} 
+                                                )}
             />
             <Route path='profile' element={(
                                                 <Container>
                                                   <Sidebar />
                                                   <ProfilePage />
                                                 </Container>
-                                                )} 
+                                                )}
             />
             <Route path='support' element={(
                                                 <Container>
                                                   <Sidebar />
                                                   <SupportPage />
                                                 </Container>
-                                                )} 
+                                                )}
             />
 
           </Route>
