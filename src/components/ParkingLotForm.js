@@ -1,12 +1,8 @@
 
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import './ParkingLotForm.css'
 
 const ParkingLotForm = (props) => {
-
-  const {parkingLot} = props
-
-  console.log("parkingLotProp", parkingLot)
 
   const [parkingLotName, setParkingLotName] = useState('')
   const [parkingLotAddress, setParkingLotAddress] = useState('')
@@ -15,6 +11,27 @@ const ParkingLotForm = (props) => {
   const [eightHourPrice, setEightHourPrice] = useState('')
   const [twentyFourHourPrice, setTwentyFourHourPrice] = useState('')
   const [maxOccupancy, setMaxOccupancy] = useState('')
+
+  const {parkingLotSelect} = props
+
+  useEffect(()=>{  
+    if(parkingLotSelect){
+      setParkingLotName(parkingLotSelect.name)
+      setParkingLotAddress(parkingLotSelect.address)
+      console.log(parkingLotSelect)
+      console.log(parkingLotSelect.pricing)
+      console.group(typeof parkingLotSelect.pricing)
+      setMaxOccupancy(parkingLotSelect.maxOccupancy)
+    }
+    if(parkingLotSelect && parkingLotSelect.pricing){
+      setOneHourPrice(parkingLotSelect.pricing.oneHourPrice)
+      setOneHourAdditionalPrice(parkingLotSelect.pricing.oneHourAdditionalPrice)
+      setEightHourPrice(parkingLotSelect.pricing.eightHourPrice)
+      setTwentyFourHourPrice(parkingLotSelect.pricing.twentyFourHourPrice)
+    }
+  },[parkingLotSelect])
+
+  
 
   return (
 
