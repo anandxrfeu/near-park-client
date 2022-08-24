@@ -1,6 +1,6 @@
 :root{
   --header-height: 3rem;
-  --nav-width: 106px;
+  --nav-width: 94px;
 
   --first-color: #3D3C42;
   --first-color-alt: #FFFFFF;
@@ -79,11 +79,11 @@ main{
   display: grid;
   grid-template-columns: max-content max-content;
   column-gap: 2rem;
-  padding: 0.5rem 0 0.5rem 1.5rem;
+  padding: 0.5rem 0 0rem 1.5rem;
 }
 
 .nav-logo {
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
 .nav-logo-icon{
@@ -94,15 +94,15 @@ main{
 }
 
 .nav-logo-name {
-  font-weight: 400;
-  color: var(--black-color);
+  font-weight: 500;
+  color: var(--first-color-alt);
 }
 
 .nav-link{
   position: relative;
   color: var(--first-color-alt);
   transition: .5s;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .nav-link:hover {
@@ -150,7 +150,7 @@ main{
   }
 
   .show {
-    width: calc(var(--header-height) + 240px);
+    width: calc(var(--header-height) + 260px);
   }
 
   .space-toggle {

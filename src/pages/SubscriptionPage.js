@@ -1,5 +1,18 @@
+import Subscription from "../components/Subscription";
+
 const SubscriptionPage = (props) => {
-    return (<p>SubscriptionPage..</p>)
+    return (
+      <div>
+         <p>SubscriptionPage..</p>
+
+         <div>
+          <Subscription />
+         </div>
+
+      </div>
+
+
+ )
 }
 
-export default SubscriptionPage; 
+export default SubscriptionPage;

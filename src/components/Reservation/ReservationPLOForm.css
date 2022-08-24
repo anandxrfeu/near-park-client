@@ -1,0 +1,32 @@
+.FormCreate {
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  border: 2px solid green;
+}
+.PLOFormContainer {
+  justify-content: center ;
+  border: 1px solid black;
+  height: 88px;
+  padding-top: 18px;
+  width: 75rem;
+}
+
+
+.badge-pill {
+  background-color: white;
+  text-align: center;
+  height: 52px;
+}
+
+.FormCreateStyle{
+  border: 2px solid purple;
+}
+
+
+.formBtn.badge-pill {
+  background-color: black;
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px
+}

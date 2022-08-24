@@ -4,7 +4,6 @@
   align-content: left;
   border: none;
   background: none;
-  filter: invert(100%) sepia(91%) saturate(38%) hue-rotate(254deg) brightness(110%) contrast(110%);
 }
 
 .parkingLotSelect {
@@ -29,11 +28,11 @@
 .homeIcon {
  display: flex;
  align-content: left;
- filter: invert(100%) sepia(91%) saturate(38%) hue-rotate(254deg) brightness(110%) contrast(110%);
+
 }
 
 .homeIcon:hover {
-  filter: invert(27%) sepia(94%) saturate(1843%) hue-rotate(205deg) brightness(91%) contrast(92%);
+
 }
 
 .dashboardIcon {
@@ -74,8 +73,8 @@
 
 
 .nav-link-icon {
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 2.8rem;
+  width: 2.8rem;
   filter: invert(100%) sepia(91%) saturate(38%) hue-rotate(254deg) brightness(110%) contrast(110%);
 }
 
@@ -85,22 +84,28 @@ filter: invert(69%) sepia(29%) saturate(4614%) hue-rotate(52deg) brightness(92%)
 }
 
 .nav-logo-icon {
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  padding-bottom: 0.4rem;
+  filter: invert(100%) sepia(91%) saturate(38%) hue-rotate(254deg) brightness(110%) contrast(110%);
 }
 
+.nav-logo-icon:hover {
+filter: invert(69%) sepia(29%) saturate(4614%) hue-rotate(52deg) brightness(92%) contrast(81%);
+}
 
 
 span.nav-link-name {
   padding-left: 2.2rem;
-  padding-top: 1.3rem;
-  font-size: 1rem;
+  padding-top: 0.8rem;
+  font-size: 1.1rem;
   font-weight: 300;
   font-style: normal;
 }
 
 span.nav-logo-name {
-  padding-left: 2rem;
-  padding-top: 2rem;
-  font-size: 1.5em;
+
+  padding-bottom: 0.4rem;
+  font-size: 1.8em;
+  font-weight: 300;
 }

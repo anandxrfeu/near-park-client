@@ -1,0 +1,26 @@
+input.ProfileForm.badge-pill{
+  width: 50vw;
+  height: 68px;
+  font-weight: bold;
+  font-size: 38px;
+  color: black;
+}
+
+input.ProfileForm.Email.badge-pill {
+  font-size: 28px;
+  color: black;
+  font-weight: light;
+}
+
+
+input.ResetPassword.badge-pill {
+  width: 26vw;
+  height: 60px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+input.ImageURL.badge-pill {
+  width: 240px
+
+}

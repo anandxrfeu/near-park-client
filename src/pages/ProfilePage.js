@@ -1,5 +1,18 @@
+import ProfileForm from "../components/ProfileForm";
+
 const ProfilePage = (props) => {
-    return (<p>ProfilePage..</p>)
+    return (
+    <div>
+          <p>ProfilePage..</p>
+
+          <div>
+            <ProfileForm/>
+          </div>
+    </div>
+
+
+
+    )
 }
 
-export default ProfilePage; 
+export default ProfilePage;

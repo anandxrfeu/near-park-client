@@ -9,15 +9,15 @@ class ApiService {
     this.api.interceptors.request.use((config) => {
       // Verifica se já temos as informações do usuário logado no localStorage
       const storedUser = localStorage.getItem("loggedInUser");
-    
+
       const loggedInUser = JSON.parse(storedUser || '""');
-    
+
       if (loggedInUser.token) {
         config.headers = {
           Authorization: `Bearer ${loggedInUser.token}`,
         };
       }
-    
+
       return config;
     });
   }
@@ -29,6 +29,25 @@ class ApiService {
   async login(user) {
     return await this.api.post("/users/login", user);
   }
+
+    async getUserProfile() {
+    return await this.api.get("/users/profile");
+  }
+
+    async updateUserProfile(user) {
+    return await this.api.patch("/users/profile", user);
+  }
+
+   async uploadFile(fileData){
+    const res = await this.api.post('/imageUpload', fileData)
+    return res.data
+  }
+
+    async getAllParkingLots() {
+    const res = await this.api.get("/parkingLots");
+    return res.data
+  }
+
 }
 
 export default new ApiService();

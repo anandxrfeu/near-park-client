@@ -42,7 +42,7 @@ const Sidebar = () => {
                  <div>
                   <p className="hamburgerBar nav-link">
                     <img src={hamburgerBar}  onClick={() => {setShow(!show); console.log("clicked")}} className="nav-logo-icon" alt="barIcon"/>
-                    <span className='nav-link-name'>NEAR PARK</span>
+                    <span className='nav-logo-name'>NEAR PARK</span>
                   </p>
                 </div>
                <Link to="/saas" className="nav-link">
