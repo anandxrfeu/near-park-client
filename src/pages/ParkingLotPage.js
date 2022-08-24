@@ -5,16 +5,15 @@ import apiService from '../services/api.service'
 
 const ParkingLotPage = (props) => {
   const [loading, setLoading] = useState(true)
-  const [parkingLotSelect, setParkingLotSelect] = useState('')
+  const [parkingLotSelect, setParkingLotSelect] = useState({})
   const [parkingLotList, setParkingLotList] = useState([])
 
-    useEffect(() => {
+  useEffect(() => {
     async function fetchData() {
       try {
-        const parkingLots = await apiService.getAllParkingLots()
         setLoading(false)
-        console.log("checkParkingLot", parkingLots)
-        setParkingLotSelect(parkingLots[0].name)
+        const parkingLots = await apiService.getAllParkingLots()
+        setParkingLotSelect(parkingLots[0])
         setParkingLotList(parkingLots)
 
       } catch (err) {
@@ -29,6 +28,11 @@ const ParkingLotPage = (props) => {
     setParkingLotSelect(parkingLot)
   }
 
+  const onSubmitHandler = (parkingLot) => {
+    console.log("Onsubmit handler", parkingLot)
+    
+  }
+
   if (loading) {
     return <p>loading ...</p>
   }
@@ -40,9 +44,8 @@ const ParkingLotPage = (props) => {
           <div style={{marginBottom: "40px"}}>
             <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
           </div>
-          <ParkingLotForm />
-
-
+        {Object.keys(parkingLotSelect).length === 0 && <ParkingLotForm />}
+        {Object.keys(parkingLotSelect).length !== 0 && <ParkingLotForm parkingLotSelect={parkingLotSelect} onSubmitHandler={onSubmitHandler}/>}
       </div>
     )
 

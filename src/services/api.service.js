@@ -30,20 +30,20 @@ class ApiService {
     return await this.api.post("/users/login", user);
   }
 
-    async getUserProfile() {
+  async getUserProfile() {
     return await this.api.get("/users/profile");
   }
 
-    async updateUserProfile(user) {
+  async updateUserProfile(user) {
     return await this.api.patch("/users/profile", user);
   }
 
-   async uploadFile(fileData){
+  async uploadFile(fileData){
     const res = await this.api.post('/imageUpload', fileData)
     return res.data
   }
 
-    async getAllParkingLots() {
+  async getAllParkingLots() {
     const res = await this.api.get("/parkingLots");
     return res.data
   }

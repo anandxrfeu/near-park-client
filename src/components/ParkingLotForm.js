@@ -1,12 +1,8 @@
 
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import './ParkingLotForm.css'
 
 const ParkingLotForm = (props) => {
-
-  const {parkingLot} = props
-
-  console.log("parkingLotProp", parkingLot)
 
   const [parkingLotName, setParkingLotName] = useState('')
   const [parkingLotAddress, setParkingLotAddress] = useState('')
@@ -16,10 +12,43 @@ const ParkingLotForm = (props) => {
   const [twentyFourHourPrice, setTwentyFourHourPrice] = useState('')
   const [maxOccupancy, setMaxOccupancy] = useState('')
 
+  const {parkingLotSelect, onSubmitHandler} = props
+
+  useEffect(()=>{  
+    if(parkingLotSelect){
+      setParkingLotName(parkingLotSelect.name)
+      setParkingLotAddress(parkingLotSelect.address)
+      setMaxOccupancy(parkingLotSelect.maxOccupancy)
+    }
+    if(parkingLotSelect && parkingLotSelect.pricing){
+      setOneHourPrice(parkingLotSelect.pricing.oneHourPrice)
+      setOneHourAdditionalPrice(parkingLotSelect.pricing.oneHourAdditionalPrice)
+      setEightHourPrice(parkingLotSelect.pricing.eightHourPrice)
+      setTwentyFourHourPrice(parkingLotSelect.pricing.twentyFourHourPrice)
+    }
+  },[parkingLotSelect])
+
+  
+  const submitHandler = (e) => {
+    e.preventDefault()
+    onSubmitHandler({
+      name:parkingLotName,
+      address: parkingLotAddress,
+      maxOccupancy: +maxOccupancy,
+      pricing: {
+        oneHourPrice, 
+        oneHourAdditionalPrice, 
+        eightHourPrice,
+        twentyFourHourPrice
+      }
+    })
+
+  }
+
   return (
 
     <div>
-     <form>
+      <form onSubmit={submitHandler}>
         <div>
            <div>
             <div>
@@ -128,7 +157,6 @@ const ParkingLotForm = (props) => {
 
           </div>
       </div>
-
      </form>
     </div>
 

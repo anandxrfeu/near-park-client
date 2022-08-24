@@ -1,6 +1,3 @@
-import {useState, useEffect} from 'react'
-import apiService from '../services/api.service'
-
 const ParkingLotSelect = (props) => {
 const {parkingLotList, onSelectHandler} = props
 
@@ -14,17 +11,12 @@ const {parkingLotList, onSelectHandler} = props
         <select
         className="custom-select badge-pill"
         onChange={(e) => {
-          console.log("parkinglot",e.target.value)
-          // const selectedParkingLot = e.target.value;
-          // setParkingLotSelect(selectedParkingLot)
-          onSelectHandler(e.target.value)
+          const parkingLot = parkingLotList.find( parkingLot => parkingLot.name === e.target.value )
+          onSelectHandler(parkingLot)
         }}
-        > {parkingLotList.map(parkingLot =>  <option key={parkingLot._id} value={parkingLot.name}>{parkingLot.name}</option> )}
-           {/* { return (
-
-        )} */}
-
-
+        >
+        {/* <option key={1} defaultValue={"Select a parking lot"}>{"Select a parking lot"}</option>   */}
+        {parkingLotList.map(parkingLot =>  <option key={parkingLot._id} value={parkingLot.name}>{parkingLot.name}</option> )}
         </select>
 
       </div>
