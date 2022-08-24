@@ -12,15 +12,12 @@ const ParkingLotForm = (props) => {
   const [twentyFourHourPrice, setTwentyFourHourPrice] = useState('')
   const [maxOccupancy, setMaxOccupancy] = useState('')
 
-  const {parkingLotSelect} = props
+  const {parkingLotSelect, onSubmitHandler} = props
 
   useEffect(()=>{  
     if(parkingLotSelect){
       setParkingLotName(parkingLotSelect.name)
       setParkingLotAddress(parkingLotSelect.address)
-      console.log(parkingLotSelect)
-      console.log(parkingLotSelect.pricing)
-      console.group(typeof parkingLotSelect.pricing)
       setMaxOccupancy(parkingLotSelect.maxOccupancy)
     }
     if(parkingLotSelect && parkingLotSelect.pricing){
@@ -32,11 +29,26 @@ const ParkingLotForm = (props) => {
   },[parkingLotSelect])
 
   
+  const submitHandler = (e) => {
+    e.preventDefault()
+    onSubmitHandler({
+      name:parkingLotName,
+      address: parkingLotAddress,
+      maxOccupancy: +maxOccupancy,
+      pricing: {
+        oneHourPrice, 
+        oneHourAdditionalPrice, 
+        eightHourPrice,
+        twentyFourHourPrice
+      }
+    })
+
+  }
 
   return (
 
     <div>
-     <form>
+      <form onSubmit={submitHandler}>
         <div>
            <div>
             <div>
@@ -145,7 +157,6 @@ const ParkingLotForm = (props) => {
 
           </div>
       </div>
-
      </form>
     </div>
 
