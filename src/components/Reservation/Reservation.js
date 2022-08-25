@@ -1,8 +1,12 @@
-import ReservationList from "./ReservationList"
+/*import ReservationList from "./ReservationList"
 import ReservationPLOForm from "./ReservationPLOForm"
 
 
 const Reservation = (props) => {
+  const {parkingLotSelect} = props
+
+  console.log("parkingLotSelect", parkingLotSelect)
+
     return (
       <div>
          <p>Reservation..</p>
@@ -22,4 +26,4 @@ const Reservation = (props) => {
     )
 }
 
-export default Reservation
+export default Reservation */

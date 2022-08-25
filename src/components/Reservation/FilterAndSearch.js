@@ -15,8 +15,8 @@ const FilterAndSearch = () => {
         <button className="badge-pill" style={{paddingLeft: "90px", paddingRight: "90px", color: "white", backgroundColor: "black", border: "black", marginLeft: "10px", height: "48px" }}>
           CASH
         </button>
-        <button type="button" class="badge-pill" style={{paddingLeft: "80px", paddingRight: "80px", color: "white", backgroundColor: "black" , border: "black",  marginLeft: "10px", height: "48px" }}>
-            CARD <span class="badge badge-success rounded-circle">5</span>
+        <button type="button" className="badge-pill" style={{paddingLeft: "80px", paddingRight: "80px", color: "white", backgroundColor: "black" , border: "black",  marginLeft: "10px", height: "48px" }}>
+            CARD <span className="badge badge-success rounded-circle">5</span>
         </button>
         <button className="badge-pill" style={{paddingLeft: "60px", paddingRight: "60px", color: "white", backgroundColor: "black", border: "black",  marginLeft: "10px", height: "48px"  }}>
           CHECK-OUT LIST

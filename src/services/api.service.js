@@ -48,6 +48,16 @@ class ApiService {
     return res.data
   }
 
+    async getAllReservationsForAParkingLot(id) {
+    const res = await this.api.get(`/parkingLots/${id}/reservations`);
+    return res.data
+  }
+
+    async createReservation(reservation) {
+    const res = await this.api.post("/reservations", reservation);
+    return res.data
+  }
+
 }
 
 export default new ApiService();
