@@ -51,9 +51,9 @@ const ParkingLotPage = (props) => {
           <div style={{marginBottom: "40px", marginTop: "20px"}}>
             <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
           </div>
-          <Link to="/saas/parkinglots/create">Add new parling lot</Link>
-        {Object.keys(parkingLotSelect).length === 0 && <ParkingLotForm />}
-        {Object.keys(parkingLotSelect).length !== 0 && <ParkingLotForm parkingLotSelect={parkingLotSelect} onSubmitHandler={onSubmitHandler}/>}
+          <Link  style={{fontSize: "28px"}} to="/saas/parkinglots/create">Add new parking lot</Link>
+        {parkingLotSelect && Object.keys(parkingLotSelect).length === 0 && <ParkingLotForm />}
+        {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <ParkingLotForm parkingLotSelect={parkingLotSelect} onSubmitHandler={onSubmitHandler}/>}
       </div>
     )
 
