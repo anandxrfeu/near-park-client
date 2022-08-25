@@ -12,29 +12,28 @@ const OneReservationForm = () => {
 
   return (
     <div>
-    <p>Form</p>
     <div>
         <table style={{marginTop: "12px", border: "3px solid green", width: "100%"}}>
             <thead >
                 <div >
                   <tr style={{border: "2px solid red", display: "flex", flexDirection: "row", justifyContent: 'space-between'}}>
-                      <div>
-                        <th  style={{border: "2px solid yellow", paddingLeft:"20px"}}>TICKET #</th>
+                      <div style={{border: "1px solid black", width: "100px"}}>
+                        <th  style={{border: "2px solid yellow", paddingLeft:"20px", width: "100px"}}>TICKET #</th>
                       </div>
-                      <div style={{ marginLeft: "-40px"}}>
-                        <th  style={{border: "2px solid yellow"}}>CHECK-IN</th>
+                      <div style={{ marginLeft: "-40px", border: "1px solid black", width: "86px"}}>
+                        <th  style={{border: "2px solid yellow", width: "86px"}}>CHECK-IN</th>
                       </div>
-                      <div style={{marginLeft: "-20px"}}>
+                      <div style={{marginLeft: "-16px", border: "1px solid black", width: "128px"}}>
                         <th  style={{border: "2px solid yellow"}}>LICENSE PLATE</th>
                       </div>
-                      <div style={{ marginRight: "90px", marginLeft: "14px"}}>
-                        <th  style={{border: "2px solid yellow" }}>TYPE</th>
+                      <div style={{ marginRight: "90px", marginLeft: "14px", border: "1px solid black", width: "48px"}}>
+                        <th  style={{border: "2px solid yellow", width: "48px" }}>TYPE</th>
                       </div>
-                      <div style={{ marginRight: "10px"}}>
-                        <th  style={{border: "2px solid yellow"}}>DESCRIPTION</th>
+                      <div style={{ marginRight: "10px", border: "1px solid black", width: "116px"}}>
+                        <th  style={{border: "2px solid yellow", width: "116px"}}>DESCRIPTION</th>
                       </div>
-                      <div  style={{ marginRight: "150px" }}>
-                         <th style={{border: "2px solid yellow"}}>STATUS</th>
+                      <div  style={{ marginRight: "150px", border: "1px solid black", width: "70px" }}>
+                         <th style={{border: "2px solid yellow", width: "70px"}}>STATUS</th>
                       </div>
                   </tr>
                 </div>
@@ -45,14 +44,15 @@ const OneReservationForm = () => {
       <div className="OneReservationFormContainer">
         <form className="FormCreateStyle">
           <div className="FormCreate  container-xxl" >
-            <div style={{marginLeft: "14px"}}>
-              <p style={{fontSize: "32px", fontWeight: "bold"}}>005</p>
+            <div style={{marginLeft: "14px", width: "98px"}} >
+              <p style={{fontSize: "32px", fontWeight: "bold", width: "98px"}}>e32jm</p>
             </div>
-            <div style={{marginLeft: "50px", marginRight: "50px"}}>
-              <p style={{fontSize: "32px"}}>01:38</p>
+            <div style={{marginLeft: "16px", marginRight: "50px", width: "90px"}}>
+              <p style={{fontSize: "32px", fontWeight: "bold", width: "90px"}}>01:38</p>
             </div>
-            <div style={{ marginLeft: "-30px"}}>
+            <div style={{ marginLeft: "-30px", width: "202px"}}>
                 <input className="LicensePlateOne badge-pill"
+                  style={{width: "202px"}}
                   placeholder = "LICENSE PLATE"
                   type="text"
                   name="LicensePlate"
@@ -60,15 +60,18 @@ const OneReservationForm = () => {
                   value={licensePlate}
                 />
               </div>
-                <div className='vehicleType'>
-                  <select value="vehicleType" className="vehicleTypeOne  badge-pill">
-                    <option className='vehicleType'>VEHICLE TYPE</option>
-                    <option className='vehicleType' value="Car">Carro</option>
-                    <option className='vehicleType' value="Motorbike">Moto</option>
-                  </select>
-                </div>
-                <div>
-                    <input className="Vehicle-DescriptionOne badge-pill" style={{width: "320px"}}
+              <div className='vehicleType' style={{width: "152px"}}>
+                <select value={vehicleType} className="vehicleType  badge-pill"
+                style={{width: "152px"}}
+                onChange={(e) => setVehicleType(e.target.value) }>
+                  <option className='vehicleType'>VEHICLE TYPE</option>
+                  <option className='vehicleType' value="CAR">Carro</option>
+                  <option className='vehicleType' value="MOTORBIKE">Moto</option>
+                </select>
+              </div>
+                <div style={{width: "320px"}}>
+                    <input className="Vehicle-DescriptionOne badge-pill"
+                      style={{width: "320px"}}
                       placeholder = "VEHICLE DESCRIPTION"
                       type="text"
                       name="VehicleDescription"
@@ -76,13 +79,13 @@ const OneReservationForm = () => {
                       value={vehicleDescription}
                     />
                   </div>
-                  <div>
-                    <p className="rounded-circle" style={{marginRight:"20px", marginTop:"8px", border: "2px solid black", width: "38px", height: "38px", backgroundColor: "#FED000"}}></p>
+                  <div style={{width: "38px", marginRight:"6px"}}>
+                    <p className="rounded-circle" style={{marginTop:"8px", border: "2px solid black", width: "38px", height: "38px", backgroundColor: "#FED000"}}></p>
                   </div>
 
 
-              <div>
-                <button className='formBtnOne badge-pill' type="submit">EDIT</button>
+              <div style={{width: "120px", marginRight: "10px"}} >
+                <button className='formBtnOne badge-pill' style={{border: "1px solid black"}} type="submit">EDIT</button>
               </div>
             </div>
         </form>

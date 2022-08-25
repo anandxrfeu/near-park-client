@@ -44,7 +44,7 @@ const ReservationPLOForm = (props) => {
                 value={licensePlate}
               />
             </div>
-              <div className='vehicleType'>
+              <div className='vehicleType' >
                 <select value={vehicleType} className="vehicleType  badge-pill"
                 onChange={(e) => setVehicleType(e.target.value) }>
                   <option className='vehicleType'>VEHICLE TYPE</option>

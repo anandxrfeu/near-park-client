@@ -1,0 +1,35 @@
+.CashBtn {
+   width: 330px;
+  height: 80px;
+  font-size: 46px;
+  font-weight: 500;
+  border: 2px solid black;
+  border-radius: 12px;
+  background-color: white;
+
+}
+
+.CheckOutBtn {
+  width: 330px;
+  height: 80px;
+  font-size: 46px;
+  font-weight: 500;
+  border: 2px solid black;
+  border-radius: 12px;
+  background-color: white;
+  margin-top: 20px;
+
+}
+
+
+.CashBtn:hover {
+  border: 2px solid green;
+  background-color: green;
+  color: white
+}
+
+.CheckOutBtn:hover {
+  border: green;
+  background-color: green;
+  color: white
+}

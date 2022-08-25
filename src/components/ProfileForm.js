@@ -90,7 +90,7 @@ const ProfileForm = () => {
                 </div>
                 <div style={{marginTop: "200px"}}>
                   <div>
-                    <p > RESET PASSWORD</p>
+                    <p style={{fontSize: "26px", marginLeft: "72px"}}> RESET PASSWORD</p>
                   </div>
                   <input className="ResetPassword badge-pill"
                     placeholder = "*******"
@@ -102,12 +102,12 @@ const ProfileForm = () => {
                 </div>
               </div>
             <div className='FormRight' style={{border: "4px solid yellow", display: "flex", flexDirection: "column", marginLeft: "50px"}}>
-              <div style={{border: "4px solid black", height: "240px", borderRadius:" 12px"}}>
-                <div>
-                  <img src={imageUrl}/>
+              <div style={{border: "4px solid black", height: "240px", width: "240px", borderRadius:" 12px"}}>
+                <div style={{border: "1px solid red", display: "flex", justifyContent:"center", alignContent: "center"}}>
+                  <img style={{height: "230px", width: "230px", alignItems: "center"}} src={imageUrl} alt="imageUrl"/>
                 </div>
-                <div style={{display: "flex", marginTop: "180px"}}>
-                  <input className="ImageURL badge-pill"
+                <div style={{display: "flex", marginTop: "20px"}}>
+                  <input className="ImageURL"
                     placeholder="IMAGE URL"
                     type="file"
                     name="imageURL"

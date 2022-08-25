@@ -15,22 +15,22 @@ const ReservationList = (props) => {
             <thead >
                 <div >
                   <tr style={{border: "2px solid red", display: "flex", flexDirection: "row", justifyContent: 'space-between'}}>
-                      <div>
+                      <div style={{border: "1px solid green", width:"100px"}}>
                         <th  style={{border: "2px solid yellow", paddingLeft:"20px"}}>TICKET #</th>
                       </div>
-                      <div>
+                      <div style={{border: "1px solid green", width:"86px", marginLeft: "42px"}}>
                         <th  style={{border: "2px solid yellow"}}>CHECK-IN</th>
                       </div>
-                      <div>
+                      <div style={{border: "1px solid green", width:"128px", marginLeft: "12px"}}>
                         <th  style={{border: "2px solid yellow"}}>LICENSE PLATE</th>
                       </div>
-                      <div>
+                      <div  style={{border: "1px solid green", width:"48px",  marginRight: "110px", marginLeft: "42px"}}>
                         <th  style={{border: "2px solid yellow"}}>TYPE</th>
                       </div>
-                      <div>
+                      <div style={{border: "1px solid green", width:"116px", marginRight: "50px"}}>
                         <th  style={{border: "2px solid yellow"}}>DESCRIPTION</th>
                       </div>
-                      <div  style={{paddingLeft:  "50px", paddingRight: "15px"}}>
+                      <div  style={{border: "1px solid green", width:"70px", marginRight: "10px"}}>
                          <th style={{border: "2px solid yellow"}}>STATUS</th>
                       </div>
                   </tr>
@@ -57,12 +57,15 @@ const ReservationList = (props) => {
                       <div key={reservation._id} style={{height: "55px", border: "2px solid Black"}}>
                         <tr style={{border: "2px solid grey", display: "flex", flexDirection: "row", justifyContent: 'space-between', height: "50px", width: "1200px"}}>
                             <td style={{border: "2px solid blue"}}><span style={{marginLeft: "20px", border: "2px solid red", fontSize: "28px", fontWeight: "bold"}}>{reservation.ticket}</span></td>
-                            <td style={{marginLeft: "48px", border: "2px solid blue"}}><span  style={{border: "2px solid red", fontSize: "28px"}}>{reservation.startTime}</span></td>
-                            <td  style={{marginLeft: "28px", border: "2px solid blue"}}><span style={{border: "2px solid red", fontSize: "28px", fontWeight: "bold"}}>{reservation.vehicle.licensePlate}</span></td>
-                            <td style={{border: "2px solid blue"}}><span style={{border: "2px solid red", fontSize: "28px"}}>{reservation.vehicle.type}</span></td>
-                            <td style={{border: "2px solid blue"}}><span style={{border: "2px solid red", fontSize: "24px"}}>{reservation.vehicle.description}</span></td>
+                            <td style={{marginLeft: "48px", border: "2px solid blue", width: "90px"}}><span  style={{border: "2px solid red", fontSize: "28px", width: "90px"}}>{reservation.startTime}</span></td>
+                            <td  style={{marginLeft: "28px", border: "2px solid blue", width: "136px"}}><span style={{border: "2px solid red", fontSize: "28px", fontWeight: "bold", width: "136px"}}>{reservation.vehicle.licensePlate}</span></td>
+                            <td style={{border: "2px solid blue", width: "164px"}}><span style={{border: "2px solid red", fontSize: "28px", width: "164px"}}>{reservation.vehicle.type}</span></td>
+                            <td style={{border: "2px solid blue", width: "280px"}}><span style={{border: "2px solid red", fontSize: "24px",  width: "280px"}}>{reservation.vehicle.description}</span></td>
                             <Link to={`/saas/reservation/${reservation._id}`}>
-                              <td className="rounded-circle" style={{marginRight:"20px", marginTop:"4px", border: "2px solid black", width: "38px", height: "38px", backgroundColor: "#FED000"}}>{reservation.statusCode}</td>
+                              <div style={{marginRight: "24px", marginTop:"4px", width:"38px"}}>
+                                <td className="rounded-circle" style={{marginTop:"6px", width: "38px", height: "38px", backgroundColor: "#FED000"}}></td>
+                                {/* {reservation.statusCode} */}
+                              </div>
                             </Link>
 
 

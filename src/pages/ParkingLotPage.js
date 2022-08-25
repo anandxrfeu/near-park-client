@@ -30,7 +30,7 @@ const ParkingLotPage = (props) => {
 
   const onSubmitHandler = (parkingLot) => {
     console.log("Onsubmit handler", parkingLot)
-    
+
   }
 
   if (loading) {
@@ -40,8 +40,7 @@ const ParkingLotPage = (props) => {
     return (
 
       <div>
-          <p>ParkingLotPage..</p>
-          <div style={{marginBottom: "40px"}}>
+          <div style={{marginBottom: "40px", marginTop: "20px"}}>
             <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
           </div>
         {Object.keys(parkingLotSelect).length === 0 && <ParkingLotForm />}

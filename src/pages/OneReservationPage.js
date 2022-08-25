@@ -4,8 +4,7 @@ import ContainerOneReservation from "../components/layout/OneReservation/Contain
 const OneReservationPage = (props) => {
     return (
 
-      <div>
-            <p>Testing OneReservation Page</p>
+      <div style={{marginLeft: '-20px', marginTop: "-7px"}}>
             <div>
                <OneReservationForm/>
                <div>

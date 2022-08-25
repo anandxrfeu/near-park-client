@@ -71,9 +71,8 @@ const ReservationPage = (props) => {
   }
 
     return (
-      <div>
-        <p>ReservationPage..</p>
-        <div>
+      <div style={{marginLeft: "-20px"}}>
+        <div style={{marginTop: "30px", marginBottom: "20px"}}>
           <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
         </div>
         <div>
@@ -81,8 +80,18 @@ const ReservationPage = (props) => {
               <ReservationPLOForm createReservationHandler={createReservationHandler}/>
             </div>
             <div>
-              {reservationList.length === 0 && <p>No Reservations for this Parking Lot</p> }
-              {reservationList.length !== 0 && <ReservationList reservationList={reservationList}/> }
+              <div>
+                {reservationList.length === 0 &&
+                <div style={{border: "1px solid black", display: "flex", justifyContent:"center", alignContent:"center" }}>
+                    <div>
+                      <p style={{fontSize: "38px", fontWeight: "500", marginTop: '140px', marginBottom: "140px"}}>No Reservations for this Parking Lot</p>
+                    </div>
+
+                </div> }
+              </div>
+              <div>
+                {reservationList.length !== 0 && <ReservationList reservationList={reservationList}/> }
+              </div>
             </div>
         </div>
         <div>
