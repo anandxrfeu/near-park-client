@@ -18,6 +18,8 @@ import OneReservationPage from '../pages/OneReservationPage'
 
 
 import { AuthContextComponent } from "../contexts/authContext";
+import ParkingLotCreatePage from "../pages/ParkingLotCreatePage";
+import Logout from "../pages/auth/Logout";
 
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
           <Route path="/auth">
             <Route path='signup' element={<Signup />} />
             <Route path='login' element={<Login />} />
+            <Route path='logout' element={<Logout />} />
+
           </Route>
           <Route path="/saas">
             <Route path='' element={(<Container>
@@ -66,6 +70,14 @@ function App() {
                                                   </Container>
                                                   )}
             />
+            <Route path='parkinglots/create' element={(
+                                                  <Container>
+                                                    <Sidebar />
+                                                    <ParkingLotCreatePage />
+                                                  </Container>
+                                                  )}
+            />
+
             <Route path='subscription' element={(
                                                 <Container>
                                                   <Sidebar />
