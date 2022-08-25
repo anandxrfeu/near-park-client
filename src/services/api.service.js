@@ -63,6 +63,12 @@ class ApiService {
     return res.data
   }
 
+  async updateParkingLot(parkingLotId, parkingLot) {
+    const res = await this.api.patch(`/parkingLots/${parkingLotId}`, parkingLot);
+    console.log(res)
+    return res.data 
+  }
+
 }
 
 export default new ApiService();

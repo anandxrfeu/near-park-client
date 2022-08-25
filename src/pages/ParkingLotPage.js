@@ -9,6 +9,7 @@ const ParkingLotPage = (props) => {
   const [loading, setLoading] = useState(true)
   const [parkingLotSelect, setParkingLotSelect] = useState({})
   const [parkingLotList, setParkingLotList] = useState([])
+  const [refresh, setRefresh] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
@@ -24,15 +25,20 @@ const ParkingLotPage = (props) => {
     }
 
     fetchData()
-  }, [])
+  }, [refresh])
 
   const onSelectHandler = (parkingLot) =>{
     setParkingLotSelect(parkingLot)
   }
 
-  const onSubmitHandler = (parkingLot) => {
+  const onSubmitHandler = async (parkingLot) => {
     console.log("Onsubmit handler", parkingLot)
-    
+    try{
+      await apiService.updateParkingLot(parkingLotSelect._id,parkingLot)
+      setRefresh(!refresh)
+    }catch(err){
+      console.log(err)
+    }
   }
 
   if (loading) {
