@@ -18,6 +18,7 @@ import OneReservationPage from '../pages/OneReservationPage'
 
 
 import { AuthContextComponent } from "../contexts/authContext";
+import ParkingLotCreatePage from "../pages/ParkingLotCreatePage";
 
 
 function App() {
@@ -66,6 +67,14 @@ function App() {
                                                   </Container>
                                                   )}
             />
+            <Route path='parkinglots/create' element={(
+                                                  <Container>
+                                                    <Sidebar />
+                                                    <ParkingLotCreatePage />
+                                                  </Container>
+                                                  )}
+            />
+
             <Route path='subscription' element={(
                                                 <Container>
                                                   <Sidebar />

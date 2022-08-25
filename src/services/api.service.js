@@ -53,8 +53,13 @@ class ApiService {
     return res.data
   }
 
-    async createReservation(reservation) {
+  async createReservation(reservation) {
     const res = await this.api.post("/reservations", reservation);
+    return res.data
+  }
+
+  async createParkingLot(parkingLot) {
+    const res = await this.api.post("/parkingLots", parkingLot);
     return res.data
   }
 

@@ -2,6 +2,8 @@ import ParkingLotForm from '../components/ParkingLotForm'
 import ParkingLotSelect from '../components/ParkingLotSelect'
 import {useState, useEffect} from 'react'
 import apiService from '../services/api.service'
+import {Link} from 'react-router-dom';
+
 
 const ParkingLotPage = (props) => {
   const [loading, setLoading] = useState(true)
@@ -44,6 +46,7 @@ const ParkingLotPage = (props) => {
           <div style={{marginBottom: "40px"}}>
             <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
           </div>
+          <Link to="/saas/parkinglots/create">Add new parling lot</Link>
         {Object.keys(parkingLotSelect).length === 0 && <ParkingLotForm />}
         {Object.keys(parkingLotSelect).length !== 0 && <ParkingLotForm parkingLotSelect={parkingLotSelect} onSubmitHandler={onSubmitHandler}/>}
       </div>
