@@ -1,11 +1,48 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
-const OneReservationDetail = () => {
+const OneReservationDetail = (props) => {
+  const {reservation} = props
 
   const [updateGuestUserPhone, setUpdateGuestUserPhone] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
+  // const [duration, setDuration] = useState('')
 
+  useEffect(() => {
+    if (reservation) {
+      setUpdateGuestUserPhone(reservation.guestUserPhone)
+      // setDuration(())
+      setIsLoading(false)
+    }
+
+
+  }, [reservation])
+
+//   const calculatePrice = (pricing, start, end) => {
+//     console.log(pricing, start, end)
+//     const startDate = new Date(start)
+//     const endDate = new Date(end)
+//     let price = 0
+//     const durationInHours = Math.ceil((endDate.valueOf() - startDate.valueOf())/3600000)
+//     if(durationInHours >= 24){
+//         price = parseInt(pricing.twentyFourHourPrice) + (durationInHours - 24)*parseInt(pricing.oneHourAdditionalPrice)
+//     } else if (durationInHours >= 8 ){
+//         price = parseInt(pricing.eightHourPrice) + (durationInHours - 8)*parseInt(pricing.oneHourAdditionalPrice)
+//     }else{
+//         price = parseInt(pricing.oneHourPrice) + (durationInHours - 1)*parseInt(pricing.oneHourAdditionalPrice)
+//     }
+//     console.log("price > ",price)
+//     return price
+// }
+
+
+  if (isLoading) {
+    return (
+      <p>loading...</p>
+    )
+
+  }
   return (
     <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
       <div>
@@ -15,8 +52,8 @@ const OneReservationDetail = () => {
         <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginLeft: "116px"}}>
           <form >
             <input className="guestUserPhoneUpdate badge-pill"
-              placeholder = "11999998888"
-              type="text"
+              placeholder = "CellPhone Number"
+              type="number"
               name="GuestUserPhone"
               onChange={(e) => setUpdateGuestUserPhone(e.target.value)}
               value={updateGuestUserPhone}
@@ -31,7 +68,7 @@ const OneReservationDetail = () => {
       <div style={{marginTop: "54px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
         <div style={{color: "#FED000", backgroundColor: "black", width: "200px",
         paddingTop:"6px", paddingBottom:"2px", textAlign: "center", border: "1px solid black", borderRadius: "10px"}}>
-          <h1>ACTIVE</h1>
+          <h1>{reservation.status !== "CLOSED" ? "ACTIVE" : "CLOSED"}</h1>
         </div>
         {/* <div style={{color: "green", backgroundColor: "black", width: "200px",
         paddingTop:"6px", paddingBottom:"2px", textAlign: "center", border: "1px solid black", borderRadius: "10px"}}>

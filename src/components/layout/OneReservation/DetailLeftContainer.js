@@ -1,18 +1,19 @@
 import OneReservationDetail from "./OneReservationDetail"
 import ChangeCashCalc from "./ChangeCashCalc"
 
-const DetailLeftContainer = () => {
+const DetailLeftContainer = (props) => {
+  const {reservation} = props
 
   return (
     <div style={{border: "1px solid green", width: "45vw", height: "80vh"}}>
 
         <div>
             <div>
-             <OneReservationDetail/>
+             <OneReservationDetail reservation={reservation}/>
             </div>
-            <div>
+            {/* <div>
               <ChangeCashCalc/>
-            </div>
+            </div> */}
         </div>
 
     </div>
