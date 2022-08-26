@@ -1,16 +1,24 @@
 import {useState} from 'react'
 
 
-const ChangeCashCalc = () => {
+const ChangeCashCalc = (props) => {
+
+  const {calculateChange} = props
 
   const [CashAmount, setCashAmount] = useState("")
   const [ChangeAmount, setChangeAmount] = useState("")
-  const [ChangeTotal, setChangeTotal] = useState("")
+
+
+  const calculateChangeHandler = (e) => {
+    e.preventDefault()
+    const changeTotal = CashAmount - ChangeAmount ;
+    calculateChange(changeTotal)
+  }
 
   return (
     <div>
       <div style={{border: "1px solid black", height: "280px", marginTop: "25px", backgroundColor: "white"}}>
-        <form>
+        <form onSubmit={calculateChangeHandler}>
           <div style={{display: "flex", flexDirection: "row"}}>
             <div style={{display: "flex", flexDirection: "row",  marginTop: "80px", marginLeft: "20px"}}>
               <div style={{display: "flex", flexDirection: "column"}}>

@@ -1,6 +1,32 @@
 import './PaymentSelect.css'
+import { useState } from 'react'
 
-const PaymentSelect = () => {
+
+const PaymentSelect = (props) => {
+
+  const [activeCashBtn, setActiveCashBtn] = useState("")
+ const [activeCheckoutBtn, setActiveCheckoutBtn] = useState("")
+
+
+
+  const {updatePaymentMethod} = props
+
+  const changePaymentMethod = (e) => {
+    e.preventDefault()
+
+    if (e.target.value === "CASH") {
+      setActiveCashBtn("activeBtn")
+      updatePaymentMethod("CASH")
+      setActiveCheckoutBtn("")
+    }
+    else if (e.target.value === "CHECKOUT"){
+      setActiveCashBtn("")
+      updatePaymentMethod("CHECKOUT")
+      setActiveCheckoutBtn("activeBtn")
+    }
+
+    }
+
 
   return (
     <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
@@ -12,9 +38,9 @@ const PaymentSelect = () => {
       </div>
       <div style={{marginTop: "30px"}}>
         <div>
-          <button className="CashBtn">CASH</button>
+          <button value="CASH" className={`CashBtn ${activeCashBtn}`} onClick={changePaymentMethod}>CASH</button>
         </div>
-          <button className="CheckOutBtn" >CHECKOUT</button>
+          <button value="CHECKOUT" className={`CheckOutBtn ${activeCheckoutBtn}`} onClick={changePaymentMethod} >CHECKOUT</button>
 
       </div>
 

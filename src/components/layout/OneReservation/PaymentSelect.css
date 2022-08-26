@@ -28,8 +28,16 @@
   color: white
 }
 
+
+
 .CheckOutBtn:hover {
   border: green;
+  background-color: green;
+  color: white
+}
+
+.activeBtn {
+  border: 2px solid green;
   background-color: green;
   color: white
 }
