@@ -57,8 +57,8 @@ const ReservationList = (props) => {
                       <div key={reservation._id} style={{height: "55px", border: "2px solid Black"}}>
                         <tr style={{border: "2px solid grey", display: "flex", flexDirection: "row", justifyContent: 'space-between', height: "50px", width: "1200px"}}>
                             <td style={{border: "2px solid blue"}}><span style={{marginLeft: "20px", border: "2px solid red", fontSize: "28px", fontWeight: "bold"}}>{reservation.ticket}</span></td>
-                            <td style={{marginLeft: "48px", border: "2px solid blue", width: "90px"}}><span  style={{border: "2px solid red", fontSize: "28px", width: "90px"}}>{reservation.startTime}</span></td>
-                            <td  style={{marginLeft: "28px", border: "2px solid blue", width: "136px"}}><span style={{border: "2px solid red", fontSize: "28px", fontWeight: "bold", width: "136px"}}>{reservation.vehicle.licensePlate}</span></td>
+                            <td style={{marginLeft: "48px", border: "2px solid blue", width: "96px"}}><span  style={{border: "2px solid red", fontSize: "28px", width: "94px"}}>{reservation.startTime}</span></td>
+                            <td  style={{marginLeft: "28px", border: "2px solid blue", width: "146px"}}><span style={{border: "2px solid red", fontSize: "28px", fontWeight: "bold", width: "146px"}}>{reservation.vehicle.licensePlate}</span></td>
                             <td style={{border: "2px solid blue", width: "164px"}}><span style={{border: "2px solid red", fontSize: "28px", width: "164px"}}>{reservation.vehicle.type}</span></td>
                             <td style={{border: "2px solid blue", width: "280px"}}><span style={{border: "2px solid red", fontSize: "24px",  width: "280px"}}>{reservation.vehicle.description}</span></td>
                             <Link to={`/saas/reservation/${reservation._id}`}>

@@ -53,6 +53,16 @@ class ApiService {
     return res.data
   }
 
+    async getAReservation(id) {
+    const res = await this.api.get(`/reservations/${id}`);
+    return res.data
+  }
+
+  async updateAReservation(id, reservation) {
+    const res = await this.api.patch(`/reservations/${id}`, reservation);
+    return res.data
+  }
+
   async createReservation(reservation) {
     const res = await this.api.post("/reservations", reservation);
     return res.data
@@ -66,7 +76,7 @@ class ApiService {
   async updateParkingLot(parkingLotId, parkingLot) {
     const res = await this.api.patch(`/parkingLots/${parkingLotId}`, parkingLot);
     console.log(res)
-    return res.data 
+    return res.data
   }
 
 }

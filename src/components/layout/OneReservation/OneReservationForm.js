@@ -1,12 +1,52 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import './OneReservationForm.css'
 
-const OneReservationForm = () => {
+const OneReservationForm = (props) => {
+  const {reservation, updateReservation} = props
 
-  const [licensePlate, setLicensePlate] = useState('')
-  const [vehicleType, setVehicleType] = useState('')
-  const [vehicleDescription, setVehicleDescription] = useState('')
-  const [guestUserPhone, setGuestUserPhone] = useState('')
+  const [licensePlate, setLicensePlate] = useState("")
+  const [vehicleType, setVehicleType] = useState("")
+  const [vehicleDescription, setVehicleDescription] = useState("")
+  const [ticketCode, setTicketCode] = useState("")
+  const [checkIn, setCheckIn] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    if(reservation && reservation.vehicle) {
+      setLicensePlate(reservation.vehicle.licensePlate)
+      setVehicleType(reservation.vehicle.type)
+      setVehicleDescription(reservation.vehicle.description)
+    }
+    if(reservation) {
+      setTicketCode(reservation.ticket)
+      setCheckIn(reservation.startTime)
+    }
+
+    setIsLoading(false)
+
+  }, [reservation])
+
+  const editHandler = (e) => {
+    e.preventDefault()
+    const payload = {
+      vehicle : {
+        licensePlate : licensePlate,
+        type : vehicleType,
+        description: vehicleDescription,
+      }
+
+    }
+    updateReservation(payload)
+  }
+
+
+if (isLoading) {
+  return (
+    <p>Loading ...</p>
+  )
+}
+
+
 
 
 
@@ -24,7 +64,7 @@ const OneReservationForm = () => {
                         <th  style={{border: "2px solid yellow", width: "86px"}}>CHECK-IN</th>
                       </div>
                       <div style={{marginLeft: "-16px", border: "1px solid black", width: "128px"}}>
-                        <th  style={{border: "2px solid yellow"}}>LICENSE PLATE</th>
+                        <th  style={{border: "2px solid yellow"}}>License Plate</th>
                       </div>
                       <div style={{ marginRight: "90px", marginLeft: "14px", border: "1px solid black", width: "48px"}}>
                         <th  style={{border: "2px solid yellow", width: "48px" }}>TYPE</th>
@@ -42,13 +82,13 @@ const OneReservationForm = () => {
     </div>
 
       <div className="OneReservationFormContainer">
-        <form className="FormCreateStyle">
+        <form className="FormCreateStyle" onSubmit={editHandler}>
           <div className="FormCreate  container-xxl" >
             <div style={{marginLeft: "14px", width: "98px"}} >
-              <p style={{fontSize: "32px", fontWeight: "bold", width: "98px"}}>e32jm</p>
+              <p style={{fontSize: "32px", fontWeight: "bold", width: "98px"}}>{ticketCode}</p>
             </div>
-            <div style={{marginLeft: "16px", marginRight: "50px", width: "90px"}}>
-              <p style={{fontSize: "32px", fontWeight: "bold", width: "90px"}}>01:38</p>
+            <div style={{marginLeft: "16px", marginRight: "50px", width: "100px"}}>
+              <p style={{fontSize: "32px", fontWeight: "bold", width: "100px"}}>{checkIn}</p>
             </div>
             <div style={{ marginLeft: "-30px", width: "202px"}}>
                 <input className="LicensePlateOne badge-pill"
