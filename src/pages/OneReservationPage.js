@@ -56,7 +56,7 @@ const OneReservationPage = (props) => {
             <div>
                <OneReservationForm reservation={reservation} updateReservation={updateReservation}/>
                <div>
-                <ContainerOneReservation reservation={reservation}/>
+                <ContainerOneReservation reservation={reservation} updateReservation={updateReservation}/>
                </div>
 
             </div>

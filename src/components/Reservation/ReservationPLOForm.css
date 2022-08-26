@@ -3,13 +3,16 @@
   justify-items: center;
   justify-content: space-between;
   border: 2px solid green;
+  width: 1200px;
+  height: 88px;
 }
 .PLOFormContainer {
   justify-content: center ;
   border: 1px solid black;
   height: 88px;
-  padding-top: 18px;
-  width: 75rem;
+  padding-top: 0px;
+  width: 1200px;
+
 }
 
 
@@ -17,10 +20,12 @@
   background-color: white;
   text-align: center;
   height: 52px;
+  border: 2px solid black
 }
 
 .FormCreateStyle{
-  border: 2px solid purple;
+  border: 6px solid purple;
+  height: 88px
 }
 
 

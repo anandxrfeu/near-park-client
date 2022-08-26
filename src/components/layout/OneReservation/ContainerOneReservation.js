@@ -3,12 +3,12 @@ import DetailLeftContainer from "./DetailLeftContainer"
 
 
 const ContainerOneReservation = (props) => {
-  const {reservation} = props
+  const {reservation,updateReservation } = props
 
   return (
     <div style={{display: "flex", border: "1px solid red"}}>
         <div>
-          <DetailLeftContainer reservation={reservation}/>
+          <DetailLeftContainer reservation={reservation} updateReservation={updateReservation}/>
         </div>
         <div>
           <PaymentANDStatusContainer/>
