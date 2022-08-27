@@ -24,6 +24,7 @@ const OneReservationPage = (props) => {
   const [reservationPrice, setReservationPrice] = useState(0)
   const [showPaymentComplete, setShowPaymentComplete] = useState(false)
   const [showPaymentSelect, setShowPaymentSelect] = useState(true)
+  const [showCheckOut, setShowCheckOut] = useState(false)
 
 
 
@@ -34,7 +35,18 @@ const OneReservationPage = (props) => {
       setReservationPrice(calculatePrice(reservation.parkingLot.pricing, durationInHours))
     }
     else if (paymentMethod === "CHECKOUT") {
-      setPayByCash(false)
+      // setPayByCash(false)
+      // setShowChange(false)
+      //  setShowPaymentComplete(false)
+      // setShowCheckOut(true)
+      setShowPaymentSelect(false)
+      setShowCheckOut(false)
+
+      console.log("showChange",showChange)
+      console.log("payByCash)",payByCash)
+      console.log("showPaymentComplete",showPaymentComplete)
+      console.log("showCheckOut",showCheckOut)
+      console.log("showPaymentSelect",showPaymentSelect)
     }
   }
 
@@ -86,8 +98,14 @@ const calculatePrice = (pricing, durationInHours) => {
   const confirmPaymentByCash = () => {
     setShowChange(false)
     setShowPaymentComplete(true)
+    setPayByCash(false)
 
+  }
 
+  const confirmPaymentByCard = () => {
+    setShowChange(false)
+    setShowPaymentComplete(true)
+    setShowCheckOut(true)
   }
 
   useEffect(() => {
@@ -101,6 +119,21 @@ const calculatePrice = (pricing, durationInHours) => {
         data.startTime = `${startDateTime.getHours()} : ${startDateTime.getMinutes()} `;
         setReservation(data)
         console.log(data)
+        if (data.status === "CLOSED"){
+          setShowPaymentComplete(true)
+          setShowPaymentSelect(false)
+          setShowCheckOut(true)
+        }
+        else if (data.status === "OPEN") {
+          setShowCheckOut(true)
+        }
+
+        if (data.payBy === "CARD"){
+          // setShowPaymentComplete(true)
+          setShowPaymentSelect(false)
+          setShowCheckOut(true)
+        }
+
 
 
       } catch (err) {
@@ -157,9 +190,9 @@ const calculatePrice = (pricing, durationInHours) => {
                             <div>
                               {showPaymentSelect && <PaymentSelect updatePaymentMethod={updatePaymentMethod} /> }
                             </div>
-                            {/* <div>
-                              <CardCheckout/>
-                            </div> */}
+                            <div>
+                              {!showCheckOut && <CardCheckout reservation={reservation} confirmPaymentByCard={confirmPaymentByCard}/>}
+                            </div>
                             <div>
                               {showPaymentComplete && <PaymentComplete reservation={reservation}/>}
                             </div>

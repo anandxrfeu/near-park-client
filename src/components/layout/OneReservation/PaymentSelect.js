@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const PaymentSelect = (props) => {
 
-  const [activeCashBtn, setActiveCashBtn] = useState("")
+const [activeCashBtn, setActiveCashBtn] = useState("")
  const [activeCheckoutBtn, setActiveCheckoutBtn] = useState("")
 
 

@@ -71,7 +71,7 @@ const ReservationList = (props) => {
                             <td style={{border: "2px solid blue", width: "280px"}}><span style={{border: "2px solid red", fontSize: "24px",  width: "280px"}}>{reservation.vehicle.description}</span></td>
                             <Link to={`/saas/reservation/${reservation._id}`}>
                               <div style={{marginRight: "24px", marginTop:"4px", width:"38px"}}>
-                                <td className="statusActive rounded-circle" ></td>
+                                <td className={reservation.status !== "CLOSED" ? "statusActive rounded-circle" : "statusClosed rounded-circle"} ></td>
                                 {/* {reservation.statusCode} */}
                               </div>
                             </Link>

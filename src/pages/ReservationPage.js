@@ -18,6 +18,7 @@ const ReservationPage = (props) => {
   const [parkingLotList, setParkingLotList] = useState([])
   const [reservationList, setReservationList] = useState([])
   const [reservationListFiltered, setReservationListFiltered] = useState([])
+  const [refresh, setRefresh] = useState(false)
 
 
 
@@ -71,6 +72,7 @@ const ReservationPage = (props) => {
         setReservationList((previousState)=> {
           return [reservationData, ...previousState]
         })
+        // setRefresh(!refresh)
 
 
     } catch(err){
@@ -95,6 +97,33 @@ const ReservationPage = (props) => {
 
   function isLetter(c) {
     return c.toLowerCase() !== c.toUpperCase();
+  }
+
+  const filterReservations = (filter) => {
+    console.log(filter)
+    let  filteredReservationList  = []
+    if(filter === "CASH") {
+      filteredReservationList = reservationList.filter(r => {
+        return r.payBy === "CASH" && r.status !== "CLOSED"
+      })
+    }
+      else if (filter === "CARD") {
+        filteredReservationList = reservationList.filter(r => {
+          return r.payBy === "CARD" && r.status !== "CLOSED"
+      })
+    }
+
+    else if (filter === "CLOSED") {
+      filteredReservationList = reservationList.filter(r => {
+      return r.status === "CLOSED"
+      })}
+
+    else if (filter === "ALL") {
+       filteredReservationList = reservationList
+    }
+
+    console.log("resList", filteredReservationList)
+     setReservationListFiltered(filteredReservationList)
   }
 
     return (
@@ -125,12 +154,12 @@ const ReservationPage = (props) => {
           {/* <FilterAndSearch searchReservation={searchReservation} /> */}
         <div style={{marginTop: "30px", border: "1px solid red"}} >
             <div>
-              <FilterList/>
+              <FilterList filterReservations={filterReservations}/>
             </div>
 
             <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
               <div>
-                <Occupancy/>
+                <Occupancy maxOccupancy={parkingLotSelect.maxOccupancy} activeReservations={reservationList.filter((r) => r.status !== "CLOSED").length}/>
               </div>
 
               <div>

@@ -10,7 +10,7 @@
 }
 
 .statusActive.rounded-circle:hover{
-  background-color: green;
+  background-color: black;
 }
 
 .statusClosed.rounded-circle {
