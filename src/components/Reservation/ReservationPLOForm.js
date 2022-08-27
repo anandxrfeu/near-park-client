@@ -34,9 +34,10 @@ const ReservationPLOForm = (props) => {
 
      <div className="PLOFormContainer">
       <form className="FormCreateStyle" onSubmit={(onSubmitHandler)}>
-        <div className="FormCreate  container-xxl">
-          <div>
+        <div className="FormCreate  container-xxl" style={{width: "1200px", paddingTop: "16px"}}>
+            <div>
               <input className="LicensePlate badge-pill"
+                style={{marginLeft: "8px"}}
                 placeholder = "LICENSE PLATE"
                 type="text"
                 name="LicensePlate"
@@ -63,6 +64,7 @@ const ReservationPLOForm = (props) => {
                 </div>
               <div>
                   <input className="GuestUserPhoneForm badge-pill"
+                    style={{textAlign: "center"}}
                     placeholder = "CELLPHONE NUMBER"
                     type="number"
                     name="GuestUserPhone"
@@ -72,7 +74,7 @@ const ReservationPLOForm = (props) => {
                 </div>
 
 
-            <div>
+            <div  style={{marginRight: "20px"}}>
               <button className='formBtn badge-pill' type="submit">SUBMIT</button>
             </div>
           </div>

@@ -60,20 +60,17 @@ if (isLoading) {
                       <div style={{border: "1px solid black", width: "100px"}}>
                         <th  style={{border: "2px solid yellow", paddingLeft:"20px", width: "100px"}}>TICKET #</th>
                       </div>
-                      <div style={{ marginLeft: "-40px", border: "1px solid black", width: "86px"}}>
+                      <div style={{ marginLeft: "-34px", marginRight: "22px", border: "1px solid black", width: "86px"}}>
                         <th  style={{border: "2px solid yellow", width: "86px"}}>CHECK-IN</th>
                       </div>
-                      <div style={{marginLeft: "-16px", border: "1px solid black", width: "128px"}}>
+                      <div style={{marginLeft: "24px", border: "1px solid black", width: "128px"}}>
                         <th  style={{border: "2px solid yellow"}}>License Plate</th>
                       </div>
-                      <div style={{ marginRight: "90px", marginLeft: "14px", border: "1px solid black", width: "48px"}}>
+                      <div style={{ marginRight: "72px", marginLeft: "10px", border: "1px solid black", width: "48px"}}>
                         <th  style={{border: "2px solid yellow", width: "48px" }}>TYPE</th>
                       </div>
-                      <div style={{ marginRight: "10px", border: "1px solid black", width: "116px"}}>
+                      <div style={{ marginRight: "252px", border: "1px solid black", width: "116px"}}>
                         <th  style={{border: "2px solid yellow", width: "116px"}}>DESCRIPTION</th>
-                      </div>
-                      <div  style={{ marginRight: "150px", border: "1px solid black", width: "70px" }}>
-                         <th style={{border: "2px solid yellow", width: "70px"}}>STATUS</th>
                       </div>
                   </tr>
                 </div>
@@ -87,12 +84,12 @@ if (isLoading) {
             <div style={{marginLeft: "14px", width: "98px"}} >
               <p style={{fontSize: "32px", fontWeight: "bold", width: "98px"}}>{ticketCode}</p>
             </div>
-            <div style={{marginLeft: "16px", marginRight: "50px", width: "100px"}}>
-              <p style={{fontSize: "32px", fontWeight: "bold", width: "100px"}}>{checkIn}</p>
+            <div style={{marginLeft: "26px", marginRight: "50px", width: "140px"}}>
+              <p style={{fontSize: "32px", fontWeight: "bold", width: "140px"}}>{checkIn}</p>
             </div>
-            <div style={{ marginLeft: "-30px", width: "202px"}}>
+            <div style={{ marginLeft: "-20px", width: "224px"}}>
                 <input className="LicensePlateOne badge-pill"
-                  style={{width: "202px"}}
+                  style={{width: "224px"}}
                   placeholder = "LICENSE PLATE"
                   type="text"
                   name="LicensePlate"
@@ -100,9 +97,9 @@ if (isLoading) {
                   value={licensePlate}
                 />
               </div>
-              <div className='vehicleType' style={{width: "152px"}}>
+              <div className='vehicleType' style={{width: "156px"}}>
                 <select value={vehicleType} className="vehicleType  badge-pill"
-                style={{width: "152px"}}
+                style={{width: "156px"}}
                 onChange={(e) => setVehicleType(e.target.value) }>
                   <option className='vehicleType'>VEHICLE TYPE</option>
                   <option className='vehicleType' value="CAR">Carro</option>
@@ -119,11 +116,6 @@ if (isLoading) {
                       value={vehicleDescription}
                     />
                   </div>
-                  <div style={{width: "38px", marginRight:"6px"}}>
-                    <p className="rounded-circle" style={{marginTop:"8px", border: "2px solid black", width: "38px", height: "38px", backgroundColor: "#FED000"}}></p>
-                  </div>
-
-
               <div style={{width: "120px", marginRight: "10px"}} >
                 <button className='formBtnOne badge-pill' style={{border: "1px solid black"}} type="submit">EDIT</button>
               </div>

@@ -3,6 +3,14 @@ import ContainerOneReservation from "../components/layout/OneReservation/Contain
 import {useParams} from 'react-router-dom'
 import { useEffect, useState } from "react";
 import apiService from "../services/api.service";
+import DetailLeftContainer from "../components/layout/OneReservation/DetailLeftContainer";
+import PaymentANDStatusContainer from "../components/layout/OneReservation/PaymentANDStatusContainer";
+import OneReservationDetail from "../components/layout/OneReservation/OneReservationDetail";
+import ChangeCashCalc from "../components/layout/OneReservation/ChangeCashCalc";
+import PaymentSelect from "../components/layout/OneReservation/PaymentSelect"
+import CardCheckout from "../components/layout/OneReservation/CardCheckout"
+import PaymentComplete from '../components/layout/OneReservation/PaymentComplete'
+import ChangeTotal from '../components/layout/OneReservation/ChangeTotal'
 
 const OneReservationPage = (props) => {
   const {id} = useParams()
@@ -10,6 +18,24 @@ const OneReservationPage = (props) => {
 
   const [isLoading, setIsLoading] = useState(true)
   const [reservation, setReservation] = useState({})
+  const [payByCash, setPayByCash] = useState(false)
+  const [showChange, setShowChange] = useState(false)
+  const [change, setChange] = useState(0)
+
+  const updatePaymentMethod = (paymentMethod) => {
+    if (paymentMethod === "CASH") {
+      setPayByCash(true)
+    }
+    else if (paymentMethod === "CHECKOUT") {
+      setPayByCash(false)
+    }
+  }
+
+  const calculateChange = (changeValue) => {
+    setChange(changeValue)
+
+  }
+
 
   const startDateTime = new Date(reservation.createdAt)
   reservation.startTime = `${startDateTime.getHours()} : ${startDateTime.getMinutes()} `;
@@ -56,7 +82,50 @@ const OneReservationPage = (props) => {
             <div>
                <OneReservationForm reservation={reservation} updateReservation={updateReservation}/>
                <div>
-                <ContainerOneReservation reservation={reservation}/>
+                <div style={{display: "flex", border: "1px solid red"}}>
+                    <div>
+                      <div style={{border: "1px solid green", width: "45vw", height: "80vh"}}>
+
+                          <div>
+                              <div>
+                              <OneReservationDetail updateReservation={updateReservation} reservation={reservation}/>
+                              </div>
+                              <div>
+                                {payByCash && <ChangeCashCalc calculateChange={calculateChange}/>}
+                              </div>
+                          </div>
+
+                      </div>
+                      {/* <DetailLeftContainer reservation={reservation} updateReservation={updateReservation}/> */}
+                    </div>
+                    <div>
+                      <div style={{border: "1px solid blue", width: "45vw", height: "80vh"}}>
+                          <div style={{display: "flex", justifyContent: "right", backgroundColor: "black", color: "white"}}>
+                            <h2 style={{paddingRight: "20px", display: "flex"}}>PAYMENT</h2>
+                          </div>
+                          <div>
+                            <div>
+                              {!showChange && <PaymentSelect updatePaymentMethod={updatePaymentMethod} /> }
+                            </div>
+                            {/* <div>
+                              <CardCheckout/>
+                            </div> */}
+                            {/* <div>
+                              <PaymentComplete/>
+                            </div> */}
+                            <div>
+                              {showChange && <ChangeTotal change={change}/>}
+                            </div>
+
+                          </div>
+
+                      </div>
+                      {/* <PaymentANDStatusContainer/> */}
+                    </div>
+
+                </div>
+
+                {/* <ContainerOneReservation reservation={reservation} updateReservation={updateReservation}/> */}
                </div>
 
             </div>

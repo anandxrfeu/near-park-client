@@ -56,14 +56,20 @@ const ReservationList = (props) => {
                     return (
                       <div key={reservation._id} style={{height: "55px", border: "2px solid Black"}}>
                         <tr style={{border: "2px solid grey", display: "flex", flexDirection: "row", justifyContent: 'space-between', height: "50px", width: "1200px"}}>
-                            <td style={{border: "2px solid blue"}}><span style={{marginLeft: "20px", border: "2px solid red", fontSize: "28px", fontWeight: "bold"}}>{reservation.ticket}</span></td>
-                            <td style={{marginLeft: "48px", border: "2px solid blue", width: "96px"}}><span  style={{border: "2px solid red", fontSize: "28px", width: "94px"}}>{reservation.startTime}</span></td>
-                            <td  style={{marginLeft: "28px", border: "2px solid blue", width: "146px"}}><span style={{border: "2px solid red", fontSize: "28px", fontWeight: "bold", width: "146px"}}>{reservation.vehicle.licensePlate}</span></td>
-                            <td style={{border: "2px solid blue", width: "164px"}}><span style={{border: "2px solid red", fontSize: "28px", width: "164px"}}>{reservation.vehicle.type}</span></td>
+                            <td style={{border: "2px solid blue",  width:"120px"}}><span style={{marginLeft: "20px", border: "2px solid red", fontSize: "28px", fontWeight: "bold", width:"120px"}}>{reservation.ticket}</span></td>
+                            <td style={{marginLeft: "48px", border: "2px solid blue", width: "108px", textAlign: "center"}}><span  style={{border: "2px solid red", fontSize: "28px", width: "116px"}}>{reservation.startTime}</span></td>
+                            <div style={{width: "180px"}}>
+                               <td  style={{marginLeft: "28px", border: "2px solid blue", width: "180px", textAlign: "left"}}><span style={{border: "2px solid red", fontSize: "28px", fontWeight: "bold", width: "180px"}}>{reservation.vehicle.licensePlate}</span></td>
+                            </div>
+
+                            <div style={{width: "164px"}}>
+                              <td style={{border: "2px solid blue", width: "164px"}}><span style={{border: "2px solid red", fontSize: "28px", width: "164px"}}>{reservation.vehicle.type}</span></td>
+                            </div>
+
                             <td style={{border: "2px solid blue", width: "280px"}}><span style={{border: "2px solid red", fontSize: "24px",  width: "280px"}}>{reservation.vehicle.description}</span></td>
                             <Link to={`/saas/reservation/${reservation._id}`}>
                               <div style={{marginRight: "24px", marginTop:"4px", width:"38px"}}>
-                                <td className="rounded-circle" style={{marginTop:"6px", width: "38px", height: "38px", backgroundColor: "#FED000"}}></td>
+                                <td className="statusActive rounded-circle" ></td>
                                 {/* {reservation.statusCode} */}
                               </div>
                             </Link>

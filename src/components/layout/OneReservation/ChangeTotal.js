@@ -1,4 +1,5 @@
-const ChangeTotal = () => {
+const ChangeTotal = (props) => {
+  const {change}= props
 
   return (
     <div style={{display: "flex", justifyContent: "center", alignContent: "center"}} >
@@ -11,7 +12,7 @@ const ChangeTotal = () => {
                 <h3 style={{paddingTop: "2px"}}>TROCO</h3>
               </div>
               <div style={{marginTop: "36px"}}>
-                <h1 style={{fontWeight: "bold", fontSize: "44px"}}>R$ 47,50</h1>
+                <h1 style={{fontWeight: "bold", fontSize: "44px"}}>R$ {change}</h1>
               </div>
               <div style={{marginTop: "36px"}}>
                 <button className="badge-pill" style={{backgroundColor: "black", color: "white", border: "1px solid black", width: "100px", height: "40px"}}>OK</button>
