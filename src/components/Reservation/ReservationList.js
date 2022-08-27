@@ -6,7 +6,9 @@ const ReservationList = (props) => {
 
    console.log('reservationList', reservationList)
 
-
+    const formatTime = (time) => {
+    return Number(time) < 10 ? `0${time}` : time
+  }
 
   return (
     <>
@@ -52,7 +54,7 @@ const ReservationList = (props) => {
                   {reservationList.map( reservation => {
                     reservation.statusCode = reservation.status === "CLOSED" ? 'Inactive' : 'Active' ;
                     const startDateTime = new Date(reservation.createdAt)
-                    reservation.startTime = `${startDateTime.getHours()} : ${startDateTime.getMinutes()} `;
+                    reservation.startTime = `${formatTime(startDateTime.getHours())} : ${formatTime(startDateTime.getMinutes())} `;
                     return (
                       <div key={reservation._id} style={{height: "55px", border: "2px solid Black"}}>
                         <tr style={{border: "2px solid grey", display: "flex", flexDirection: "row", justifyContent: 'space-between', height: "50px", width: "1200px"}}>

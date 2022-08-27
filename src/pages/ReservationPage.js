@@ -6,6 +6,9 @@ import apiService from "../services/api.service";
 import ReservationPLOForm from "../components/Reservation/ReservationPLOForm";
 import ReservationList from "../components/Reservation/ReservationList";
 import {AuthContext} from '../contexts/authContext'
+import FilterList from "../components/Reservation/FilterAndSearchComponents/FilterList";
+import Occupancy from "../components/Reservation/FilterAndSearchComponents/Occupancy";
+import SearchReservation from "../components/Reservation/FilterAndSearchComponents/SearchReservation";
 
 
 const ReservationPage = (props) => {
@@ -15,6 +18,7 @@ const ReservationPage = (props) => {
   const [parkingLotList, setParkingLotList] = useState([])
   const [reservationList, setReservationList] = useState([])
   const [reservationListFiltered, setReservationListFiltered] = useState([])
+
 
 
   useEffect(() => {
@@ -86,7 +90,7 @@ const ReservationPage = (props) => {
       })
     }
     setReservationListFiltered(filteredReservationList)
-     
+
   }
 
   function isLetter(c) {
@@ -118,7 +122,27 @@ const ReservationPage = (props) => {
             </div>
         </div>
         <div>
-          <FilterAndSearch searchReservation={searchReservation} />
+          {/* <FilterAndSearch searchReservation={searchReservation} /> */}
+        <div style={{marginTop: "30px", border: "1px solid red"}} >
+            <div>
+              <FilterList/>
+            </div>
+
+            <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
+              <div>
+                <Occupancy/>
+              </div>
+
+              <div>
+                <div className="Search" style={{marginTop: "30px", border: "1px solid red"}}>
+                  <div>
+                    <SearchReservation searchReservation={searchReservation} />
+                  </div>
+
+                </div>
+              </div>
+            </div>
+    </div>
         </div>
 
       </div>

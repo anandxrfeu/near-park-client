@@ -1,5 +1,16 @@
 const ChangeTotal = (props) => {
-  const {change}= props
+  const {change, updateReservation, confirmPaymentByCash}= props
+
+  const clickHandler = () => {
+   const payload = {
+    endedAt: new Date(),
+    status: "CLOSED"
+    }
+      updateReservation(payload)
+      confirmPaymentByCash()
+  }
+
+
 
   return (
     <div style={{display: "flex", justifyContent: "center", alignContent: "center"}} >
@@ -15,7 +26,9 @@ const ChangeTotal = (props) => {
                 <h1 style={{fontWeight: "bold", fontSize: "44px"}}>R$ {change}</h1>
               </div>
               <div style={{marginTop: "36px"}}>
-                <button className="badge-pill" style={{backgroundColor: "black", color: "white", border: "1px solid black", width: "100px", height: "40px"}}>OK</button>
+                <button className="badge-pill"
+                onClick={clickHandler}
+                style={{backgroundColor: "black", color: "white", border: "1px solid black", width: "100px", height: "40px"}}>OK</button>
               </div>
            </div>
 
