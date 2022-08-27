@@ -1,0 +1,270 @@
+.hamburgerBar {
+  display: flex;
+  align-content: left;
+  border: none;
+  background: none;
+}
+
+.parkingLotSelect {
+  display: flex;
+  margin-top: -10;
+}
+
+.options.parkingLotSelect.parkingdrop {
+  background-color: white;
+}
+
+.parkingLotSelectDesign {
+  background-color: white;
+  width: 200px;
+  height: 40px;
+  border: white 1px solid;
+  border-radius: 24px;
+  text-align: center;
+}
+
+
+.homeIcon {
+  display: flex;
+  align-content: left;
+
+}
+
+.homeIcon:hover {}
+
+.dashboardIcon {
+  display: flex;
+  align-content: left;
+}
+
+
+.ReservationIcon {
+  display: flex;
+  align-content: left;
+}
+
+.ParkingLotIcon {
+  display: flex;
+  align-content: left;
+}
+
+.SubscriptionIcon {
+  display: flex;
+  align-content: left;
+}
+
+.supportIcon {
+  display: flex;
+  align-content: left;
+}
+
+.profileIcon {
+  display: flex;
+  align-content: left;
+}
+
+.logoutIcon {
+  display: flex;
+  align-content: left;
+}
+
+
+.nav-link-icon {
+  height: 2.8rem;
+  width: 2.8rem;
+  filter: invert(100%) sepia(91%) saturate(38%) hue-rotate(254deg) brightness(110%) contrast(110%);
+}
+
+.nav-link-icon:hover {
+  filter: invert(69%) sepia(29%) saturate(4614%) hue-rotate(52deg) brightness(92%) contrast(81%);
+
+}
+
+.nav-logo-icon {
+  height: 2.8rem;
+  width: 2.8rem;
+  padding-bottom: 0.4rem;
+  filter: invert(100%) sepia(91%) saturate(38%) hue-rotate(254deg) brightness(110%) contrast(110%);
+}
+
+.nav-logo-icon:hover {
+  filter: invert(69%) sepia(29%) saturate(4614%) hue-rotate(52deg) brightness(92%) contrast(81%);
+}
+
+
+span.nav-link-name {
+  padding-left: 2.2rem;
+  padding-top: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: normal;
+}
+
+span.nav-logo-name {
+
+  padding-bottom: 0.4rem;
+  font-size: 1.8em;
+  font-weight: 300;
+}
+
+
+:root {
+  --header-height: 3rem;
+  --nav-width: 94px;
+
+  --first-color: #969393;
+  --first-color-alt: #FFFFFF;
+  --black-color: #000;
+  --white-color: #000;
+  --green-color: #5BB318;
+
+
+}
+
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  position: relative;
+  margin: var(--header-height) 0 0 0;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-family: 'Nunito Sans', sans-serif;
+  transition: .5s;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--header-height);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--black-color);
+  padding: 0 1rem;
+  transition: .5s;
+}
+
+.header-toggle {
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--first-color);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -30%;
+  height: 100vh;
+  width: var(--nav-width);
+  background-color: var(--first-color);
+  padding-top: 1rem;
+  transition: 0.5s;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 100%
+}
+
+.nav-logo,
+.nav-link {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 2rem;
+  padding: 0.5rem 0 0rem 1.5rem;
+}
+
+.nav-logo {
+  margin-bottom: 1.8rem;
+}
+
+.nav-logo-icon {
+  font-size: 1.25rem;
+  color: var(--black-color);
+  cursor: pointer;
+
+}
+
+.nav-logo-name {
+  font-weight: 500;
+  color: var(--first-color-alt);
+}
+
+.nav-link {
+  position: relative;
+  color: var(--first-color-alt);
+  transition: .5s;
+  margin-bottom: 1.2rem;
+}
+
+.nav-link:hover {
+  color: var(--green-color);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.active {
+  color: var(--green-color);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 64px;
+  width: 3px;
+  background-color: var(--black-color);
+}
+
+.show {
+  left: 0;
+}
+
+.space-toggle {
+  padding-left: calc(var(--nav-width) + 1rem);
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding: 0 1rem 0 calc(var(--nav-width) + 2rem);
+  }
+
+  .header {
+    height: calc(var(--header-height) + 1rem);
+    padding-left: calc(var(--nav-width) + 2rem);
+  }
+
+  .sidebar {
+    left: 0;
+    padding: 1rem 0 0 0;
+  }
+
+  .show {
+    width: calc(var(--header-height) + 260px);
+  }
+
+  .space-toggle {
+    padding-left: calc(var(--nav-width) + 240px);
+  }
+}

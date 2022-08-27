@@ -1,10 +1,24 @@
+import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { AuthContext } from "../contexts/authContext"
+
 const Subscription = () => {
+
+  const {loggedInUser} = useContext(AuthContext)
 
   return (
       <div>
         <div>
           <h1>SUBSCRIPTION</h1>
         </div>
+       {loggedInUser.user.role === "ADMIN" && <div>
+            <Link to="/saas/subscription/create">
+
+                <p>Create New Plan</p>
+
+            </Link>
+
+        </div> }
         <div style={{display: "flex", justifyContent: "space-between"}}>
           <div style={{border: "1px solid black", width: "460px", height: "500px", marginRight: "80px", borderRadius: "22px", marginTop: "40px"}}>
             <div style={{display: "flex", justifyContent: "center", marginTop: "20px"}}>

@@ -20,12 +20,19 @@ import OneReservationPage from '../pages/OneReservationPage'
 import { AuthContextComponent } from "../contexts/authContext";
 import ParkingLotCreatePage from "../pages/ParkingLotCreatePage";
 import Logout from "../pages/auth/Logout";
+import {AuthContext} from '../contexts/authContext'
+
+import { useEffect, useState, useContext } from "react"
+import SideBarAdmin from "./layout/Sidebar Admin/SideBarAdmin";
+import SubscriptionCreatePage from "../pages/admin/SubscriptionCreatePage";
 
 
 function App() {
+  // const {loggedInUser} = useContext(AuthContext)
+   const {isLoading, loggedInUser} = useContext(AuthContext)
+
   return (
-    <BrowserRouter>
-      <AuthContextComponent>
+
         <Routes>
           <Route exact path="/" element={ <HomePage />} />
           <Route path="/auth">
@@ -48,35 +55,35 @@ function App() {
                                                   </Container>
                                                   )}
               />
-            <Route path='reservations' element={(
+            {loggedInUser.user.role === "OWNER" && <Route path='reservations' element={(
                                                   <Container>
                                                     <Sidebar />
                                                     <ReservationPage />
                                                   </Container>
                                                   )}
-              />
+              />}
 
-            <Route path='reservation/:id' element={(
+            {loggedInUser.user.role === "OWNER" && <Route path='reservation/:id' element={(
                                                   <Container>
                                                     <Sidebar />
                                                     <OneReservationPage />
                                                   </Container>
                                                   )}
-              />
-            <Route path='parkinglots' element={(
+              />}
+            {loggedInUser.user.role === "OWNER" && <Route path='parkinglots' element={(
                                                   <Container>
                                                     <Sidebar />
                                                     <ParkingLotPage />
                                                   </Container>
                                                   )}
-            />
-            <Route path='parkinglots/create' element={(
+            />}
+            {loggedInUser.user.role === "OWNER" && <Route path='parkinglots/create' element={(
                                                   <Container>
                                                     <Sidebar />
                                                     <ParkingLotCreatePage />
                                                   </Container>
                                                   )}
-            />
+            />}
 
             <Route path='subscription' element={(
                                                 <Container>
@@ -99,11 +106,17 @@ function App() {
                                                 </Container>
                                                 )}
             />
+            {loggedInUser.user.role === "ADMIN" && <Route path='subscription/create' element={(
+                                                  <Container>
+                                                    <SideBarAdmin />
+                                                    <SubscriptionCreatePage/>
+                                                  </Container>
+                                                  )}
+            />}
 
           </Route>
         </Routes>
-      </AuthContextComponent>
-    </BrowserRouter>
+
   );
 }
 
