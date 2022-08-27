@@ -11,9 +11,9 @@ const DetailLeftContainer = (props) => {
             <div>
              <OneReservationDetail reservation={reservation}/>
             </div>
-            {/* <div>
+            <div>
               <ChangeCashCalc/>
-            </div> */}
+            </div>
         </div>
 
     </div>

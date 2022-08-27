@@ -14,6 +14,8 @@ const ReservationPage = (props) => {
   const [parkingLotSelect, setParkingLotSelect] = useState({})
   const [parkingLotList, setParkingLotList] = useState([])
   const [reservationList, setReservationList] = useState([])
+  const [reservationListFiltered, setReservationListFiltered] = useState([])
+
 
   useEffect(() => {
     async function fetchData() {
@@ -22,7 +24,6 @@ const ReservationPage = (props) => {
         const parkingLots = await apiService.getAllParkingLots()
         setParkingLotSelect(parkingLots[0])
         setParkingLotList(parkingLots)
-
       } catch (err) {
         console.log(err)
       }
@@ -41,13 +42,16 @@ const ReservationPage = (props) => {
         setLoading(false)
         const reservations = await apiService.getAllReservationsForAParkingLot(parkingLotSelect._id)
         setReservationList(reservations)
+        setReservationListFiltered(reservations)
 
       } catch (err) {
         console.log(err)
       }
     }
 
-    fetchData()
+    if(parkingLotSelect !== undefined){
+      fetchData()
+    }
   }, [parkingLotSelect])
 
   const createReservationHandler = async (reservation) => {
@@ -70,6 +74,25 @@ const ReservationPage = (props) => {
     }
   }
 
+  const searchReservation = (searchText) => {
+    let  filteredReservationList  = []
+    if(searchText && isLetter(searchText[0])){
+      filteredReservationList = reservationList.filter(resrvtn => {
+        return resrvtn.vehicle.licensePlate.toLowerCase().startsWith(searchText.toLowerCase())
+      })
+    }else{
+      filteredReservationList = reservationList.filter(resrvtn => {
+        return resrvtn.guestUserPhone.startsWith(searchText)
+      })
+    }
+    setReservationListFiltered(filteredReservationList)
+     
+  }
+
+  function isLetter(c) {
+    return c.toLowerCase() !== c.toUpperCase();
+  }
+
     return (
       <div style={{marginLeft: "-20px"}}>
         <div style={{marginTop: "30px", marginBottom: "20px"}}>
@@ -90,12 +113,12 @@ const ReservationPage = (props) => {
                 </div> }
               </div>
               <div>
-                {reservationList.length !== 0 && <ReservationList reservationList={reservationList}/> }
+                {reservationList.length !== 0 && <ReservationList reservationList={reservationListFiltered}/> }
               </div>
             </div>
         </div>
         <div>
-          <FilterAndSearch />
+          <FilterAndSearch searchReservation={searchReservation} />
         </div>
 
       </div>

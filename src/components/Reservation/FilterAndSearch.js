@@ -2,9 +2,19 @@ import './FilterAndSearch.css'
 import {useState} from "react";
 
 
-const FilterAndSearch = () => {
+const FilterAndSearch = (props) => {
+
+  const {searchReservation} = props
 
   const [search, setSearch] = useState('')
+
+  const searchHandler = (e) => {
+    e.preventDefault()
+    //console.log("e.target.value", e.target.value) //12
+    setSearch(e.target.value)
+    //console.log("search-> ", search) //1   To DO - Ask nilton
+    searchReservation(e.target.value)
+  }
 
   return (
     <div style={{marginTop: "30px", border: "1px solid red"}} >
@@ -20,7 +30,7 @@ const FilterAndSearch = () => {
         </button>
         <button className="badge-pill" style={{paddingLeft: "60px", paddingRight: "60px", color: "white", backgroundColor: "black", border: "black",  marginLeft: "10px", height: "48px"  }}>
           CHECK-OUT LIST
-        </button >
+        </button>
       </div>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
         <div  style={{border: "4px solid black", borderRadius: "6px", backgroundColor: "black", width: "140px", height: "82px", marginTop: "20px"}}>
@@ -37,7 +47,8 @@ const FilterAndSearch = () => {
                       type="text"
                       name="searchForm"
                       value={search}
-                      onChange={(e) => setSearch(e.target.value)}
+                      onChange={searchHandler}
+                      //onKeyDown={searchHandler}
                     />
                   </div>
                 </div>
