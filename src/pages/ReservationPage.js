@@ -27,7 +27,7 @@ const ReservationPage = (props) => {
       try {
         setLoading(false)
         const parkingLots = await apiService.getAllParkingLots()
-        setParkingLotSelect(parkingLots[0])
+        setParkingLotSelect(parkingLots[0])                          //To do
         setParkingLotList(parkingLots)
       } catch (err) {
         console.log(err)
@@ -35,7 +35,7 @@ const ReservationPage = (props) => {
     }
 
     fetchData()
-  }, [])
+  }, [refresh])
 
     const onSelectHandler = (parkingLot) =>{
     setParkingLotSelect(parkingLot)
@@ -69,10 +69,10 @@ const ReservationPage = (props) => {
     console.log(payload)
     try {
         const reservationData = await apiService.createReservation(payload)
-        setReservationList((previousState)=> {
-          return [reservationData, ...previousState]
-        })
-        // setRefresh(!refresh)
+        // setReservationList((previousState)=> {
+        //   return [reservationData, ...previousState]
+        // })
+        setRefresh(!refresh)
 
 
     } catch(err){

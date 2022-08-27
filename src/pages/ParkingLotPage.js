@@ -43,7 +43,7 @@ const ParkingLotPage = (props) => {
   }
 
 
-  console.log("HOSt", window.location.host)
+  console.log("ENV", process.env)
 
   if (loading) {
     return <p>loading ...</p>
@@ -58,7 +58,7 @@ const ParkingLotPage = (props) => {
           <Link  style={{fontSize: "28px"}} to="/saas/parkinglots/create">Add new parking lot</Link>
         {parkingLotSelect && Object.keys(parkingLotSelect).length === 0 && <ParkingLotForm />}
         {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <ParkingLotForm parkingLotSelect={parkingLotSelect} onSubmitHandler={onSubmitHandler}/>}
-        {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <QRCOde url={`http://${window.location.host}/client/parkinglot/${parkingLotSelect._id}`} />}
+        {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <QRCOde url={`http://${process.env.REACT_APP_MOBILE_APP}/client/parkinglot/${parkingLotSelect._id}`} />}
         
       </div>
     )
