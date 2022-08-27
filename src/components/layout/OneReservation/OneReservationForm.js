@@ -60,7 +60,7 @@ if (isLoading) {
                       <div style={{border: "1px solid black", width: "100px"}}>
                         <th  style={{border: "2px solid yellow", paddingLeft:"20px", width: "100px"}}>TICKET #</th>
                       </div>
-                      <div style={{ marginLeft: "-56px", marginRight: "36px", border: "1px solid black", width: "86px"}}>
+                      <div style={{ marginLeft: "-34px", marginRight: "22px", border: "1px solid black", width: "86px"}}>
                         <th  style={{border: "2px solid yellow", width: "86px"}}>CHECK-IN</th>
                       </div>
                       <div style={{marginLeft: "24px", border: "1px solid black", width: "128px"}}>
