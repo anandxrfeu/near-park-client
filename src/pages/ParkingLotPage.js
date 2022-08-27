@@ -3,6 +3,7 @@ import ParkingLotSelect from '../components/ParkingLotSelect'
 import {useState, useEffect} from 'react'
 import apiService from '../services/api.service'
 import {Link} from 'react-router-dom';
+import QRCOde from '../components/QRCode/QRCode';
 
 
 const ParkingLotPage = (props) => {
@@ -41,6 +42,9 @@ const ParkingLotPage = (props) => {
     }
   }
 
+
+  console.log("HOSt", window.location.host)
+
   if (loading) {
     return <p>loading ...</p>
   }
@@ -54,6 +58,8 @@ const ParkingLotPage = (props) => {
           <Link  style={{fontSize: "28px"}} to="/saas/parkinglots/create">Add new parking lot</Link>
         {parkingLotSelect && Object.keys(parkingLotSelect).length === 0 && <ParkingLotForm />}
         {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <ParkingLotForm parkingLotSelect={parkingLotSelect} onSubmitHandler={onSubmitHandler}/>}
+        {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <QRCOde url={`http://${window.location.host}/client/parkinglot/${parkingLotSelect._id}`} />}
+        
       </div>
     )
 
