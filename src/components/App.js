@@ -1,35 +1,32 @@
-import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Signup from '../pages/auth/Signup'
-import Login from '../pages/auth/Login'
+import {AuthContext} from '../contexts/authContext'
+import { useContext } from "react"
+
+import SideBarAdmin from "./layout/admin/SideBarAdmin";
+import SubscriptionCreatePage from "../pages/admin/SubscriptionCreatePage";
 import Container from "./layout/Container";
 import Sidebar from "./layout/Sidebar";
-import DashboardPage from "../pages/DashboardPage";
-import HomePage from "../pages/LandingPage";
-import ParkingLotPage from "../pages/ParkingLotPage";
-import ProfilePage from "../pages/ProfilePage";
-import ReservationPage from "../pages/ReservationPage";
-import SubscriptionPage from "../pages/SubscriptionPage";
-import SupportPage from "../pages/SupportPage";
-import SaasHomePage from "../pages/SaasHomePage";
-import OneReservationPage from '../pages/OneReservationPage'
 
-
-import { AuthContextComponent } from "../contexts/authContext";
-import ParkingLotCreatePage from "../pages/ParkingLotCreatePage";
+import Signup from '../pages/auth/Signup'
+import Login from '../pages/auth/Login'
 import Logout from "../pages/auth/Logout";
-import {AuthContext} from '../contexts/authContext'
+import DashboardPage from "../pages/dashboard/DashboardPage";
+import HomePage from "../pages/LandingPage";
+import ProfilePage from "../pages/profile/ProfilePage";
+import SubscriptionPage from "../pages/subscriptions/SubscriptionPage";
+import SupportPage from "../pages/support/SupportPage";
+import SaasHomePage from "../pages/SaasHomePage";
+import OneReservationPage from '../pages/reservations/OneReservationPage'
+import ReservationPage from "../pages/reservations/ReservationPage";
+import ParkingLotCreatePage from "../pages/parkingLots/ParkingLotCreatePage";
+import ParkingLotPage from "../pages/parkingLots/ParkingLotPage";
 
-import { useEffect, useState, useContext } from "react"
-import SideBarAdmin from "./layout/Sidebar Admin/SideBarAdmin";
-import SubscriptionCreatePage from "../pages/admin/SubscriptionCreatePage";
 
 
 function App() {
-  // const {loggedInUser} = useContext(AuthContext)
-   const {isLoading, loggedInUser} = useContext(AuthContext)
+   const {loggedInUser} = useContext(AuthContext)
 
   return (
 

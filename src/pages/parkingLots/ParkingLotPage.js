@@ -1,9 +1,9 @@
-import ParkingLotForm from '../components/ParkingLotForm'
-import ParkingLotSelect from '../components/ParkingLotSelect'
+import ParkingLotForm from '../../components/parkinglots/ParkingLotForm'
+import ParkingLotSelect from '../../components/parkinglots/ParkingLotSelect'
 import {useState, useEffect} from 'react'
-import apiService from '../services/api.service'
+import apiService from '../../services/api.service'
 import {Link} from 'react-router-dom';
-import QRCOde from '../components/QRCode/QRCode';
+import QRCOde from '../../components/qrcode/QRCode';
 
 
 const ParkingLotPage = (props) => {

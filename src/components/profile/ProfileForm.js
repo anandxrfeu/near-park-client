@@ -1,13 +1,13 @@
 import './ProfileForm.css'
-import apiService from '../services/api.service'
-import {AuthContext} from '../contexts/authContext'
+import apiService from '../../services/api.service'
+import {AuthContext} from '../../contexts/authContext'
 
 import { useEffect, useState, useContext } from "react"
 
 
 const ProfileForm = () => {
 
-  const {isLoading, loggedInUser} = useContext(AuthContext)
+  const {loggedInUser} = useContext(AuthContext)
 
   const [userName, setUserName] = useState(loggedInUser.user.name)
   const [userEmail, setUserEmail] = useState(loggedInUser.user.email)

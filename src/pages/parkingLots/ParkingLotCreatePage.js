@@ -1,5 +1,5 @@
-import ParkingLotForm from '../components/ParkingLotForm'
-import apiService from '../services/api.service'
+import ParkingLotForm from '../../components/parkinglots/ParkingLotForm'
+import apiService from '../../services/api.service'
 import { useNavigate } from 'react-router-dom'
 
 const ParkingLotCreatePage = (props) => {

@@ -1,16 +1,14 @@
-import OneReservationForm from "../components/layout/OneReservation/OneReservationForm";
-import ContainerOneReservation from "../components/layout/OneReservation/ContainerOneReservation";
 import {useParams} from 'react-router-dom'
 import { useEffect, useState } from "react";
-import apiService from "../services/api.service";
-import DetailLeftContainer from "../components/layout/OneReservation/DetailLeftContainer";
-import PaymentANDStatusContainer from "../components/layout/OneReservation/PaymentANDStatusContainer";
-import OneReservationDetail from "../components/layout/OneReservation/OneReservationDetail";
-import ChangeCashCalc from "../components/layout/OneReservation/ChangeCashCalc";
-import PaymentSelect from "../components/layout/OneReservation/PaymentSelect"
-import CardCheckout from "../components/layout/OneReservation/CardCheckout"
-import PaymentComplete from '../components/layout/OneReservation/PaymentComplete'
-import ChangeTotal from '../components/layout/OneReservation/ChangeTotal'
+import apiService from "../../services/api.service";
+
+import OneReservationForm from "../../components/reservations/oneReservation/OneReservationForm";
+import OneReservationDetail from "../../components/reservations/oneReservation/OneReservationDetail";
+import ChangeCashCalc from "../../components/reservations/oneReservation/ChangeCashCalc";
+import PaymentSelect from "../../components/reservations/oneReservation/PaymentSelect"
+import CardCheckout from "../../components/reservations/oneReservation/CardCheckout"
+import PaymentComplete from '../../components/reservations/oneReservation/PaymentComplete'
+import ChangeTotal from '../../components/reservations/oneReservation/ChangeTotal'
 
 const OneReservationPage = (props) => {
   const {id} = useParams()
@@ -35,10 +33,6 @@ const OneReservationPage = (props) => {
       setReservationPrice(calculatePrice(reservation.parkingLot.pricing, durationInHours))
     }
     else if (paymentMethod === "CHECKOUT") {
-      // setPayByCash(false)
-      // setShowChange(false)
-      //  setShowPaymentComplete(false)
-      // setShowCheckOut(true)
       setShowPaymentSelect(false)
       setShowCheckOut(false)
 

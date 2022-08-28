@@ -1,4 +1,4 @@
-import Subscription from "../components/Subscription";
+import Subscription from "../../components/subscriptions/Subscription";
 
 const SubscriptionPage = (props) => {
     return (

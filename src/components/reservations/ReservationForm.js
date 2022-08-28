@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-import './ReservationPLOForm.css'
+import './ReservationForm.css'
 
 const ReservationPLOForm = (props) => {
   const {createReservationHandler} = props

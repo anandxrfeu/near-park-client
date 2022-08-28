@@ -1,4 +1,4 @@
-import './FilterList.css'
+import './Filter.css'
 
 
 const FilterList = (props) => {

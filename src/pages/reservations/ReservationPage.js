@@ -1,18 +1,18 @@
-/*import Reservation from "../components/Reservation/Reservation";*/
-import FilterAndSearch from "../components/Reservation/FilterAndSearch";
-import ParkingLotSelect from "../components/ParkingLotSelect";
+
+import ParkingLotSelect from "../../components/parkinglots/ParkingLotSelect";
 import {useEffect, useState, useContext} from "react"
-import apiService from "../services/api.service";
-import ReservationPLOForm from "../components/Reservation/ReservationPLOForm";
-import ReservationList from "../components/Reservation/ReservationList";
-import {AuthContext} from '../contexts/authContext'
-import FilterList from "../components/Reservation/FilterAndSearchComponents/FilterList";
-import Occupancy from "../components/Reservation/FilterAndSearchComponents/Occupancy";
-import SearchReservation from "../components/Reservation/FilterAndSearchComponents/SearchReservation";
+import apiService from "../../services/api.service";
+import ReservationPLOForm from "../../components/reservations/ReservationForm";
+import ReservationList from "../../components/reservations/ReservationList";
+import FilterList from "../../components/reservations/filter/Filter"
+import Occupancy from "../../components/reservations/occupancy/Occupancy";
+import SearchReservation from "../../components/reservations/search/Search";
+import {AuthContext} from '../../contexts/authContext'
+
 
 
 const ReservationPage = (props) => {
-  const {isLoading, loggedInUser} = useContext(AuthContext)
+  const {loggedInUser} = useContext(AuthContext)
   const [loading, setLoading] = useState(true)
   const [parkingLotSelect, setParkingLotSelect] = useState({})
   const [parkingLotList, setParkingLotList] = useState([])
