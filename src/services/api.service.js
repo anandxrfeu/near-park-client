@@ -75,9 +75,24 @@ class ApiService {
 
   async updateParkingLot(parkingLotId, parkingLot) {
     const res = await this.api.patch(`/parkingLots/${parkingLotId}`, parkingLot);
-    console.log(res)
     return res.data
   }
+
+  async createSubscription (subscriptionPlan) {
+    const res = await this.api.post("/subscriptionPlans", subscriptionPlan);
+    return res.data
+  }
+
+  async getAllActiveSubscriptions () {
+    const res = await this.api.get("/subscriptionPlans?active=true");
+    return res.data
+  }
+
+  async subscribeToPlan (plan) {
+    const res = await this.api.post("/userSubscriptions", plan);
+    return res.data
+  }
+
 
 }
 
