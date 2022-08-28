@@ -1,0 +1,56 @@
+.subsctiption{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.subscriptions_controls{
+    display: flex;
+    width: 100%;
+    margin: 2rem;
+}
+
+.subscriptions_controls input{
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 2rem;
+    
+}
+
+.subscriptions_controls-name{
+    width: 90%;
+}
+
+.subscriptions_controls-benefits-cost-cta{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subscriptions_controls-benefits{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+}
+
+
+.subscriptions_controls-benefit-cost-cta{
+    width: 80%;
+    padding-left: 3rem;
+}
+
+.subscriptions_controls-cost-cta{
+    width: 50%;
+
+}
+
+.subscriptions_controls-cost{
+    padding-bottom: 2rem;
+
+}
+
+.subscriptions_controls-btn{
+    background: black;
+    font-weight: bold;
+    width: 10rem;
+}
