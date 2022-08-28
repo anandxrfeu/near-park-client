@@ -5,7 +5,7 @@ import {AuthContext} from '../contexts/authContext'
 import { useContext } from "react"
 
 import SideBarAdmin from "./layout/admin/SideBarAdmin";
-import SubscriptionCreatePage from "../pages/admin/SubscriptionCreatePage";
+import SubscriptionCreatePage from "../pages/subscriptions/SubscriptionCreatePage";
 import Container from "./layout/Container";
 import Sidebar from "./layout/Sidebar";
 
