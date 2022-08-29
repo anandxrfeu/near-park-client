@@ -4,14 +4,14 @@ import { useState } from "react"
 
 const Search = (props) => {
 
- const {searchReservation, placeholder} = props
+ const {searchFunction, placeholder} = props
 
  const [search, setSearch] = useState('')
 
  const searchHandler = (e) => {
    e.preventDefault()
    setSearch(e.target.value)
-   searchReservation(e.target.value)
+   searchFunction(e.target.value)
  }
 
 
