@@ -40,14 +40,14 @@ function App() {
           </Route>
           <Route path="/saas">
             <Route path='' element={(<Container>
-                                      <Sidebar />
+                                     {loggedInUser.user.role === "OWNER" ? <Sidebar /> : <SideBarAdmin />}
                                       <SaasHomePage />
                                     </Container>
                                     )}
               />
             <Route path='dashboard' element={(
                                                   <Container>
-                                                    <Sidebar />
+                                                    {loggedInUser.user.role === "OWNER" ? <Sidebar /> : <SideBarAdmin />}
                                                     <DashboardPage />
                                                   </Container>
                                                   )}
@@ -84,21 +84,21 @@ function App() {
 
             <Route path='subscription' element={(
                                                 <Container>
-                                                  <Sidebar />
+                                                  {loggedInUser.user.role === "OWNER" ? <Sidebar /> : <SideBarAdmin />}
                                                   <SubscriptionPage />
                                                 </Container>
                                                 )}
             />
             <Route path='profile' element={(
                                                 <Container>
-                                                  <Sidebar />
+                                                 {loggedInUser.user.role === "OWNER" ? <Sidebar /> : <SideBarAdmin />}
                                                   <ProfilePage />
                                                 </Container>
                                                 )}
             />
             <Route path='support' element={(
                                                 <Container>
-                                                  <Sidebar />
+                                                  {loggedInUser.user.role === "OWNER" ? <Sidebar /> : <SideBarAdmin />}
                                                   <SupportPage />
                                                 </Container>
                                                 )}

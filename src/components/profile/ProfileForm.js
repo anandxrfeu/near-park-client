@@ -9,10 +9,10 @@ const ProfileForm = () => {
 
   const {loggedInUser} = useContext(AuthContext)
 
-  const [userName, setUserName] = useState(loggedInUser.user.name)
-  const [userEmail, setUserEmail] = useState(loggedInUser.user.email)
-  const [newPassword, setNewPassword] = useState(loggedInUser.user.password)
-  const [imageUrl, setImageUrl] = useState(loggedInUser.user.profileImageUrl)
+  const [userName, setUserName] = useState("")
+  const [userEmail, setUserEmail] = useState("")
+  const [newPassword, setNewPassword] = useState("")
+  const [imageUrl, setImageUrl] = useState("")
   const [loading, setLoading] = useState(true)
   const [refresh, setRefresh] = useState(true)
 
@@ -20,11 +20,12 @@ const ProfileForm = () => {
     async function fetchData() {
       try {
         const user = await apiService.getUserProfile()
-        console.log("checkUser", user)
         setUserName(user.data.name)
         setUserEmail(user.data.email)
         setNewPassword(user.data.password)
-        setImageUrl(user.data.profileImageUrl)
+        if(user.data.profileImageUrl){
+          setImageUrl(user.data.profileImageUrl)
+        }
         setLoading(false)
       } catch (err) {
         console.log(err)
