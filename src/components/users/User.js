@@ -1,3 +1,4 @@
+import ToggleSwitch from "../layout/toggleSwitch/ToggleSwitch"
 import "./User.css"
 
 const User = (props) => {
@@ -13,7 +14,7 @@ return (
                 <div className="user-card_plan">BASIC</div>
                 <div className="user-card_price">R$ 89 / month</div>
                 <div className="user-card_since">07/12</div>
-                <div className="user-card_status">ACTIVE</div>
+                <div className="user-card_status"><ToggleSwitch /></div>
     </div>
 
 )
