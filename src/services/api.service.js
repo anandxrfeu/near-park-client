@@ -93,6 +93,10 @@ class ApiService {
     return res.data
   }
 
+  async getActiveSubscriptionForUser (plan) {
+    const res = await this.api.get("/users/profile/subscriptions?status=ACTIVE");
+    return res.data
+  }
 
 }
 

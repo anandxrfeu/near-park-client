@@ -1,23 +1,46 @@
+import "./Subscription.css"
 import { Link } from "react-router-dom"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../contexts/authContext"
 import apiService from "../../services/api.service"
 
 const Subscription = (props) => {
 
   const {subscriptions} = props
-
   const {loggedInUser} = useContext(AuthContext)
+  const [activeSubscription, setActiveSubscription] = useState({})
+  const [isLoading, setIsloading] = useState(true)
+  const [refresh, setRefresh] = useState(false)
+
+
+  useEffect(()=>{
+    async function fetchData(){
+      try{
+        const data = await apiService.getActiveSubscriptionForUser()
+        setActiveSubscription(data)
+      }catch(err){
+        console.log(err)
+      }
+    }
+    if(loggedInUser.user.role !== "ADMIN" ) {
+      fetchData()
+    }
+    setIsloading(false)
+
+  }, [refresh, loggedInUser.user.role])
 
   const clickHandler = async (e) =>{
     const payload = {subscriptionPlan: e.target.id}
     try{
-      const data = await apiService.subscribeToPlan(payload)
-      console.log(data)
+      await apiService.subscribeToPlan(payload)
+      setRefresh(!refresh)
     }catch(err){
       console.log(err)
     }
+  }
 
+  if(isLoading){
+    return (<p>Loading..</p>)
   }
 
   return (
@@ -28,11 +51,12 @@ const Subscription = (props) => {
             </Link>
         </div> }
 
-        <div style={{display: "flex", justifyContent: "space-between"}}>
+        <div style={{display: "flex", justifyContent: "space-between"}} >
           {subscriptions && subscriptions.map(subscription => {
             return  (
                       <div key={subscription._id}  
-                          style={{border: "1px solid black", width: "460px", height: "500px", marginRight: "80px", borderRadius: "22px", marginTop: "40px"}}>
+                          className={activeSubscription.subscriptionPlan === subscription._id ? "subscription-card active" : "subscription-card" }   
+                          >
                         <div style={{display: "flex", justifyContent: "center", marginTop: "20px"}}>
                           <h2 style={{fontWeight: "bold", fontSize: "42px"}}>{subscription.name}</h2>
                         </div>
@@ -45,7 +69,7 @@ const Subscription = (props) => {
                           })}
                           </div>
                           <div  style={{display: "flex", justifyContent: "center", marginTop: "40px"}}>
-                            <button disabled={loggedInUser.user.role === "ADMIN"} 
+                            <button disabled={loggedInUser.user.role === "ADMIN" || activeSubscription.subscriptionPlan === subscription._id} 
                                     style={{width: "260px", border: "1px solid black"}}
                                     className="badge-pill"
                                     id={subscription._id}

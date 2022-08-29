@@ -42,9 +42,6 @@ const ParkingLotPage = (props) => {
     }
   }
 
-
-  console.log("ENV", process.env)
-
   if (loading) {
     return <p>loading ...</p>
   }

@@ -16,7 +16,6 @@ const SearchReservation = (props) => {
 
 
   return (
-      <search>
             <form>
               <div className="SearchForm">
                 <div>
@@ -30,7 +29,6 @@ const SearchReservation = (props) => {
                   </div>
                 </div>
             </form>
-        </search>
   )
 }
 

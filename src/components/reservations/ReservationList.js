@@ -3,12 +3,9 @@ import {Link} from 'react-router-dom';
 
 const ReservationList = (props) => {
   const {reservationList} = props
-
-   console.log('reservationList', reservationList)
-
-    const formatTime = (time) => {
-    return Number(time) < 10 ? `0${time}` : time
-  }
+  const formatTime = (time) => {
+  return Number(time) < 10 ? `0${time}` : time
+}
 
   return (
     <>
@@ -41,16 +38,6 @@ const ReservationList = (props) => {
             <div className="scrollit" >
               <tbody>
                 <div>
-                  {/* <div style={{height: "55px", border: "2px solid Black"}}>
-                    <tr style={{border: "2px solid grey", display: "flex", flexDirection: "row", justifyContent: 'space-between', height: "50px", width: "1200px"}}>
-                        <td style={{border: "2px solid blue"}}><span style={{marginLeft: "20px", border: "2px solid red", fontSize: "28px", fontWeight: "bold"}}>005</span></td>
-                        <td style={{marginLeft: "48px", border: "2px solid blue"}}><span  style={{border: "2px solid red", fontSize: "28px"}}>01:36</span></td>
-                        <td  style={{marginLeft: "28px", border: "2px solid blue"}}><span style={{border: "2px solid red", fontSize: "28px", fontWeight: "bold"}}>AAA-1234</span></td>
-                        <td style={{border: "2px solid blue"}}><span style={{border: "2px solid red", fontSize: "28px"}}>CARRO</span></td>
-                        <td style={{border: "2px solid blue"}}><span style={{border: "2px solid red", fontSize: "24px"}}>VW JETTA PRETO</span></td>
-                        <td style={{border: "2px solid blue"}}><span style={{ paddingRight: "15px", border: "2px solid red"}}>ACTIVE</span></td>
-                    </tr>
-                  </div> */}
                   {reservationList.map( reservation => {
                     reservation.statusCode = reservation.status === "CLOSED" ? 'Inactive' : 'Active' ;
                     const startDateTime = new Date(reservation.createdAt)

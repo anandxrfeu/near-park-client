@@ -3,7 +3,6 @@ import './SideBarAdmin.css'
 import hamburgerBar from "../../../assets/icons/bars_data_icon.png"
 import {Link} from 'react-router-dom';
 import dashboardIcon from "../../../assets/icons/analytics_chart_infographic_metrics_trends_icon.png"
-import reservationIcon from "../../../assets/icons/city_meter_parking_transportation_urban_icon (1).png"
 import parkingLotIcon from "../../../assets/icons/parking_car_maps_location_placeholder_icon.png"
 import subscriptionIcon from "../../../assets/icons/bank_cash_finance_money_payment_icon.png"
 import supportIcon from "../../../assets/icons/and_chat_computers_hardware_head_icon.png"

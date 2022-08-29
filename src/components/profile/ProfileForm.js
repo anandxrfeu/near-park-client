@@ -14,6 +14,7 @@ const ProfileForm = () => {
   const [newPassword, setNewPassword] = useState(loggedInUser.user.password)
   const [imageUrl, setImageUrl] = useState(loggedInUser.user.profileImageUrl)
   const [loading, setLoading] = useState(true)
+  const [refresh, setRefresh] = useState(true)
 
    useEffect(() => {
     async function fetchData() {
@@ -31,7 +32,7 @@ const ProfileForm = () => {
     }
 
     fetchData()
-  }, [])
+  }, [refresh])
 
   const SubmitHandler = async (e) => {
     try {
@@ -41,7 +42,8 @@ const ProfileForm = () => {
         password: newPassword,
         profileImageUrl: imageUrl
       }
-       const response = await apiService.updateUserProfile(user)
+       await apiService.updateUserProfile(user)
+       setRefresh(!refresh)
     } catch(err) {
       console.log(err)
     }

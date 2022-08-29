@@ -12,7 +12,7 @@ const QRCOde  = (props) => {
         }
         fetch()
 
-    }, [])
+    }, [props.url])
 
     return (<div>
             <img src={src} alt="url"></img>

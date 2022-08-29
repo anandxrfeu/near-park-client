@@ -35,23 +35,14 @@ const OneReservationPage = (props) => {
     else if (paymentMethod === "CHECKOUT") {
       setShowPaymentSelect(false)
       setShowCheckOut(false)
-
-      console.log("showChange",showChange)
-      console.log("payByCash)",payByCash)
-      console.log("showPaymentComplete",showPaymentComplete)
-      console.log("showCheckOut",showCheckOut)
-      console.log("showPaymentSelect",showPaymentSelect)
     }
   }
 
 
   const calculateChange = (changeValue) => {
-    console.log("changeValue", changeValue)
     setChange(changeValue)
     setShowChange(true)
     setShowPaymentSelect(false)
-    console.log("change", change)
-
   }
 
   const formatTime = (time) => {
@@ -76,7 +67,6 @@ const OneReservationPage = (props) => {
 }
 
 const calculatePrice = (pricing, durationInHours) => {
-  console.log(pricing, durationInHours)
   let price = 0
   if(durationInHours >= 24){
       price = parseInt(pricing.twentyFourHourPrice) + (durationInHours - 24)*parseInt(pricing.oneHourAdditionalPrice)
@@ -85,7 +75,6 @@ const calculatePrice = (pricing, durationInHours) => {
   }else{
       price = parseInt(pricing.oneHourPrice) + (durationInHours - 1)*parseInt(pricing.oneHourAdditionalPrice)
   }
-  console.log("price > ",price)
   return price
 }
 
@@ -107,12 +96,9 @@ const calculatePrice = (pricing, durationInHours) => {
       try {
         setIsLoading(false)
         const data = await apiService.getAReservation(id)
-        console.log(data)
-        console.log(id)
         const startDateTime = new Date(data.createdAt)
         data.startTime = `${startDateTime.getHours()} : ${startDateTime.getMinutes()} `;
         setReservation(data)
-        console.log(data)
         if (data.status === "CLOSED"){
           setShowPaymentComplete(true)
           setShowPaymentSelect(false)
@@ -136,10 +122,9 @@ const calculatePrice = (pricing, durationInHours) => {
     }
 
     fetchData()
-  }, [])
+  }, [id])
 
   const updateReservation = async (payload) => {
-    console.log(payload)
     try {
       const data = await apiService.updateAReservation(id, payload)
       setReservation(data)

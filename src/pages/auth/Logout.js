@@ -7,7 +7,7 @@ const Logout = () => {
     useEffect(()=>{
         localStorage.removeItem("loggedInUser")
         navigate("/auth/login")
-    }, [])
+    })
 
     return <></>
 }

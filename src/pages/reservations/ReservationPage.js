@@ -44,37 +44,29 @@ const ReservationPage = (props) => {
    useEffect(() => {
     async function fetchData() {
       try {
-        setLoading(false)
         const reservations = await apiService.getAllReservationsForAParkingLot(parkingLotSelect._id)
         setReservationList(reservations)
         setReservationListFiltered(reservations)
-
+        setLoading(false)
       } catch (err) {
         console.log(err)
       }
     }
 
-    if(parkingLotSelect !== undefined){
+    if(parkingLotSelect._id !== undefined){
       fetchData()
     }
   }, [parkingLotSelect])
 
   const createReservationHandler = async (reservation) => {
-    console.log(reservation)
     const payload = {
       ...reservation,
     "parkingLot": parkingLotSelect._id.toString(),
     "owner": loggedInUser.user._id.toString()
     }
-    console.log(payload)
     try {
-        const reservationData = await apiService.createReservation(payload)
-        // setReservationList((previousState)=> {
-        //   return [reservationData, ...previousState]
-        // })
+        await apiService.createReservation(payload)
         setRefresh(!refresh)
-
-
     } catch(err){
 
     }
@@ -100,7 +92,6 @@ const ReservationPage = (props) => {
   }
 
   const filterReservations = (filter) => {
-    console.log(filter)
     let  filteredReservationList  = []
     if(filter === "CASH") {
       filteredReservationList = reservationList.filter(r => {
@@ -121,10 +112,15 @@ const ReservationPage = (props) => {
     else if (filter === "ALL") {
        filteredReservationList = reservationList
     }
-
-    console.log("resList", filteredReservationList)
      setReservationListFiltered(filteredReservationList)
   }
+
+  if(loading){
+    return (
+      <p>Loading..</p>
+    )
+  }
+    
 
     return (
       <div style={{marginLeft: "-20px"}}>

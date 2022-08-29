@@ -18,8 +18,6 @@ const OneReservationDetail = (props) => {
       if (reservation.parkingLot) {
         setPrice(calculatePrice(reservation.parkingLot.pricing, reservationDuration))
       }
-
-
       setIsLoading(false)
     }
 
@@ -31,7 +29,6 @@ const OneReservationDetail = (props) => {
     const updatedReservation = {
       guestUserPhone: updateGuestUserPhone
     }
-    console.log("updatedReservation",updatedReservation)
     updateReservation(updatedReservation)
   }
 
@@ -44,7 +41,6 @@ const OneReservationDetail = (props) => {
   }
 
   const calculatePrice = (pricing, durationInHours) => {
-    console.log(pricing, durationInHours)
     let price = 0
     if(durationInHours >= 24){
         price = parseInt(pricing.twentyFourHourPrice) + (durationInHours - 24)*parseInt(pricing.oneHourAdditionalPrice)
@@ -53,7 +49,6 @@ const OneReservationDetail = (props) => {
     }else{
         price = parseInt(pricing.oneHourPrice) + (durationInHours - 1)*parseInt(pricing.oneHourAdditionalPrice)
     }
-    console.log("price > ",price)
     return price
 }
 
