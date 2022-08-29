@@ -40,18 +40,13 @@ function App() {
 
           </Route>
           <Route path="/saas">
-            <Route path='' element={(<Container>
-                                     {loggedInUser.user.role === "OWNER" ? <Sidebar /> : <SideBarAdmin />}
-                                      <SaasHomePage />
-                                    </Container>
-                                    )}
-              />
-            <Route path='dashboard' element={(
-                                                  <Container>
-                                                    {loggedInUser.user.role === "OWNER" ? <Sidebar /> : <SideBarAdmin />}
-                                                    <DashboardPage />
-                                                  </Container>
-                                                  )}
+            
+            <Route path='' element={(
+                                      <Container>
+                                        {loggedInUser.user.role === "OWNER" ? <Sidebar /> : <SideBarAdmin />}
+                                        <DashboardPage />
+                                      </Container>
+                                      )}
               />
             {loggedInUser.user.role === "OWNER" && <Route path='reservations' element={(
                                                   <Container>

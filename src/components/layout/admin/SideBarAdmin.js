@@ -32,13 +32,13 @@ const SideBarAdmin = () => {
                     <span className='nav-logo-name'>NEAR PARK</span>
                   </p>
                 </div>
-               <Link to="/saas" className="nav-link">
+               {/* <Link to="/saas" className="nav-link">
                   <p className="homeIcon">
                     <img src={homeIcon} className="nav-link-icon" alt="homeIcon"/>
                     <span className='nav-link-name'>HOME</span>
                   </p>
-                </Link>
-                <Link to="/saas/dashboard" className="nav-link">
+                </Link> */}
+                <Link to="/saas" className="nav-link">
                   <p className="dashboardIcon">
                     <img src={dashboardIcon} className="nav-link-icon " alt="dashboardIcon"/>
                     <span className='nav-link-name'>DASHBOARD</span>

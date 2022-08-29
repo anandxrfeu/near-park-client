@@ -24,17 +24,6 @@ const Sidebar = () => {
 
   return (
     <main className={show ? 'space-toggle' : null}>
-      {/* <header className={`header ${show ? 'space-toggle' : null}`}>
-          <div className="header-toggle" onClick={() => setShow(!show)}>
-            <button className="hamburgerBar">
-              <img src={hamburgerBar} alt="bar"/>
-            </button>
-          </div>
-        </header> */}
-         {/* <header className={`header ${show ? 'space-toggle' : null}`}>
-
-         </header> */}
-
         <aside className={`sidebar ${show ? 'show' : null}`}>
           <nav className="nav">
             <div>
@@ -45,13 +34,13 @@ const Sidebar = () => {
                     <span className='nav-logo-name'>NEAR PARK</span>
                   </p>
                 </div>
-               <Link to="/saas" className="nav-link">
+               {/* <Link to="/saas" className="nav-link">
                   <p className="homeIcon">
                     <img src={homeIcon} className="nav-link-icon" alt="homeIcon"/>
                     <span className='nav-link-name'>HOME</span>
                   </p>
-                </Link>
-                <Link to="/saas/dashboard" className="nav-link">
+                </Link> */}
+                <Link to="/saas" className="nav-link">
                   <p className="dashboardIcon">
                     <img src={dashboardIcon} className="nav-link-icon " alt="dashboardIcon"/>
                     <span className='nav-link-name'>DASHBOARD</span>
