@@ -55,7 +55,7 @@ const Subscription = (props) => {
           {subscriptions && subscriptions.map(subscription => {
             return  (
                       <div key={subscription._id}  
-                          className={activeSubscription.subscriptionPlan === subscription._id ? "subscription-card active" : "subscription-card" }   
+                          className={activeSubscription.subscriptionPlan === subscription._id ? "subscription-card active-subscription" : "subscription-card" }   
                           >
                         <div style={{display: "flex", justifyContent: "center", marginTop: "20px"}}>
                           <h2 style={{fontWeight: "bold", fontSize: "42px"}}>{subscription.name}</h2>

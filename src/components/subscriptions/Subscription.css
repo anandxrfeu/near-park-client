@@ -1,7 +1,3 @@
-.active{
-    background-color: rgb(41, 10, 10);
-}
-
 .subscription-card{
     border: 1px solid black;
     width: 460px;
@@ -9,4 +5,8 @@
     margin-right: 80px;
     border-radius: 22px;
     margin-top: 40px;
+}
+
+.active-subscription{
+    border: 8px solid green;
 }
