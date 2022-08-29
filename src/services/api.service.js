@@ -103,6 +103,23 @@ class ApiService {
     return res.data
   }
 
+  async toggleUserAccess(id, payload) {
+    const res = await this.api.patch(`/users/${id}`, payload);
+    return res.data
+  }
+
+  async getUserSubscptionDetails(id) {
+    const res = await this.api.get(`/userSubscriptions/${id}`);
+    return res.data
+  }
+
+  async getAllUserSubscptionDetails(id) {
+    const res = await this.api.get("/userSubscriptions");
+    return res.data
+  }
+
+
+
 }
 
 export default new ApiService();

@@ -13,8 +13,18 @@ const UserPage = (props) => {
     useEffect(() => {
 
         async function fetchData(){
-            const data = await apiService.getAllUsers()
-            setOwners(data)
+            const userData = await apiService.getAllUsers()
+            const userSubsciptions = await apiService.getAllUserSubscptionDetails()
+            
+            if(userSubsciptions && userData && userData.map((user) => {
+                userSubsciptions.forEach(subscription => {
+                    if(subscription.user.toString() === user._id.toString()){
+                        user.subscription = subscription
+                    }
+                })
+                return user 
+            }))
+            setOwners(userData)
             setIsloading(false)
         }
         fetchData()
@@ -43,6 +53,12 @@ const UserPage = (props) => {
             </div>
 
             {owners.length !== 0 && owners.map(plo => {
+                const memberSinceTimestamp = new Date(plo.createdAt)
+                plo.memberSince = `${memberSinceTimestamp.getMonth()}/${memberSinceTimestamp.getFullYear()}`
+                if(plo.subscription){
+                    plo.plan = plo.subscription.subscriptionPlan.name
+                    plo.planPrice = plo.subscription.subscriptionPlan.pricePerMonth
+                }
                 return ( <User key={plo._id} user={plo}/>)
             })}
 
