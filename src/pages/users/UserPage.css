@@ -1,0 +1,50 @@
+.user-management{
+    width: 100%;
+    padding-top: 3rem;
+}
+
+.user-management_search{
+    width: 60%;
+}
+
+.user-management_table{
+    width: 90%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    border: 2px black solid;
+    height: 3rem;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 0.5rem;
+}
+
+.user-management_table_name{
+    padding-left: 4px;
+    width: 10%;
+}
+
+.user-management_table_email{
+    width: 20%;
+
+}
+.user-management_table_plan{
+    width: 10%;
+    
+}
+.user-management_table_price{
+    width: 10%;
+
+}
+.user-management_table_since{
+    width: 10%;
+
+}
+.user-management_table_status{
+    width: 10%;
+}
+
+
+
+
+
