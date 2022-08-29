@@ -22,6 +22,7 @@ import OneReservationPage from '../pages/reservations/OneReservationPage'
 import ReservationPage from "../pages/reservations/ReservationPage";
 import ParkingLotCreatePage from "../pages/parkingLots/ParkingLotCreatePage";
 import ParkingLotPage from "../pages/parkingLots/ParkingLotPage";
+import UserPage from "../pages/users/UserPage";
 
 
 
@@ -107,6 +108,13 @@ function App() {
                                                   <Container>
                                                     <SideBarAdmin />
                                                     <SubscriptionCreatePage/>
+                                                  </Container>
+                                                  )}
+            />}
+            {loggedInUser.user.role === "ADMIN" && <Route path='users' element={(
+                                                  <Container>
+                                                    <SideBarAdmin />
+                                                    <UserPage />
                                                   </Container>
                                                   )}
             />}
