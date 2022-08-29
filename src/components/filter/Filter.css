@@ -1,0 +1,17 @@
+.filter.badge-pill {
+    padding-left: 60px;
+    padding-right: 60px;
+     color: white;
+      background-color: #3D3C42;
+      border: black;
+      height: 48px;
+  }
+  
+  .filter.badge-pill:hover {
+    padding-left: 60px;
+    padding-right: 60px;
+    color: white;
+    border: green;
+    height: 48px;
+    background-color: green;
+  }

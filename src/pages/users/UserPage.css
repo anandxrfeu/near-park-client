@@ -3,8 +3,17 @@
     padding-top: 3rem;
 }
 
+.user-management-controls-container{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .user-management_search{
-    width: 60%;
+    width: 35%;
+}
+.user-management_filter button{
+    margin-left: 1rem;
 }
 
 .user-management_table{

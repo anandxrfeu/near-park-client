@@ -4,12 +4,12 @@ import Search from "../../components/search/Search"
 import User from "../../components/users/User"
 import { useState, useEffect } from "react"
 import apiService from "../../services/api.service"
+import Filter from "../../components/filter/Filter"
 
 const UserPage = (props) => {
 
     const [owners, setOwners] = useState([])
     const [ownersFiltered, setOwnersFiltered] = useState([])
-
     const [isLoading, setIsloading] = useState(true)
 
     useEffect(() => {
@@ -34,12 +34,30 @@ const UserPage = (props) => {
 
     }, [])
 
-    const searcUsers = (searchTerm) => {
+    const searchUsers = (searchTerm) => {
         let ownersFilteredCopy = []
         ownersFilteredCopy = owners.filter(owner => {
             return owner.email.toLowerCase().startsWith(searchTerm.toLowerCase())
         })
         setOwnersFiltered(ownersFilteredCopy)
+    }
+
+    const filterUsers = (option) => {
+        let filterOwners = []
+        if (option === "Active") {
+            filterOwners = owners.filter(owner => {
+            return !owner.deletedAt
+            })
+        }
+        else if (option === "Paying") {
+            filterOwners = owners.filter(owner => {
+            return owner.subscription
+            })
+        }
+        else{
+            filterOwners = [...owners]
+        }
+        setOwnersFiltered(filterOwners)
     }
 
     if(isLoading){
@@ -51,8 +69,15 @@ const UserPage = (props) => {
     return (
         <div className="user-management">
             
-            <div className="user-management_search" >
-                <Search placeholder="SEARCH BY USER EMAIL" searchFunction={searcUsers}/>
+            <div className="user-management-controls-container">
+                <div className="user-management_search" >
+                    <Search placeholder="SEARCH BY USER EMAIL" searchFunction={searchUsers}/>
+                </div>
+                <div className="user-management_filter" >
+                    <Filter btnText={"All"} filterFunction={filterUsers}/>
+                    <Filter btnText={"Active"} filterFunction={filterUsers}/>
+                    <Filter btnText={"Paying"} filterFunction={filterUsers}/>
+                </div>
             </div>
             <div className="user-management_table">
                 <div className="user-management_table_name">NAME</div>
