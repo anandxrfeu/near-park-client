@@ -18,6 +18,8 @@ const ReservationPage = (props) => {
   const [parkingLotList, setParkingLotList] = useState([])
   const [reservationList, setReservationList] = useState([])
   const [reservationListFiltered, setReservationListFiltered] = useState([])
+  const [reservationsByCard, setReservationsByCard] = useState(0)
+  const [reservationsByCash, setReservationsByCash] = useState(0)
   const [refresh, setRefresh] = useState(false)
 
 
@@ -45,6 +47,9 @@ const ReservationPage = (props) => {
     async function fetchData() {
       try {
         const reservations = await apiService.getAllReservationsForAParkingLot(parkingLotSelect._id)
+        //const allReservationsByCash = reservations.filter(r =>  r.payBy === "CASH" && r.status !== "CLOSED")
+        setReservationsByCash(reservations.filter(r =>  r.payBy === "CASH" && r.status !== "CLOSED").length)
+        setReservationsByCard(reservations.filter(r =>  r.payBy === "CARD" && r.status !== "CLOSED").length)
         setReservationList(reservations)
         setReservationListFiltered(reservations)
         setLoading(false)
@@ -102,6 +107,7 @@ const ReservationPage = (props) => {
         filteredReservationList = reservationList.filter(r => {
           return r.payBy === "CARD" && r.status !== "CLOSED"
       })
+
     }
 
     else if (filter === "CLOSED") {
@@ -150,7 +156,7 @@ const ReservationPage = (props) => {
           {/* <FilterAndSearch searchReservation={searchReservation} /> */}
         <div style={{marginTop: "30px", border: "1px solid red"}} >
             <div>
-              <FilterList filterReservations={filterReservations}/>
+              <FilterList filterReservations={filterReservations} reservationsByCard={reservationsByCard} reservationsByCash={reservationsByCash}/>
             </div>
 
             <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
