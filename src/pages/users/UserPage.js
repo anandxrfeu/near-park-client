@@ -2,13 +2,30 @@ import "./UserPage.css"
 
 import Search from "../../components/search/Search"
 import User from "../../components/users/User"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
+import apiService from "../../services/api.service"
 
 const UserPage = (props) => {
 
+    const [owners, setOwners] = useState([])
+    const [isLoading, setIsloading] = useState(true)
+
     useEffect(() => {
-        
+
+        async function fetchData(){
+            const data = await apiService.getAllUsers()
+            setOwners(data)
+            setIsloading(false)
+        }
+        fetchData()
+
     }, [])
+
+    if(isLoading){
+        return (
+            <p>Loading..</p>
+        )
+    }
 
     return (
         <div className="user-management">
@@ -25,10 +42,9 @@ const UserPage = (props) => {
                 <div className="user-management_table_status">STATUS</div>
             </div>
 
-
-            <User />
-            <User />
-            <User />
+            {owners.length !== 0 && owners.map(plo => {
+                return ( <User key={plo._id} user={plo}/>)
+            })}
 
         </div>
     )

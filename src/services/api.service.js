@@ -98,6 +98,11 @@ class ApiService {
     return res.data
   }
 
+  async getAllUsers() {
+    const res = await this.api.get("/users?role=OWNER");
+    return res.data
+  }
+
 }
 
 export default new ApiService();
