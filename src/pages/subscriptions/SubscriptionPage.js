@@ -19,7 +19,7 @@ const SubscriptionPage = (props) => {
 
     return (
       <div>
-         <h1>SUBSCIPTION PLANS</h1>
+         <h1>SUBSCRIPTION PLANS</h1>
          {IsLoading && <p>Loading..</p>}
          {!IsLoading && <Subscription subscriptions={subscriptions} />}
       </div>

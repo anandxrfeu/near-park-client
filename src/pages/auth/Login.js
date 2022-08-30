@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import apiService from "../../services/api.service";
+import './Login.css'
 
 import { AuthContext } from "../../contexts/authContext";
 
@@ -43,41 +44,59 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+    <div className="text-center">
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginTop: "46px"}}>
+        <div style={{width:"42%"}}>
+          <form onSubmit={handleSubmit}>
+            <div className="text-center">
+              <h1 style={{fontSize: "92px", fontWeight: "bold", marginBottom: "58px"}}>Login</h1>
+            </div>
+            <div style={{display: "flex", flexDirection: "column"}}>
+              <label
+                  style={{fontSize: "38px", fontWeight: "200", marginBottom: "16px"}}
+                  htmlFor="signupFormEmail">E-mail Address</label>
+              <input className="badge-pill"
+                style ={{height:"74px", fontSize:"38px", fontWeight:"400", border: "1px solid black"}}
+                type="email"
+                name="email"
+                id="signupFormEmail"
+                value={state.email}
+                error={errors.email}
+                onChange={handleChange}
+              />
+            </div>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
+            <div style={{display: "flex", flexDirection: "column", marginTop:"32px"}}>
+              <label
+                style={{fontSize: "38px", fontWeight: "200", marginBottom: "16px"}}
+                htmlFor="signupFormPassword">Password</label>
+              <input className="badge-pill"
+                style ={{height:"74px", fontSize:"38px", fontWeight:"400", border: "1px solid black"}}
+                type="password"
+                name="password"
+                id="signupFormPassword"
+                value={state.password}
+                error={errors.password}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginTop: "58px"}}>
+              <button className="badge-pill"
+                style={{width: "280px", height:"72px",
+                fontSize: "34px", marginBottom: "20px",
+                backgroundColor: "black", color: "white"
+                }}
+                type="submit">Login!</button>
+
+              <Link to="/auth/signup">
+                Don't have an account? Click here to signup!
+              </Link>
+            </div>
+          </form>
+        </div>
       </div>
-
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        <button type="submit">Login!</button>
-
-        <Link to="/auth/signup">
-          Don't have an account? Click here to signup!
-        </Link>
-      </div>
-    </form>
+    </div>
   );
 }
 

@@ -34,7 +34,7 @@ const ReservationPLOForm = (props) => {
 
      <div className="PLOFormContainer">
       <form className="FormCreateStyle" onSubmit={(onSubmitHandler)}>
-        <div className="FormCreate  container-xxl" style={{width: "1200px", paddingTop: "16px"}}>
+        <div className="FormCreate  container-xxl" >
             <div>
               <input className="LicensePlate badge-pill"
                 style={{marginLeft: "8px"}}

@@ -60,16 +60,16 @@ if (isLoading) {
                       <div style={{border: "1px solid black", width: "100px"}}>
                         <th  style={{border: "2px solid yellow", paddingLeft:"20px", width: "100px"}}>TICKET #</th>
                       </div>
-                      <div style={{ marginLeft: "-34px", marginRight: "22px", border: "1px solid black", width: "86px"}}>
+                      <div style={{ marginLeft: "-64px", marginRight: "8px", border: "1px solid black", width: "86px"}}>
                         <th  style={{border: "2px solid yellow", width: "86px"}}>CHECK-IN</th>
                       </div>
-                      <div style={{marginLeft: "24px", border: "1px solid black", width: "128px"}}>
-                        <th  style={{border: "2px solid yellow"}}>License Plate</th>
+                      <div style={{marginLeft: "8px", marginRight: "-6px",  border: "1px solid black", width: "128px"}}>
+                        <th  style={{border: "2px solid yellow"}}>LICENSE PLATE</th>
                       </div>
-                      <div style={{ marginRight: "72px", marginLeft: "10px", border: "1px solid black", width: "48px"}}>
+                      <div style={{ marginRight: "52px", marginLeft: "-6px", border: "1px solid black", width: "48px"}}>
                         <th  style={{border: "2px solid yellow", width: "48px" }}>TYPE</th>
                       </div>
-                      <div style={{ marginRight: "252px", border: "1px solid black", width: "116px"}}>
+                      <div style={{ marginRight: "314px", border: "1px solid black", width: "116px"}}>
                         <th  style={{border: "2px solid yellow", width: "116px"}}>DESCRIPTION</th>
                       </div>
                   </tr>

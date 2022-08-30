@@ -54,8 +54,8 @@ const Subscription = (props) => {
         <div style={{display: "flex", justifyContent: "space-between"}} >
           {subscriptions && subscriptions.map(subscription => {
             return  (
-                      <div key={subscription._id}  
-                          className={activeSubscription.subscriptionPlan === subscription._id ? "subscription-card active-subscription" : "subscription-card" }   
+                      <div key={subscription._id}
+                          className={activeSubscription.subscriptionPlan === subscription._id ? "subscription-card active-subscription" : "subscription-card" }
                           >
                         <div style={{display: "flex", justifyContent: "center", marginTop: "20px"}}>
                           <h2 style={{fontWeight: "bold", fontSize: "42px"}}>{subscription.name}</h2>
@@ -69,7 +69,7 @@ const Subscription = (props) => {
                           })}
                           </div>
                           <div  style={{display: "flex", justifyContent: "center", marginTop: "40px"}}>
-                            <button disabled={loggedInUser.user.role === "ADMIN" || activeSubscription.subscriptionPlan === subscription._id} 
+                            <button disabled={loggedInUser.user.role === "ADMIN" || activeSubscription.subscriptionPlan === subscription._id}
                                     style={{width: "260px", border: "1px solid black"}}
                                     className="badge-pill"
                                     id={subscription._id}

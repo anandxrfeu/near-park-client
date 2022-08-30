@@ -70,8 +70,8 @@ const ProfileForm = () => {
         </div>
         <div className='FormDiv'>
           <form onSubmit={SubmitHandler}>
-            <div  className='FormContainer' style={{border: "4px solid blue", display: "flex", flexDirection: "row"}}>
-              <div className='FormLeft' style={{border: "5px solid red", display: "flex", flexDirection: "column", marginTop: "30px"}}>
+            <div  className='FormContainer' style={{border: "4px solid white", display: "flex", flexDirection: "row"}}>
+              <div className='FormLeft' style={{border: "5px solid white", display: "flex", flexDirection: "column", marginTop: "30px"}}>
                 <div>
                   <input className="ProfileForm badge-pill"
                     placeholder = "USERNAME"
@@ -102,9 +102,9 @@ const ProfileForm = () => {
                   />
                 </div>
               </div>
-            <div className='FormRight' style={{border: "4px solid yellow", display: "flex", flexDirection: "column", marginLeft: "50px"}}>
+            <div className='FormRight' style={{border: "4px solid white", display: "flex", flexDirection: "column", marginLeft: "50px"}}>
               <div style={{border: "4px solid black", height: "240px", width: "240px", borderRadius:" 12px"}}>
-                <div style={{border: "1px solid red", display: "flex", justifyContent:"center", alignContent: "center"}}>
+                <div style={{border: "1px solid white", display: "flex", justifyContent:"center", alignContent: "center"}}>
                   <img style={{height: "230px", width: "230px", alignItems: "center"}} src={imageUrl} alt="imageUrl"/>
                 </div>
                 <div style={{display: "flex", marginTop: "20px"}}>

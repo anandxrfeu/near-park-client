@@ -2,19 +2,40 @@
   display: flex;
   justify-items: center;
   justify-content: space-between;
-  border: 2px solid green;
-  width: 1200px;
+  /* border: 2px solid green; */
+  border: none;
+  width: 1220px;
   height: 88px;
+  padding-top: 16px
 }
+
+.FormCreateShow {
+  display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    /* border: 2px solid green; */
+    border: none;
+    width: 1072px;
+    height: 88px;
+    padding-top: 16px
+}
+
+
 .PLOFormContainer {
   justify-content: center ;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 88px;
   padding-top: 0px;
-  width: 1200px;
-
+  width: 1220px;
 }
 
+.PLOFormContainerShow {
+  justify-content: center;
+  /* border: 1px solid black; */
+  height: 88px;
+  padding-top: 0px;
+  width: 1072px;
+}
 
 .badge-pill {
   background-color: white;
@@ -24,7 +45,8 @@
 }
 
 .FormCreateStyle{
-  border: 6px solid purple;
+  /* border: 6px solid red; */
+  border: 1px solid black;
   height: 88px
 }
 

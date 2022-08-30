@@ -11,6 +11,7 @@ import {AuthContext} from '../../contexts/authContext'
 
 
 
+
 const ReservationPage = (props) => {
   const {loggedInUser} = useContext(AuthContext)
   const [loading, setLoading] = useState(true)
@@ -126,10 +127,10 @@ const ReservationPage = (props) => {
       <p>Loading..</p>
     )
   }
-    
+
 
     return (
-      <div style={{marginLeft: "-20px"}}>
+      <div className="reservationPageContainer"style={{marginLeft: "-20px"}}>
         <div style={{marginTop: "12px", marginBottom: "20px"}}>
           <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
         </div>

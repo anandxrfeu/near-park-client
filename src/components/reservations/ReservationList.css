@@ -13,9 +13,54 @@
   background-color: black;
 }
 
+.statusClosed.rounded-circle:hover {
+  background-color: black;
+}
+
 .statusClosed.rounded-circle {
   margin-top: 6px;
   width: 38px;
   height: 38px;
   background-color: green;
+}
+
+.TableReservation {
+  margin-top: 20px;
+  border: 1px solid black;
+}
+
+.TableReservationShow {
+  margin-top: 20px;
+  border: 1px solid black;
+  width: 1072px
+}
+
+
+.tableRowReservationList {
+
+    border: 2px solid grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    width: 1200px
+}
+
+.tableRowReservationListShow {
+      border: 2px solid grey;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 50px;
+        width: 1060px
+}
+
+.tableListMain {
+      border: 3px solid green;
+      width: 1220px
+}
+
+.tableListMainShow {
+  border: 3px solid green;
+  width: 1060px
 }

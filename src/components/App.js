@@ -25,6 +25,7 @@ import UserPage from "../pages/users/UserPage";
 
 
 
+
 function App() {
    const {loggedInUser} = useContext(AuthContext)
 
@@ -39,7 +40,7 @@ function App() {
 
           </Route>
           <Route path="/saas">
-            
+
             <Route path='' element={(
                                       <Container>
                                         {loggedInUser.user.role === "OWNER" ? <Sidebar /> : <SideBarAdmin />}
