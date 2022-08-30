@@ -3,7 +3,7 @@ const {parkingLotList, onSelectHandler} = props
 
   return (
     <div style={{width: "300px", display: "flex", flexDirection: "row"}}>
-      <div className='container' style={{width: "300px", display: "flex", flexDirection: "column"}}>
+      <div style={{width: "300px", display: "flex", flexDirection: "column"}}>
         <select
         className="custom-select badge-pill"
         onChange={(e) => {

@@ -1,9 +1,12 @@
-import ParkingLotForm from '../../components/parkinglots/ParkingLotForm'
+import "./ParkingLotPage.css"
+
+import ParkingLotForm from '../../components/parkinglots/ParkingLotForm1'
 import ParkingLotSelect from '../../components/parkinglots/ParkingLotSelect'
 import {useState, useEffect} from 'react'
 import apiService from '../../services/api.service'
 import {Link} from 'react-router-dom';
-import QRCOde from '../../components/qrcode/QRCode';
+import PlusButton from "../../components/layout/plusButton/PlusButton"
+
 
 
 const ParkingLotPage = (props) => {
@@ -48,14 +51,22 @@ const ParkingLotPage = (props) => {
 
     return (
 
-      <div>
-          <div style={{marginBottom: "40px", marginTop: "20px"}}>
-            <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
+      <div className="pakinglot-container">
+        <div className="pakinglot-container-top">
+            <div style={{marginBottom: "40px", marginTop: "20px"}}>
+              <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
+            </div>
+            <div className="create-parkinglot-btn">
+              <span className="create-parkinglot-span">Add new parking lot</span> 
+              <Link to="/saas/parkinglots/create">
+                  <PlusButton />
+              </Link>
           </div>
-          <Link  style={{fontSize: "28px"}} to="/saas/parkinglots/create">Add new parking lot</Link>
+
+        </div>
         {parkingLotSelect && Object.keys(parkingLotSelect).length === 0 && <ParkingLotForm />}
         {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <ParkingLotForm parkingLotSelect={parkingLotSelect} onSubmitHandler={onSubmitHandler}/>}
-        {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <QRCOde url={`http://${process.env.REACT_APP_MOBILE_APP}/client/parkinglot/${parkingLotSelect._id}`} />}
+        {/* {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <QRCOde url={`http://${process.env.REACT_APP_MOBILE_APP}/client/parkinglot/${parkingLotSelect._id}`} />} */}
         
       </div>
     )

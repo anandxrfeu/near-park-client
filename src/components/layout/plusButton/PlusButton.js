@@ -1,7 +1,7 @@
 import "./PlusButton.css"
 
 const PlusButton = () => {
-    return <div class="plusButton">+</div>
+    return <div className="plusButton">+</div>
 }
 
 export default PlusButton
