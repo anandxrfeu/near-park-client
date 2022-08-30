@@ -13,8 +13,7 @@ const changeUserActivation = async (isAtive) => {
         "active": isAtive
     }
     try{
-        const data = await apiService.toggleUserAccess(user._id, payload)
-        console.log("data -> ", data)
+        await apiService.toggleUserAccess(user._id, payload)
     }catch(err){
         console.log(err)
     }

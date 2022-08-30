@@ -12,7 +12,7 @@ const ProfileForm = () => {
   const [userName, setUserName] = useState("")
   const [userEmail, setUserEmail] = useState("")
   const [newPassword, setNewPassword] = useState("")
-  const [imageUrl, setImageUrl] = useState("")
+  const [imageUrl, setImageUrl] = useState("http://google.com")
   const [loading, setLoading] = useState(true)
   const [refresh, setRefresh] = useState(true)
 
@@ -52,12 +52,10 @@ const ProfileForm = () => {
   }
 
     const handleFileUpload = async (e) => {
-    const uploadData = new FormData()
-
-    uploadData.append('imageUrl', e.target.files[0])
-    const response = await apiService.uploadFile(uploadData)
-
-    setImageUrl(response.filePath)
+      const uploadData = new FormData()
+      uploadData.append('imageUrl', e.target.files[0])
+      const response = await apiService.uploadFile(uploadData)
+      setImageUrl(response.filePath)
   }
 
 

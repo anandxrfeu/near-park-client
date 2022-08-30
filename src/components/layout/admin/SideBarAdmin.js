@@ -28,7 +28,7 @@ const SideBarAdmin = () => {
               <div className="nav-list">
                  <div>
                   <p className="hamburgerBar nav-link">
-                    <img src={hamburgerBar}  onClick={() => {setShow(!show); console.log("clicked")}} className="nav-logo-icon" alt="barIcon"/>
+                    <img src={hamburgerBar}  onClick={() => {setShow(!show)}} className="nav-logo-icon" alt="barIcon"/>
                     <span className='nav-logo-name'>NEAR PARK</span>
                   </p>
                 </div>
