@@ -1,6 +1,6 @@
 import "./ParkingLotPage.css"
 
-import ParkingLotForm from '../../components/parkinglots/ParkingLotForm1'
+import ParkingLotForm from '../../components/parkinglots/ParkingLotForm'
 import ParkingLotSelect from '../../components/parkinglots/ParkingLotSelect'
 import {useState, useEffect} from 'react'
 import apiService from '../../services/api.service'
