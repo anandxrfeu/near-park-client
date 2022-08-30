@@ -1,3 +1,5 @@
+import "./SubscriptionPage.css"
+
 import { useEffect, useState } from "react";
 import Subscription from "../../components/subscriptions/Subscription";
 import apiService from "../../services/api.service";
@@ -18,8 +20,8 @@ const SubscriptionPage = (props) => {
    }, [])
 
     return (
-      <div>
-         <h1>SUBSCIPTION PLANS</h1>
+      <div className="subscription-container">
+         <h1 className="subscriptions_controls-title">SUBSCRIPTION PLANS</h1>
          {IsLoading && <p>Loading..</p>}
          {!IsLoading && <Subscription subscriptions={subscriptions} />}
       </div>

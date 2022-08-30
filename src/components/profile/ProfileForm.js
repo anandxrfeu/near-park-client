@@ -76,7 +76,7 @@ const ProfileForm = () => {
                 <input className="profile-form-controls_email badge-pill" type="text" defaultValue={userEmail}/>
                 <div className="profile-form-controls_password">
                   <label htmlFor="password">Reset password</label>
-                  <input name="password" className="badge-pill" type="password" placeholder="******" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                  <input name="password" className="badge-pill" type="password" placeholder="**********" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </div>
             </div>
             <div className="profile-form-controls-right-container">
@@ -90,7 +90,7 @@ const ProfileForm = () => {
                 />
                 <button
                     disabled={imageUrl === ""} 
-                    className="btn badge-pill">Save</button>
+                    className="profile-form-controls_btn badge-pill">Save</button>
             </div>
 
           </div>

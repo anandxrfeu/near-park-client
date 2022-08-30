@@ -90,12 +90,10 @@ input.ImageURL.badge-pill {
   margin: 0 auto;
 }
 
-button{
+
+.profile-form-controls_btn.badge-pill {
   margin-top: 6rem;
   width: 250px;
-}
-
-button.badge-pill {
   padding-left: 60px;
   padding-right: 60px;
   color: white;
@@ -104,7 +102,7 @@ button.badge-pill {
   height: 48px;
 }
 
-button.badge-pill:hover {
+.profile-form-controls_btn.badge-pill:hover {
   padding-left: 60px;
   padding-right: 60px;
   color: white;
