@@ -1,13 +1,8 @@
-import ProfileForm2 from "../../components/profile/ProfileForm2"
+import ProfileForm from "../../components/profile/ProfileForm"
 
 const ProfilePage = (props) => {
     return (
-    <div>
-            <ProfileForm2 />
-    </div>
-
-
-
+            <ProfileForm />
     )
 }
 

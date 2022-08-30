@@ -1,4 +1,4 @@
-input.ProfileForm.badge-pill{
+/* input.ProfileForm.badge-pill{
   width: 50vw;
   height: 68px;
   font-weight: bold;
@@ -27,4 +27,91 @@ input.ImageURL.badge-pill {
 
 .profile-pic img{
   width: 100px;
+} */
+
+.profile-container{
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
 }
+
+.profile-form-controls-container{
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.profile-form-controls-left-container{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.profile-form-controls-left-container input{
+  margin-bottom: 2rem;
+}
+
+.profile-form-controls_password {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.profile-form-controls_password label{
+  align-self: center;
+}
+
+.profile-form-controls-right-container{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-form-controls-right-container input{
+  margin-top: 1rem;
+}
+
+.profile-form-controls_image {
+  width: 40%;
+  border-radius: 1rem;
+}
+
+.profile-form-controls_image img{
+  width: 250px;
+  border-radius: 10px;
+
+}
+.profile-form-controls_image input{
+  width: 250px;
+  margin: 0 auto;
+}
+
+button{
+  margin-top: 6rem;
+  width: 250px;
+}
+
+button.badge-pill {
+  padding-left: 60px;
+  padding-right: 60px;
+  color: white;
+  background-color: #3D3C42;
+  border: #3D3C42;
+  height: 48px;
+}
+
+button.badge-pill:hover {
+  padding-left: 60px;
+  padding-right: 60px;
+  color: white;
+  border: green;
+  height: 48px;
+  background-color: green;
+}
+
+
+

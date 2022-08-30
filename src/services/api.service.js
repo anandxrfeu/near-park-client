@@ -31,11 +31,13 @@ class ApiService {
   }
 
   async getUserProfile() {
-    return await this.api.get("/users/profile");
+    const res =  await this.api.get("/users/profile");
+    return res.data
   }
 
   async updateUserProfile(user) {
-    return await this.api.patch("/users/profile", user);
+    const res =  await this.api.patch("/users/profile", user);
+    return res.data
   }
 
   async uploadFile(fileData){
