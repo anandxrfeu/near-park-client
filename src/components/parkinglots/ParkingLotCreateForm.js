@@ -1,7 +1,7 @@
 import './ParkingLotForm.css'
 
 import {useEffect, useState} from 'react'
-import QRCOde from "../qrcode/QRCOde"
+import QrcodeComponent from "../qrcode/QrcodeComponent"
 
 
 
@@ -150,7 +150,7 @@ const ParkingLotCreateForm = (props) => {
                     value={maxOccupancy}
                   />
             </div>
-            {showQRCode && parkingLotSelect && <QRCOde url={`http://${process.env.REACT_APP_MOBILE_APP}/client/parkinglot/${parkingLotSelect._id}`} />}
+            {showQRCode && parkingLotSelect && <QrcodeComponent url={`http://${process.env.REACT_APP_MOBILE_APP}/client/parkinglot/${parkingLotSelect._id}`} />}
         </div>
               
         </div>

@@ -1,7 +1,7 @@
 import QRCode from "qrcode"
 import { useEffect, useState } from "react";
 
-const QRCOde  = (props) => {
+const QrcodeComponent  = (props) => {
     const [src, setSrc] = useState("")
 
     useEffect(() => {  
@@ -21,4 +21,4 @@ const QRCOde  = (props) => {
 
 }
 
-export default QRCOde;
+export default QrcodeComponent;
