@@ -1,7 +1,7 @@
 import './ParkingLotForm.css'
 
 import {useEffect, useState} from 'react'
-import QRCOde from "../qrcode/QRCode"
+import QRCOde from "../qrcode/QRCOde"
 
 const ParkingLotForm = (props) => {
 
