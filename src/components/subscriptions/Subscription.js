@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../contexts/authContext"
 import apiService from "../../services/api.service"
+import PlusButton from "../layout/plusButton/PlusButton"
 
 const Subscription = (props) => {
 
@@ -45,13 +46,22 @@ const Subscription = (props) => {
 
   return (
       <div>
-       {loggedInUser.user.role === "ADMIN" && <div>
+       {loggedInUser.user.role === "ADMIN" && (
+          <div className="create-subscription-btn">
+            <span className="create-subscription-span">Create New Plan</span> 
             <Link to="/saas/subscription/create">
-                <p>Create New Plan</p>
+                <PlusButton />
             </Link>
-        </div> }
+          </div>) 
+        }
 
-        <div style={{display: "flex", justifyContent: "space-between"}} >
+        {loggedInUser.user.role !== "ADMIN" && (
+          <h1 className="subscriptions_controls-title">SUBSCRIPTION PLANS</h1>)
+        }
+
+
+
+        <div className="subscription-cards">
           {subscriptions && subscriptions.map(subscription => {
             return  (
                       <div key={subscription._id}

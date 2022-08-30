@@ -1,0 +1,12 @@
+.plusButton{
+    height: 80px;
+  line-height: 80px;  
+  width: 80px;  
+  font-size: 3em;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: #3D3C42;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}

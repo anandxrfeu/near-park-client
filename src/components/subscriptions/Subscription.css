@@ -10,3 +10,19 @@
 .active-subscription{
     border: 8px solid green;
 }
+
+.create-subscription-btn{
+    display: flex;
+}
+.create-subscription-span{
+    font-size: 3rem;
+    margin-right: 2rem;
+}
+
+
+.subscription-cards{
+    display: flex; 
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+    

@@ -1,6 +1,9 @@
-import ParkingLotForm from '../../components/parkinglots/ParkingLotForm'
+import "./ParkingLotCreatePage.css"
+
+
 import apiService from '../../services/api.service'
 import { useNavigate } from 'react-router-dom'
+import ParkingLotCreateForm from "../../components/parkinglots/ParkingLotCreateForm"
 
 const ParkingLotCreatePage = (props) => {
 
@@ -17,9 +20,9 @@ const ParkingLotCreatePage = (props) => {
   }
     return (
 
-      <div>
-          <p>ParkingLotcreate Page..</p>    
-          <ParkingLotForm onSubmitHandler={onSubmitHandler}/>
+      <div className="parkinglot-create-container">
+          <h1>Create A new Parking Lot</h1>    
+          <ParkingLotCreateForm onSubmitHandler={onSubmitHandler}/>
       </div>
     )
 

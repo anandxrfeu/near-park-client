@@ -1,9 +1,11 @@
 import './ParkingLotForm.css'
 
 import {useEffect, useState} from 'react'
-import QrcodeComponent from '../qrcode/QrcodeComponent'
+import QrcodeComponent from "../qrcode/QrcodeComponent"
 
-const ParkingLotForm = (props) => {
+
+
+const ParkingLotCreateForm = (props) => {
 
   const [parkingLotName, setParkingLotName] = useState('')
   const [parkingLotAddress, setParkingLotAddress] = useState('')
@@ -160,16 +162,10 @@ const ParkingLotForm = (props) => {
               SAVE
             </button>
 
-            <button className='parkinglot-controls_btn qrcode-btn badge-pill' onClick={qrCodeClickHandler}>
-              QR CODE
-            </button>
+           
             
           </div>
-          <div className="parkinglot-controls-btn-container-right">
-            <button className='parkinglot-controls_btn delete-btn badge-pill' onClick={qrCodeClickHandler}>
-                DELETE
-              </button>
-          </div>
+          
         </div>
 
      </form>
@@ -180,4 +176,4 @@ const ParkingLotForm = (props) => {
   )
 }
 
-export default ParkingLotForm
+export default ParkingLotCreateForm
