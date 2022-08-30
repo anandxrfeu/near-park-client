@@ -55,6 +55,12 @@ const Subscription = (props) => {
           </div>) 
         }
 
+        {loggedInUser.user.role !== "ADMIN" && (
+          <h1 className="subscriptions_controls-title">SUBSCRIPTION PLANS</h1>)
+        }
+
+
+
         <div className="subscription-cards">
           {subscriptions && subscriptions.map(subscription => {
             return  (
