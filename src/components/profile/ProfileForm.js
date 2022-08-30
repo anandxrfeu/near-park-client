@@ -10,7 +10,7 @@ const ProfileForm = () => {
   const [userName, setUserName] = useState("")
   const [userEmail, setUserEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [imageUrl, setImageUrl] = useState("")
+  const [imageUrl, setImageUrl] = useState("https://res.cloudinary.com/cloud-do-anand/image/upload/v1661896238/pictures/file_cz6kit.png")
   const [loading, setLoading] = useState(true)
   const [refresh, setRefresh] = useState(true)
 
