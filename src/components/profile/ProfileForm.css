@@ -24,3 +24,7 @@ input.ImageURL.badge-pill {
   width: 240px
 
 }
+
+.profile-pic img{
+  width: 100px;
+}
