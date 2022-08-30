@@ -15,8 +15,12 @@ const QrcodeComponent  = (props) => {
     }, [props.url])
 
     return (<div>
-            <img src={src} alt="url"></img>
-        </div>)
+                <img src={src} alt="url"></img>
+                <a  style={{textDecoration: "none"}} 
+                     href={src} download={src}>
+                    {/* <button className="badge-pill" type="submit">Download</button> */}
+                </a>
+            </div>)
     
 
 }
