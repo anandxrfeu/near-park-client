@@ -9,10 +9,7 @@ function Login(props) {
   const authContext = useContext(AuthContext);
 
   const [state, setState] = useState({ password: "", email: "" });
-  const [errors, setErrors] = useState({
-    email: null,
-    password: null,
-  });
+  const [errors, setErrors] = useState("");
 
   const navigate = useNavigate();
 
@@ -21,11 +18,13 @@ function Login(props) {
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
+    setErrors("")
   }
 
   async function handleSubmit(event) {
+    
     event.preventDefault();
-
+    console.log("in handleSubmit..")
     try {
       const response = await apiService.login(state);
       console.log(response);
@@ -35,11 +34,13 @@ function Login(props) {
         "loggedInUser",
         JSON.stringify({ ...response.data })
       );
-      setErrors({ password: "", email: "" });
+      setErrors("");
       navigate("/saas");
     } catch (err) {
-      console.error(err);
-      setErrors({ ...err.response.data.errors });
+      console.error("err", err);
+      console.error("err.response.data.errors", err.response.data.msg );
+      //setErrors({ ...err.response.data.msg });
+      setErrors(err.response.data.msg)
     }
   }
 
@@ -61,7 +62,7 @@ function Login(props) {
                 name="email"
                 id="signupFormEmail"
                 value={state.email}
-                error={errors.email}
+                error={errors}
                 onChange={handleChange}
               />
             </div>
@@ -76,7 +77,7 @@ function Login(props) {
                 name="password"
                 id="signupFormPassword"
                 value={state.password}
-                error={errors.password}
+                error={errors}
                 onChange={handleChange}
               />
             </div>
@@ -93,6 +94,11 @@ function Login(props) {
                 Don't have an account? Click here to signup!
               </Link>
             </div>
+
+            <div className="error-container">
+              {errors !== "" && <p>{errors}</p>}
+            </div>
+
           </form>
         </div>
       </div>

@@ -1,14 +1,11 @@
+import "./Signup.css"
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import apiService from "../../services/api.service";
 
 function Signup(props) {
   const [state, setState] = useState({ name: "", password: "", email: "" });
-  const [errors, setErrors] = useState({
-    name: null,
-    email: null,
-    password: null,
-  });
+  const [errors, setErrors] = useState("");
 
   const navigate = useNavigate();
 
@@ -17,6 +14,7 @@ function Signup(props) {
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
+    setErrors("")
   }
 
   async function handleSubmit(event) {
@@ -24,11 +22,11 @@ function Signup(props) {
 
     try {
       await apiService.signUp(state);
-      setErrors({ name: "", password: "", email: "" });
+      setErrors("");
       navigate("/auth/login");
     } catch (err) {
       console.error(err);
-      setErrors({ ...err.response.data.errors });
+      setErrors(err.response.data.msg);
     }
   }
 
@@ -99,6 +97,11 @@ function Signup(props) {
                 Already have an account? Click here to login.
               </Link>
             </div>
+
+            <div className="error-container">
+              {errors !== "" && <p>{errors}</p>}
+            </div>
+
           </form>
         </div>
       </div>

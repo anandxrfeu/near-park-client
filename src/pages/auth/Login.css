@@ -3,8 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px
-
-
-
+  width: 300px;
 }
+
+.error-container{
+  margin-top: 3rem;
+  color: red;
+  font-size: 2rem;
+}
+
