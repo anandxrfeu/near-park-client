@@ -148,7 +148,7 @@ const ParkingLotForm = (props) => {
                     value={maxOccupancy}
                   />
             </div>
-            {showQRCode && parkingLotSelect && <QrcodeComponent url={`http://${process.env.REACT_APP_MOBILE_APP}/client/parkinglot/${parkingLotSelect._id}`} />}
+            {showQRCode && parkingLotSelect && <QrcodeComponent url={`${process.env.REACT_APP_MOBILE_APP}/parkinglots/${parkingLotSelect._id}`} />}
         </div>
 
 

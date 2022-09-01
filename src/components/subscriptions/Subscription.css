@@ -25,4 +25,12 @@
     justify-content: flex-start;
     flex-wrap: wrap;
 }
+
+.notification{
+    width: 100%;
+    padding-top: 3rem;
+    margin: 0 auto;
+    color: green;
+    font-size: 2rem;
+}
     
