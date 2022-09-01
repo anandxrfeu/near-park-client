@@ -1,7 +1,7 @@
 import './ParkingLotForm.css'
 
 import {useEffect, useState} from 'react'
-import QrcodeComponent from "../qrcode/QrcodeComponent"
+import QrcodeComponent from "../qrcode/QrcodeComponent.js"
 
 
 
@@ -18,7 +18,7 @@ const ParkingLotCreateForm = (props) => {
 
   const {parkingLotSelect, onSubmitHandler} = props
 
-  useEffect(()=>{  
+  useEffect(()=>{
     if(parkingLotSelect){
       setParkingLotName(parkingLotSelect.name)
       setParkingLotAddress(parkingLotSelect.address)
@@ -32,7 +32,7 @@ const ParkingLotCreateForm = (props) => {
     }
   },[parkingLotSelect])
 
-  
+
   const submitHandler = (e) => {
     e.preventDefault()
     onSubmitHandler({
@@ -40,8 +40,8 @@ const ParkingLotCreateForm = (props) => {
       address: parkingLotAddress,
       maxOccupancy: +maxOccupancy,
       pricing: {
-        oneHourPrice, 
-        oneHourAdditionalPrice, 
+        oneHourPrice,
+        oneHourAdditionalPrice,
         eightHourPrice,
         twentyFourHourPrice
       }
@@ -152,7 +152,7 @@ const ParkingLotCreateForm = (props) => {
             </div>
             {showQRCode && parkingLotSelect && <QrcodeComponent url={`http://${process.env.REACT_APP_MOBILE_APP}/client/parkinglot/${parkingLotSelect._id}`} />}
         </div>
-              
+
         </div>
         </div>
 
@@ -162,14 +162,14 @@ const ParkingLotCreateForm = (props) => {
               SAVE
             </button>
 
-           
-            
+
+
           </div>
-          
+
         </div>
 
      </form>
-     
+
 
 
       </>

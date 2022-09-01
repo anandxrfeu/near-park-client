@@ -16,7 +16,7 @@ const ParkingLotForm = (props) => {
 
   const {parkingLotSelect, onSubmitHandler} = props
 
-  useEffect(()=>{  
+  useEffect(()=>{
     if(parkingLotSelect){
       setParkingLotName(parkingLotSelect.name)
       setParkingLotAddress(parkingLotSelect.address)
@@ -30,7 +30,7 @@ const ParkingLotForm = (props) => {
     }
   },[parkingLotSelect])
 
-  
+
   const submitHandler = (e) => {
     e.preventDefault()
     onSubmitHandler({
@@ -38,8 +38,8 @@ const ParkingLotForm = (props) => {
       address: parkingLotAddress,
       maxOccupancy: +maxOccupancy,
       pricing: {
-        oneHourPrice, 
-        oneHourAdditionalPrice, 
+        oneHourPrice,
+        oneHourAdditionalPrice,
         eightHourPrice,
         twentyFourHourPrice
       }
@@ -150,7 +150,7 @@ const ParkingLotForm = (props) => {
             </div>
             {showQRCode && parkingLotSelect && <QrcodeComponent url={`http://${process.env.REACT_APP_MOBILE_APP}/client/parkinglot/${parkingLotSelect._id}`} />}
         </div>
-              
+
         </div>
         </div>
 
@@ -163,7 +163,7 @@ const ParkingLotForm = (props) => {
             <button className='parkinglot-controls_btn qrcode-btn badge-pill' onClick={qrCodeClickHandler}>
               QR CODE
             </button>
-            
+
           </div>
           <div className="parkinglot-controls-btn-container-right">
             <button className='parkinglot-controls_btn delete-btn badge-pill' onClick={qrCodeClickHandler}>
@@ -173,7 +173,7 @@ const ParkingLotForm = (props) => {
         </div>
 
      </form>
-     
+
 
 
       </>
