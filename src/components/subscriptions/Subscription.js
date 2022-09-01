@@ -12,15 +12,20 @@ const Subscription = (props) => {
   const [activeSubscription, setActiveSubscription] = useState({})
   const [isLoading, setIsloading] = useState(true)
   const [refresh, setRefresh] = useState(false)
+  const [error, setError] = useState("")
 
 
   useEffect(()=>{
     async function fetchData(){
       try{
         const data = await apiService.getActiveSubscriptionForUser()
+        if(data){
+          setError("")
+        }
         setActiveSubscription(data)
       }catch(err){
         console.log(err)
+        setError(err.response.data.msg)
       }
     }
     if(loggedInUser.user.role !== "ADMIN" ) {
@@ -59,8 +64,6 @@ const Subscription = (props) => {
           <h1 className="subscriptions_controls-title">SUBSCRIPTION PLANS</h1>)
         }
 
-
-
         <div className="subscription-cards">
           {subscriptions && subscriptions.map(subscription => {
             return  (
@@ -92,6 +95,8 @@ const Subscription = (props) => {
             )
           })}
         </div>
+
+        {error === "No active subscription for user!" && <p className="notification">Please subscribe to use service!</p>}
 
       </div>
 
