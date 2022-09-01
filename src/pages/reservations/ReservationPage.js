@@ -65,7 +65,8 @@ const ReservationPage = (props) => {
       }
     }
 
-    if(parkingLotSelect._id !== undefined){
+    if(parkingLotSelect && parkingLotSelect._id !== undefined){
+
       fetchData()
     }
   }, [parkingLotSelect])
@@ -171,7 +172,7 @@ const ReservationPage = (props) => {
 
             <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "30px"}}>
               <div>
-                <Occupancy maxOccupancy={parkingLotSelect.maxOccupancy} activeReservations={reservationList.filter((r) => r.status !== "CLOSED").length}/>
+               {parkingLotSelect && <Occupancy maxOccupancy={parkingLotSelect.maxOccupancy} activeReservations={reservationList.filter((r) => r.status !== "CLOSED").length}/>}
               </div>
 
               <div>
