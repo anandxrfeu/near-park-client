@@ -41,6 +41,7 @@ const ReservationPLOForm = (props) => {
                 placeholder = "LICENSE PLATE"
                 type="text"
                 name="LicensePlate"
+                maxLength={"8"}
                 onChange={(e) => setLicensePlate(e.target.value)}
                 value={licensePlate}
               />
@@ -57,6 +58,7 @@ const ReservationPLOForm = (props) => {
                   <input className="Vehicle-Description badge-pill" style={{width: "320px"}}
                     placeholder = "VEHICLE DESCRIPTION"
                     type="text"
+                    maxLength={"27"}
                     name="VehicleDescription"
                     onChange={(e) => setVehicleDescription(e.target.value)}
                     value={vehicleDescription}

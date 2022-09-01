@@ -60,8 +60,8 @@ const OneReservationDetail = (props) => {
 
   }
   return (
-    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
-      <div>
+    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginTop: "3.4%", height:"100%", width:"100%"}}>
+      <div style={{height:"21%", width: "100%"}}>
         <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginLeft: "12px"}}>
           <h5 style={{fontSize:"16px", fontWeight: "lighter" }}>CELLPHONE NUMBER</h5>
         </div>
@@ -71,6 +71,7 @@ const OneReservationDetail = (props) => {
               placeholder = "CellPhone Number"
               type="number"
               name="GuestUserPhone"
+              maxLength={"14"}
               onChange={(e) => setUpdateGuestUserPhone(e.target.value)}
               value={updateGuestUserPhone}
             />

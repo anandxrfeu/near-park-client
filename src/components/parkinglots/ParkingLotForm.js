@@ -151,6 +151,7 @@ const ParkingLotForm = (props) => {
             {showQRCode && parkingLotSelect && <QrcodeComponent url={`http://${process.env.REACT_APP_MOBILE_APP}/client/parkinglot/${parkingLotSelect._id}`} />}
         </div>
 
+
         </div>
         </div>
 

@@ -50,11 +50,11 @@ const OneReservationPage = (props) => {
   }
 
   const startDateTime = new Date(reservation.createdAt)
-  reservation.startTime = `${formatTime(startDateTime.getHours())} : ${formatTime(startDateTime.getMinutes())} `;
+  reservation.startTime = `${formatTime(startDateTime.getHours())}:${formatTime(startDateTime.getMinutes())} `;
 
   if (reservation.endedAt) {
     const endDateTime = new Date(reservation.endedAt)
-    reservation.endTime = `${formatTime(endDateTime.getHours())} : ${formatTime(endDateTime.getMinutes())} `;
+    reservation.endTime = `${formatTime(endDateTime.getHours())}:${formatTime(endDateTime.getMinutes())} `;
   }
 
 
@@ -141,57 +141,43 @@ const calculatePrice = (pricing, durationInHours) => {
     }
     return (
 
-      <div style={{marginLeft: '-20px', marginTop: "-7px"}}>
-            <div>
-               <OneReservationForm reservation={reservation} updateReservation={updateReservation}/>
-               <div>
-                <div style={{display: "flex", border: "1px solid red"}}>
-                    <div>
-                      <div style={{border: "1px solid green", width: "45vw", height: "80vh"}}>
+      <div style={{marginLeft: '-20px',  width:"100%", height:"100%", border: "4px solid purple", display: "flex", flexDirection: "column"}}>
+        <div style={{height: "22%", width:"100%", border: "4px solid blue"}}>
+          <OneReservationForm reservation={reservation} updateReservation={updateReservation}/>
+        </div>
+        <div style={{height: "78%", width:"100%", border: "4px solid yellow", display: "flex", flexDirection:"row"}}>
+            <div style={{height: "100%", width:"100%", border: "4px solid yellow"}}>
+              <div style={{height: "69%", width:"100%"}}>
+                <OneReservationDetail updateReservation={updateReservation} reservation={reservation}/>
+              </div>
+              <div style={{height: "31%", width:"100%", border: "3px solid blue"}}>
+                {payByCash && <ChangeCashCalc calculateChange={calculateChange} reservationPrice={reservationPrice}/>}
+              </div>
 
-                          <div>
-                              <div>
-                              <OneReservationDetail updateReservation={updateReservation} reservation={reservation}/>
-                              </div>
-                              <div>
-                                {payByCash && <ChangeCashCalc calculateChange={calculateChange} reservationPrice={reservationPrice}/>}
-                              </div>
-                          </div>
-
-                      </div>
-                      {/* <DetailLeftContainer reservation={reservation} updateReservation={updateReservation}/> */}
-                    </div>
-                    <div>
-                      <div style={{border: "1px solid blue", width: "45vw", height: "80vh"}}>
-                          <div style={{display: "flex", justifyContent: "right", backgroundColor: "black", color: "white"}}>
-                            <h2 style={{paddingRight: "20px", display: "flex"}}>PAYMENT</h2>
-                          </div>
-                          <div>
-                            <div>
-                              {showPaymentSelect && <PaymentSelect updatePaymentMethod={updatePaymentMethod} /> }
-                            </div>
-                            <div>
-                              {!showCheckOut && <CardCheckout reservation={reservation} confirmPaymentByCard={confirmPaymentByCard}/>}
-                            </div>
-                            <div>
-                              {showPaymentComplete && <PaymentComplete reservation={reservation}/>}
-                            </div>
-                            <div>
-                              {showChange && <ChangeTotal change={change} updateReservation={updateReservation} confirmPaymentByCash={confirmPaymentByCash}/>}
-                            </div>
-
-                          </div>
-
-                      </div>
-                      {/* <PaymentANDStatusContainer/> */}
-                    </div>
-
-                </div>
-
-                {/* <ContainerOneReservation reservation={reservation} updateReservation={updateReservation}/> */}
-               </div>
 
             </div>
+            <div style={{height: "100%", width:"100%", border: "4px solid yellow"}}>
+                <div style={{display: "flex", justifyContent: "right", backgroundColor: "black", color: "white"}}>
+                     <h2 style={{paddingRight: "20px", display: "flex"}}>PAYMENT</h2>
+                </div>
+                <div style={{height: "100%", width:"100%"}}>
+                  <div>
+                    {showPaymentSelect && <PaymentSelect updatePaymentMethod={updatePaymentMethod} /> }
+                  </div>
+                  <div>
+                    {!showCheckOut && <CardCheckout reservation={reservation} confirmPaymentByCard={confirmPaymentByCard}/>}
+                  </div>
+                  <div>
+                    {showPaymentComplete && <PaymentComplete reservation={reservation}/>}
+                  </div>
+                  <div>
+                    {showChange && <ChangeTotal change={change} updateReservation={updateReservation} confirmPaymentByCash={confirmPaymentByCash}/>}
+                  </div>
+                </div>
+            </div>
+
+
+        </div>
 
 
       </div>

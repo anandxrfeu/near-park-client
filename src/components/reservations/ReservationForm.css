@@ -34,10 +34,10 @@
 .PLOFormContainer {
   justify-content: center ;
   /* border: 1px solid black; */
-  border: 4px solid black;
+  border: 0px solid black;
   height: 88px;
   padding-top: 0px;
-  width: 94%;
+  width: 98%;
 }
 
 .PLOFormContainerShow {
@@ -52,7 +52,7 @@
   background-color: white;
   text-align: center;
   height: 52px;
-  border: 2px solid black
+  border: 1.7px solid black
 }
 
 .FormCreateStyle{

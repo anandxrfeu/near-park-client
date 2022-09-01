@@ -3,7 +3,7 @@
   justify-items: center;
   justify-content: space-between;
   border: 2px solid green;
-  width: 90%;
+  width: 90vw;
   padding-top: 10px;
 }
 
@@ -12,14 +12,14 @@
   border: 1px solid black;
   height: 88px;
   padding-top: 6px;
-  width: 90%;
+  width: 90vw;
 }
 
 
 .badge-pill {
   background-color: white;
   text-align: center;
-  height: 2em;
+  height: 52px;
 }
 
 .FormCreateStyle {
@@ -30,7 +30,6 @@
 .formBtnOne.badge-pill {
   background-color: black;
   color: white;
-  padding-left: 1em;
-  padding-right: 1em;
-  height: 3.2em
+  padding-left: 40px;
+  padding-right: 40px
 }

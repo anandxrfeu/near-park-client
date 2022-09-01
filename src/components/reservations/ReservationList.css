@@ -1,18 +1,18 @@
   .TableMainContainer{
       margin-top: 20px;
-      width: 96%;
-      border: 3px solid black
+      width: 98%;
+      border: 1px solid black;
 
   }
 
   .tableListMain {
-    border: 3px solid green;
+    /* border: 1px solid black; */
     width: 100%
   }
 
   .tableRowReservationList {
 
-    border: 2px solid grey;
+    border: 1px solid grey;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,8 +23,8 @@
 
  .statusActive.rounded-circle {
    margin-top: 6px;
-   width: 2.3em;
-   height: 2.3em;
+   width: 2em;
+   height: 2em;
    background-color: #FED000;
  }
 
@@ -44,8 +44,8 @@
 } */
  .statusClosed.rounded-circle {
    margin-top: 6px;
-   width: 2.3em;
-   height: 2.3em;
+   width: 2em;
+   height: 2em;
    background-color: green;
  }
 

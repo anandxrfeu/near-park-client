@@ -19,8 +19,8 @@ const ChangeCashCalc = (props) => {
 
   return (
     <div>
-      <div style={{border: "1px solid black", height: "268px", marginTop: "25px", backgroundColor: "white"}}>
-          <div style={{display: "flex", justifyContent:"center", alignItems: "center" , marginTop: "60px"}}>
+      <div style={{border: "1px solid black", height: "100%", backgroundColor: "white", width: "100%"}}>
+          <div style={{display: "flex", justifyContent:"center", alignItems: "center" , marginTop: "40px", paddingBottom:"14px", height: "100%", width: "100%"}}>
             <form onSubmit={calculateChangeHandler}>
               <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", width: "300px"}}>
                 <div style={{display: "flex", flexDirection:"column"}}>

@@ -33,8 +33,8 @@ const ReservationPage = (props) => {
         console.log("parkingLots -> ", parkingLots)
                                 //To do
         //const parkingLotMain = parkingLotSelect ? parkingLotSelect : parkingLots[0]
-        //setParkingLotSelect(parkingLotMain)  
-        setParkingLotSelect(parkingLots[0])  
+        //setParkingLotSelect(parkingLotMain)
+        setParkingLotSelect(parkingLots[0])
         setParkingLotList(parkingLots)
 //        setReservationListFiltered(parkingLots)
 
@@ -164,7 +164,7 @@ const ReservationPage = (props) => {
         </div>
         <div>
           {/* <FilterAndSearch searchReservation={searchReservation} /> */}
-        <div style={{marginTop: "30px", border: "1px solid red", width: "98%"}} >
+        <div style={{marginTop: "30px",  width: "98%"}} >
             <div>
               <FilterList filterReservations={filterReservations} reservationsByCard={reservationsByCard} reservationsByCash={reservationsByCash}/>
             </div>
@@ -175,7 +175,7 @@ const ReservationPage = (props) => {
               </div>
 
               <div>
-                <div className="Search" style={{marginTop: "30px", border: "1px solid red"}}>
+                <div className="Search" style={{marginTop: "30px"}}>
                   <div>
                     <SearchReservation searchReservation={searchReservation} />
                   </div>
