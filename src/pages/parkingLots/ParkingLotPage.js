@@ -54,7 +54,8 @@ const ParkingLotPage = (props) => {
       <div className="pakinglot-container">
         <div className="pakinglot-container-top">
             <div style={{marginBottom: "40px", marginTop: "20px"}}>
-              <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
+              {console.log(parkingLotList)}
+              {parkingLotList && parkingLotList.length !== 0 && <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>}
             </div>
             <div className="create-parkinglot-btn">
               <span className="create-parkinglot-span">Add new parking lot</span>
