@@ -14,7 +14,7 @@ const ParkingLotForm = (props) => {
   const [maxOccupancy, setMaxOccupancy] = useState('')
   const [showQRCode, setShowQRCode] = useState(false)
 
-  const {parkingLotSelect, onSubmitHandler} = props
+  const {parkingLotSelect, onSubmitHandler, onDeleteHandler} = props
 
   useEffect(()=>{
     if(parkingLotSelect){
@@ -168,7 +168,7 @@ const ParkingLotForm = (props) => {
 
           </div>
           <div className="parkinglot-controls-btn-container-right">
-            <button className='parkinglot-controls_btn delete-btn badge-pill' onClick={qrCodeClickHandler}>
+            <button className='parkinglot-controls_btn delete-btn badge-pill' onClick={ e => {onDeleteHandler(e)}}>
                 DELETE
               </button>
           </div>

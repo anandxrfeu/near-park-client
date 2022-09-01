@@ -80,6 +80,11 @@ class ApiService {
     return res.data
   }
 
+  async deleteParkingLot(parkingLotId) {
+    const res = await this.api.delete(`/parkingLots/${parkingLotId}`);
+    return res.data
+  }
+
   async createSubscription (subscriptionPlan) {
     const res = await this.api.post("/subscriptionPlans", subscriptionPlan);
     return res.data

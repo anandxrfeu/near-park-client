@@ -14,6 +14,7 @@ const ParkingLotPage = (props) => {
   const [parkingLotSelect, setParkingLotSelect] = useState({})
   const [parkingLotList, setParkingLotList] = useState([])
   const [refresh, setRefresh] = useState(false)
+  const [error, setError] = useState("")
 
   useEffect(() => {
     async function fetchData() {
@@ -45,6 +46,20 @@ const ParkingLotPage = (props) => {
     }
   }
 
+  const onDeleteHandler = async (e) => {
+    e.preventDefault()
+    console.log("parkingLotSelect -> ", parkingLotSelect)
+    try{
+      const data = await apiService.deleteParkingLot(parkingLotSelect._id)
+      console.log("data -> ", data)
+      setRefresh(!refresh)
+    }catch(err){
+      console.log(err)
+      console.log("msg -> ", err.response.data.msg)
+      setError(err.response.data.msg)
+    }
+  }
+
   if (loading) {
     return <p>loading ...</p>
   }
@@ -66,9 +81,9 @@ const ParkingLotPage = (props) => {
 
         </div>
         {parkingLotSelect && Object.keys(parkingLotSelect).length === 0 && <ParkingLotForm />}
-        {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <ParkingLotForm parkingLotSelect={parkingLotSelect} onSubmitHandler={onSubmitHandler}/>}
+        {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <ParkingLotForm parkingLotSelect={parkingLotSelect} onSubmitHandler={onSubmitHandler} onDeleteHandler={onDeleteHandler}/>}
         {/* {parkingLotSelect && Object.keys(parkingLotSelect).length !== 0 && <QRCOde url={`http://${process.env.REACT_APP_MOBILE_APP}/client/parkinglot/${parkingLotSelect._id}`} />} */}
-
+        {error === "Active reservation exists"  && <div className="parkinglot-error">This parkinglot has active reservations, and cannot be deleted right now!</div>}
       </div>
     )
 
