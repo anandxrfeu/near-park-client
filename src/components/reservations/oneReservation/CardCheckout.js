@@ -2,6 +2,8 @@ const CardCheckout = (props) => {
 
   const {reservation, confirmPaymentByCard} = props
 
+  console.log("in CardCheckout..")
+
   return (
   <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
       <div style={{marginTop: "40px"}}>

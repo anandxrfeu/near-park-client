@@ -7,6 +7,7 @@ class ApiService {
     });
 
     this.api.interceptors.request.use((config) => {
+      console.log("in interceptor..")
       // Verifica se já temos as informações do usuário logado no localStorage
       const storedUser = localStorage.getItem("loggedInUser");
 
