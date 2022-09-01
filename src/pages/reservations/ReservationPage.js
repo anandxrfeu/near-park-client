@@ -139,7 +139,7 @@ const ReservationPage = (props) => {
 
 
     return (
-      <div className="reservationPageContainer"style={{marginLeft: "-20px"}}>
+      <div className="reservationPageContainer"style={{marginLeft: "-26px", width: "100%"}}>
         <div style={{marginTop: "12px", marginBottom: "20px"}}>
           <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
         </div>
@@ -164,7 +164,7 @@ const ReservationPage = (props) => {
         </div>
         <div>
           {/* <FilterAndSearch searchReservation={searchReservation} /> */}
-        <div style={{marginTop: "30px", border: "1px solid red"}} >
+        <div style={{marginTop: "30px", border: "1px solid red", width: "98%"}} >
             <div>
               <FilterList filterReservations={filterReservations} reservationsByCard={reservationsByCard} reservationsByCash={reservationsByCash}/>
             </div>

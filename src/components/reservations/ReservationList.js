@@ -9,61 +9,38 @@ const ReservationList = (props) => {
 
   return (
     <>
-      <div className="TableReservation" >
-         <table className="tableListMain table-hover">
-            <thead >
-                <div >
-                  <tr style={{border: "2px solid red", display: "flex", flexDirection: "row", justifyContent: 'space-between'}}>
-                      <div style={{border: "1px solid green", width:"100px"}}>
-                        <th  style={{border: "2px solid yellow", paddingLeft:"20px"}}>TICKET #</th>
-                      </div>
-                      <div style={{border: "1px solid green", width:"86px", marginLeft: "42px"}}>
-                        <th  style={{border: "2px solid yellow"}}>CHECK-IN</th>
-                      </div>
-                      <div style={{border: "1px solid green", width:"128px", marginLeft: "12px"}}>
-                        <th  style={{border: "2px solid yellow"}}>LICENSE PLATE</th>
-                      </div>
-                      <div  style={{border: "1px solid green", width:"48px",  marginRight: "110px", marginLeft: "42px"}}>
-                        <th  style={{border: "2px solid yellow"}}>TYPE</th>
-                      </div>
-                      <div style={{border: "1px solid green", width:"116px", marginRight: "50px"}}>
-                        <th  style={{border: "2px solid yellow"}}>DESCRIPTION</th>
-                      </div>
-                      <div  style={{border: "1px solid green", width:"70px", marginRight: "12px"}}>
-                         <th style={{border: "2px solid yellow"}}>STATUS</th>
-                      </div>
-                  </tr>
-                </div>
+      <div className="TableMainContainer">
+        <table className="tableListMain table-hover">
+            <thead>
+              <tr style={{border: "2px solid red", display: "flex", flexDirection: "row", justifyContent: 'space-between'}}>
+                <th  style={{border: "2px solid yellow",  width:"10%", textAlign:"center"}}>TICKET #</th>
+                <th  style={{border: "2px solid yellow", width:"10%", textAlign:"center"}}>CHECK-IN</th>
+                <th  style={{border: "2px solid yellow", width:"16%",  textAlign:"center"}}>LICENSE PLATE</th>
+                <th  style={{border: "2px solid yellow",  width:"16%",  textAlign:"center"}}>TYPE</th>
+                <th  style={{border: "2px solid yellow", width:"32%", textAlign:"center"}}>DESCRIPTION</th>
+                <th style={{border: "2px solid yellow", width:"7%", textAlign:"center"}}>STATUS</th>
+              </tr>
             </thead>
-            <div className="scrollit" >
-              <tbody>
-                <div>
-                  {reservationList.map( reservation => {
+            <tbody style={{width:"100%", display: "flex", flexDirection:"column", marginTop: "2px"}}>
+                <div className="scrollit" style={{border: "3px solid red", width: "100%"}}>
+                    {reservationList.map( reservation => {
                     reservation.statusCode = reservation.status === "CLOSED" ? 'Inactive' : 'Active' ;
                     const startDateTime = new Date(reservation.createdAt)
                     reservation.startTime = `${formatTime(startDateTime.getHours())} : ${formatTime(startDateTime.getMinutes())} `;
                     return (
-                      <div key={reservation._id} style={{height: "55px", border: "2px solid Black"}}>
-                        <tr className='tableRowReservationList'>
-                            <td style={{border: "2px solid white",  width:"120px"}}><span style={{marginLeft: "20px", border: "2px solid white", fontSize: "28px", fontWeight: "bold", width:"120px"}}>{reservation.ticket}</span></td>
-                            <td style={{marginLeft: "48px", border: "2px solid white", width: "108px", textAlign: "center"}}><span  style={{border: "2px solid white", fontSize: "28px", width: "116px"}}>{reservation.startTime}</span></td>
-                            <div style={{width: "180px"}}>
-                               <td  style={{marginLeft: "28px", border: "2px solid white", width: "180px", textAlign: "left"}}><span style={{border: "2px solid white", fontSize: "28px", fontWeight: "bold", width: "180px"}}>{reservation.vehicle.licensePlate}</span></td>
-                            </div>
-
-                            <div style={{width: "164px"}}>
-                              <td style={{border: "2px solid white", width: "164px"}}><span style={{border: "2px solid white", fontSize: "28px", width: "164px"}}>{reservation.vehicle.type}</span></td>
-                            </div>
-
-                            <td style={{border: "2px solid white", width: "280px"}}><span style={{border: "2px solid white", fontSize: "24px",  width: "280px"}}>{reservation.vehicle.description}</span></td>
-                            <Link to={`/saas/reservation/${reservation._id}`}>
-                              <div style={{marginRight: "24px", marginTop:"4px", width:"38px"}}>
-                                <td className={reservation.status !== "CLOSED" ? "statusActive rounded-circle" : "statusClosed rounded-circle"} ></td>
-                                {/* {reservation.statusCode} */}
+                      <div key={reservation._id} style={{height: "52px", width: "100%", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                        <tr style={{paddingRight:"0.1%",  height: "50px", border: "2px solid grey", width: "100%", display: "flex", flexDirection:"row", justifyContent: "space-between"}}>
+                            <td style={{width: "10%", border:"1px solid red", textAlign: "left"}}><span style={{ width: "10%", fontSize: "1.8em", fontWeight: "bold"}}>{reservation.ticket}</span></td>
+                            <td style={{width: "10%", border:"1px solid red", textAlign: "center"}}><span style={{border:"1px solid blue", width: "10%", fontSize: "1.8em"}}>{reservation.startTime}</span></td>
+                            <td style={{width: "16%", textAlign: "left", border:"1px solid red"}}><span style={{border:"1px solid blue", width: "16%", fontSize: "1.8em", fontWeight: "bold"}}>{reservation.vehicle.licensePlate}</span></td>
+                            <td style={{width: "16%", border:"1px solid red"}}><span style={{border:"1px solid blue", width: "16%", fontSize: "1.8em"}}>{reservation.vehicle.type}</span></td>
+                            <td style={{width: "32%", border:"1px solid red", textAlign: "left"}}><span style={{width: "32%",  fontSize: "1.6em"}}>{reservation.vehicle.description}</span></td>
+                            <td style={{width: "6.6%", border:"1px solid red", paddingLeft: "1.8%"}}>
+                              <Link to={`/saas/reservation/${reservation._id}`}>
+                              <div className={reservation.status !== "CLOSED" ? "statusActive rounded-circle" : "statusClosed rounded-circle"} style={{marginTop:"4px"}}>
                               </div>
-                            </Link>
-
-
+                              </Link>
+                            </td>
                         </tr>
                       </div>
 
@@ -72,11 +49,9 @@ const ReservationList = (props) => {
 
                   })}
 
-                </div>
+                 </div>
               </tbody>
-            </div>
-          </table>
-
+        </table>
       </div>
 
     </>
