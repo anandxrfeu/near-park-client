@@ -30,8 +30,14 @@ const ReservationPage = (props) => {
       try {
         setLoading(false)
         const parkingLots = await apiService.getAllParkingLots()
-        setParkingLotSelect(parkingLots[0])                          //To do
+        console.log("parkingLots -> ", parkingLots)
+                                //To do
+        //const parkingLotMain = parkingLotSelect ? parkingLotSelect : parkingLots[0]
+        //setParkingLotSelect(parkingLotMain)  
+        setParkingLotSelect(parkingLots[0])  
         setParkingLotList(parkingLots)
+//        setReservationListFiltered(parkingLots)
+
       } catch (err) {
         console.log(err)
       }
@@ -71,10 +77,13 @@ const ReservationPage = (props) => {
     "owner": loggedInUser.user._id.toString()
     }
     try {
-        await apiService.createReservation(payload)
-        setRefresh(!refresh)
+        const newReservation = await apiService.createReservation(payload)
+        //setRefresh(!refresh)
+        const resevationListCopy = [...reservationList]
+        resevationListCopy.push(newReservation)
+        setReservationListFiltered(resevationListCopy)
     } catch(err){
-
+      console.log(err)
     }
   }
 

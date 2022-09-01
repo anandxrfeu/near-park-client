@@ -109,9 +109,10 @@ const calculatePrice = (pricing, durationInHours) => {
         }
 
         if (data.payBy === "CARD"){
+          console.log("user wants to pay by card...")
           // setShowPaymentComplete(true)
           setShowPaymentSelect(false)
-          setShowCheckOut(true)
+          setShowCheckOut(false)
         }
 
 
