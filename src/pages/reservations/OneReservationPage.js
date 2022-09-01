@@ -85,10 +85,17 @@ const calculatePrice = (pricing, durationInHours) => {
 
   }
 
-  const confirmPaymentByCard = () => {
-    setShowChange(false)
-    setShowPaymentComplete(true)
-    setShowCheckOut(true)
+  const confirmPaymentByCard = async () => {
+    // change status to closed
+    try{
+      await apiService.updateAReservation(id, {status: "CLOSED"})
+      setShowChange(false)
+      setShowPaymentComplete(true)
+      setShowCheckOut(false)
+    }catch(err){
+      console.log(err)
+    }
+    
   }
 
   useEffect(() => {
