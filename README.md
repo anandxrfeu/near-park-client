@@ -1,31 +1,94 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+<div id="top"></div>
 
-# React IronPlate
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-Esse boilerplate já inclui:
 
-- Pré-configuração do Axios para injeção de cabeçalhos de autenticação e BaseURL
-- Context para armazenar state de usuário logado
-- Forms de Login e Signup
-- Roteamento básico
-- Componente de rota protegida
 
-## Para Começar
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-- Faça o fork e clone deste repositório
+[Near Park](https://nearpark.netlify.app/) is a SaaS for parking lot owners. Features includes
+* Make reservations on behalf of vehicle owner
+* Manage parkinglots and reservations
+* Admin user management
 
-## Instalação
 
-```shell
-$ npm install
-```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Deploy no Netlify
 
-1. Faça login no Netlify e selecione seu repositório
-2. Em 'Deploy settings > build command' escreva: CI=false npm run build
-3. Em 'publish directory' escreva: build/
-4. Adicione uma environment variable (variável de ambiente) REACT_APP_API_BASE com a URL da sua API funcionando no Heroku
-5. Adicione a URL do seu app hospedado no Netlify nas variáveis de ambiente do backend no Heroku
+### Built With
 
-Happy coding! 💙
+* [MongodDB](https://www.mongodb.com/)
+* [Expressjs](http://expressjs.com/)
+* [React.js](https://reactjs.org/)
+* [Nodejs](https://nodejs.org/en/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/anandxrfeu/near-park-client.git
+   ```
+
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+4. Configure environment variables
+
+5. Run locally
+   ```sh
+   npm run dev
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+## Contact
+
+* Anand Naidu - [@anandxrfeu](https://twitter.com/anandxrfeu)
+* Christian - [@Cglik001](https://github.com/Cglik001)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [Iron Hack](https://github.com/ironhack)
+* [Nilton Freitas](https://github.com/oniltos)
+* [Felipe Osório](https://github.com/Briofita09)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+

@@ -113,6 +113,8 @@ const calculatePrice = (pricing, durationInHours) => {
         }
         else if (data.status === "OPEN") {
           setShowCheckOut(true)
+        }  else if (data.status === "PAID") {
+          setShowCheckOut(false)
         }
 
         if (data.payBy === "CARD"){
