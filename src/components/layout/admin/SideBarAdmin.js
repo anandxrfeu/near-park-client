@@ -9,6 +9,7 @@ import supportIcon from "../../../assets/icons/and_chat_computers_hardware_head_
 import profileIcon from "../../../assets/icons/user_circle_gear_light_icon.png"
 import homeIcon from "../../../assets/icons/home_house_icon.png"
 import logoutIcon from "../../../assets/icons/logout_circle_line_icon (1).png"
+import userManagementIcon from '../../../assets/icons/users-group-icon.png'
 
 
 
@@ -46,7 +47,7 @@ const SideBarAdmin = () => {
                 </Link>
                 <Link to="/saas/users" className='nav-link'>
                   <p className="ParkingLotIcon">
-                    <img src={parkingLotIcon} className="nav-link-icon" alt="parkingLotIcon"/>
+                    <img src={userManagementIcon} className="nav-link-icon" alt="parkingLotIcon"/>
                     <span className='nav-link-name'>USERS</span>
                   </p>
                 </Link>

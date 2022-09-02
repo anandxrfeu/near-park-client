@@ -1,5 +1,6 @@
 import './ProfileForm.css'
 import apiService from '../../services/api.service'
+import userProfileIcon from '../../assets/icons/user-profile.png'
 import {AuthContext} from '../../contexts/authContext'
 
 import { useEffect, useState, useContext } from "react"
@@ -10,7 +11,7 @@ const ProfileForm = () => {
   const [userName, setUserName] = useState("")
   const [userEmail, setUserEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [imageUrl, setImageUrl] = useState("https://res.cloudinary.com/cloud-do-anand/image/upload/v1661896238/pictures/file_cz6kit.png")
+  const [imageUrl, setImageUrl] = useState(userProfileIcon)
   const [loading, setLoading] = useState(true)
   const [refresh, setRefresh] = useState(true)
 
