@@ -16,32 +16,34 @@ const OneReservationPage = (props) => {
 
   const [isLoading, setIsLoading] = useState(true)
   const [reservation, setReservation] = useState({})
-  const [payByCash, setPayByCash] = useState(false)
-  const [showChange, setShowChange] = useState(false)
+
   const [change, setChange] = useState("0")
   const [reservationPrice, setReservationPrice] = useState(0)
+
+  const [showPayByCash , setShowPayByCash ] = useState(false)
+  const [showChangeTotal, setShowChangeTotal] = useState(false)
   const [showPaymentComplete, setShowPaymentComplete] = useState(false)
   const [showPaymentSelect, setShowPaymentSelect] = useState(true)
-  const [showCheckOut, setShowCheckOut] = useState(false)
+  const [showCardCheckout, setShowCardCheckout] = useState(false)
 
 
 
   const updatePaymentMethod = (paymentMethod) => {
     if (paymentMethod === "CASH") {
-      setPayByCash(true)
+      setShowPayByCash(true)
       const durationInHours = calculateDurationInHours(reservation.createdAt, new Date())
       setReservationPrice(calculatePrice(reservation.parkingLot.pricing, durationInHours))
     }
     else if (paymentMethod === "CHECKOUT") {
       setShowPaymentSelect(false)
-      setShowCheckOut(false)
+      setShowCardCheckout(true)
     }
   }
 
 
   const calculateChange = (changeValue) => {
     setChange(changeValue)
-    setShowChange(true)
+    setShowChangeTotal(true)
     setShowPaymentSelect(false)
   }
 
@@ -79,9 +81,9 @@ const calculatePrice = (pricing, durationInHours) => {
 }
 
   const confirmPaymentByCash = () => {
-    setShowChange(false)
+    setShowChangeTotal(false)
     setShowPaymentComplete(true)
-    setPayByCash(false)
+    setShowPayByCash(false)
 
   }
 
@@ -89,13 +91,13 @@ const calculatePrice = (pricing, durationInHours) => {
     // change status to closed
     try{
       await apiService.updateAReservation(id, {status: "CLOSED"})
-      setShowChange(false)
+      setShowChangeTotal(false)
       setShowPaymentComplete(true)
-      setShowCheckOut(false)
+      setShowCardCheckout(false)
     }catch(err){
       console.log(err)
     }
-    
+
   }
 
   useEffect(() => {
@@ -103,23 +105,34 @@ const calculatePrice = (pricing, durationInHours) => {
       try {
         setIsLoading(false)
         const data = await apiService.getAReservation(id)
+        console.log(data)
         const startDateTime = new Date(data.createdAt)
         data.startTime = `${startDateTime.getHours()} : ${startDateTime.getMinutes()} `;
         setReservation(data)
         if (data.status === "CLOSED"){
           setShowPaymentComplete(true)
           setShowPaymentSelect(false)
-          setShowCheckOut(true)
+          setShowCardCheckout(false)
         }
-        else if (data.status === "OPEN") {
-          setShowCheckOut(true)
-        }
+        // else if (data.status === "OPEN") {
+        //   setShowCardCheckout(true)
+        // }
 
-        if (data.payBy === "CARD"){
+        // else if (data.status === "PAID") {
+        //   setShowCardCheckout(false)
+        // }
+
+
+        if (data.status !== "CLOSED" && data.payBy === "CARD"){
           console.log("user wants to pay by card...")
           // setShowPaymentComplete(true)
           setShowPaymentSelect(false)
-          setShowCheckOut(false)
+          setShowCardCheckout(true)
+        }
+
+        if (data.payBy === "CARD" && data.status === "CLOSED") {
+          console.log("console check")
+          setShowCardCheckout(false)
         }
 
 
@@ -158,7 +171,7 @@ const calculatePrice = (pricing, durationInHours) => {
                 <OneReservationDetail updateReservation={updateReservation} reservation={reservation}/>
               </div>
               <div style={{height: "31%", width:"100%", border: "3px solid blue"}}>
-                {payByCash && <ChangeCashCalc calculateChange={calculateChange} reservationPrice={reservationPrice}/>}
+                {showPayByCash && <ChangeCashCalc calculateChange={calculateChange} reservationPrice={reservationPrice}/>}
               </div>
 
 
@@ -172,13 +185,13 @@ const calculatePrice = (pricing, durationInHours) => {
                     {showPaymentSelect && <PaymentSelect updatePaymentMethod={updatePaymentMethod} /> }
                   </div>
                   <div>
-                    {!showCheckOut && <CardCheckout reservation={reservation} confirmPaymentByCard={confirmPaymentByCard}/>}
+                    {showCardCheckout && <CardCheckout reservation={reservation} confirmPaymentByCard={confirmPaymentByCard}/>}
                   </div>
                   <div>
                     {showPaymentComplete && <PaymentComplete reservation={reservation}/>}
                   </div>
                   <div>
-                    {showChange && <ChangeTotal change={change} updateReservation={updateReservation} confirmPaymentByCash={confirmPaymentByCash}/>}
+                    {showChangeTotal && <ChangeTotal change={change} updateReservation={updateReservation} confirmPaymentByCash={confirmPaymentByCash}/>}
                   </div>
                 </div>
             </div>
