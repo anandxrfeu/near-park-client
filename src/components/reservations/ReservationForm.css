@@ -11,7 +11,7 @@
 .FormCreate {
   display: flex;
   justify-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   /* border: 2px solid green; */
   border: none;
   width: 100%;
@@ -19,16 +19,7 @@
   padding-top: 16px
 }
 
-.FormCreateShow {
-  display: flex;
-    justify-items: center;
-    justify-content: space-between;
-    /* border: 2px solid green; */
-    border: none;
-    width: 1072px;
-    height: 88px;
-    padding-top: 16px
-}
+
 
 
 .PLOFormContainer {
@@ -40,31 +31,29 @@
   width: 98%;
 }
 
-.PLOFormContainerShow {
-  justify-content: center;
-  /* border: 1px solid black; */
-  height: 88px;
-  padding-top: 0px;
-  width: 1072px;
-}
+
 
 .badge-pill {
   background-color: white;
   text-align: center;
   height: 52px;
-  border: 1.7px solid black
+  border: 1.7px solid black;
+  font-size: 1em
 }
 
 .FormCreateStyle{
   /* border: 6px solid red; */
   border: 1px solid black;
-  height: 88px
+  height: 88px;
+  width: 100%
+
+
+
 }
 
 
 .formBtn.badge-pill {
   background-color: black;
   color: white;
-  padding-left: 40px;
-  padding-right: 40px
+  width: 96%;
 }

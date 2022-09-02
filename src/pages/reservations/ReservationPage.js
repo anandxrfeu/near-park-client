@@ -140,7 +140,7 @@ const ReservationPage = (props) => {
 
 
     return (
-      <div className="reservationPageContainer"style={{marginLeft: "-26px", width: "100%"}}>
+      <div className="reservationPageContainer"style={{marginLeft: "-26px", width: "96%"}}>
         <div style={{marginTop: "12px", marginBottom: "20px"}}>
           <ParkingLotSelect parkingLotList={parkingLotList} onSelectHandler={onSelectHandler}/>
         </div>

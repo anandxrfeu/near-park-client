@@ -4,11 +4,11 @@ const PaymentComplete = (props) => {
   const {reservation} = props
 
   const reservationStartTimeStamp = new Date(reservation.createdAt)
-  const reservationStartDate = `${reservationStartTimeStamp.getDay()}/${reservationStartTimeStamp.getMonth()}/${reservationStartTimeStamp.getFullYear()}`
+  const reservationStartDate = `${reservationStartTimeStamp.getDate()}/${reservationStartTimeStamp.getMonth() + 1}/${reservationStartTimeStamp.getFullYear()}`
 
    const reservationEndTimeStamp = new Date(reservation.endedAt)
-   const reservationEndDate = `${reservationEndTimeStamp.getDay()}/${reservationEndTimeStamp.getMonth()}/${reservationEndTimeStamp.getFullYear()}`
-
+   const reservationEndDate = `${reservationEndTimeStamp.getDate()}/${reservationEndTimeStamp.getMonth() + 1}/${reservationEndTimeStamp.getFullYear()}`
+  console.log("paymentcomplete reservation", reservation)
 
   return (
 <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", backgroundColor: "white"}}>
