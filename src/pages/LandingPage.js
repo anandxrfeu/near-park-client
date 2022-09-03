@@ -1,6 +1,5 @@
 import NearParkLogo from '../assets/icons/Near Park Logo 4-04.png'
 import {Link} from 'react-router-dom'
-import parkingLotIcon from '../assets/icons/parking_car_maps_location_placeholder_icon.png'
 import './LandingPage.css'
 import bannerRegister from '../assets/banners/banner-register.png'
 import bannerManage from '../assets/banners/banner-manage.png'
@@ -22,9 +21,9 @@ const LandingPage = (props) => {
         </nav>
 
       </navbar>
-      <div style={{height:"90vh"}}>
+      <div style={{height:"100vh"}}>
         <div style={{marginTop: "180px"}}>
-           <img style={{width: "45%", height: '30%'}} src={NearParkLogo} alt="logo-nearby"/>
+           <img style={{width: "80%"}} src={NearParkLogo} alt="logo-nearby"/>
         </div>
         <div style={{marginTop: "40px"}}>
           <Link to="/auth/signup">
