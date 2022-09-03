@@ -1,0 +1,29 @@
+.badge-pill.accountCreate {
+  width: 620px;
+  height: 80px;
+  background-color: white;
+  color: black ;
+  font-size: 28px;
+  border: 2px solid black;
+  font-weight: 300;
+
+}
+
+.badge-pill.accountCreate:hover {
+  background-color: black;
+  color: white
+}
+
+
+.badge-pill.login {
+  width: 140px;
+  height: 46px;
+  border: 1px solid white;
+  background-color: black;
+  color: white
+}
+
+.badge-pill.login:hover {
+background-color: white;
+color: black
+}

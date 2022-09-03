@@ -3,4 +3,17 @@
     color: red;
     font-size: 2rem;
   }
-  
+
+
+    .badge-pill.login {
+      width: 140px;
+      height: 46px;
+      border: 1px solid white;
+      background-color: black;
+      color: white
+    }
+
+    .badge-pill.login:hover {
+      background-color: white;
+      color: black
+    }

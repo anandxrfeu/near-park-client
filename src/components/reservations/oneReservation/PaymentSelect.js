@@ -29,8 +29,8 @@ const [activeCashBtn, setActiveCashBtn] = useState("")
 
 
   return (
-    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width:"100%", height:"100%", border: "4px solid purple"}}>
-      <div style={{paddingTop: "10%", border: "1px solid blue", width:"100%", height:"30%", display:"flex", justifyContent:"center"}}>
+    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width:"100%", height:"100%"}}>
+      <div style={{paddingTop: "10%", width:"100%", height:"30%", display:"flex", justifyContent:"center"}}>
         <div style={{height: "100%", display:"flex", alignItems:"center", flexDirection:"column"}}>
           <h3 style={{marginBottom: "-2px"}}>PAYMENT STATUS</h3>
           <h1 style={{color: "red", fontWeight: "600" }}>PENDING</h1>

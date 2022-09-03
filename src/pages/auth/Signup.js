@@ -31,19 +31,31 @@ function Signup(props) {
   }
 
   return (
-    <div className="text-center">
-      <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginTop: "30px"}} >
-        <div style={{width:"38%"}} >
-          <form onSubmit={handleSubmit}>
-            <div style={{marginBottom: "38px"}}>
-              <h1 style={{fontSize: "78px", fontWeight: "700"}}>Signup!</h1>
+    <div style={{display: "flex", flexDirection: "column"}}>
+      <navbar style={{backgroundColor: "black", width: "100%", height:"60px" , position: "fixed", color:"white"}}>
+        <nav style={{display: "flex", flexDirection: "row", justifyContent:"right"}}>
+          <div style={{display: "flex", flexDirection: "row", marginTop:"6px"}}>
+            <div style={{marginRight:"16px"}}>
+              <Link to="/auth/login">
+                <button className='badge-pill login'>LOGIN</button>
+              </Link>
             </div>
-            <div style={{display: "flex", flexDirection: "column", marginBottom:"30px"}}>
+          </div>
+        </nav>
+      </navbar>
+    <div className="text-center">
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginTop: "88px"}} >
+        <div style={{width:"34%"}} >
+          <form onSubmit={handleSubmit}>
+            <div style={{marginBottom: "42px"}}>
+              <h1 style={{fontSize: "58px", fontWeight: "700"}}>Signup!</h1>
+            </div>
+            <div style={{display: "flex", flexDirection: "column", marginBottom:"18px"}}>
               <label
-                style={{fontSize: "34px", fontWeight: "200"}}
+                style={{fontSize: "30px", fontWeight: "200"}}
                 htmlFor="signupFormName">Name</label>
               <input
-                style={{height: "74px", fontSize:"26px"}}
+                style={{height: "68px", fontSize:"26px"}}
                 className="badge-pill"
                 type="text"
                 name="name"
@@ -54,12 +66,12 @@ function Signup(props) {
               />
             </div>
 
-            <div style={{display: "flex", flexDirection: "column", marginBottom:"30px"}}>
+            <div style={{display: "flex", flexDirection: "column", marginBottom:"18px"}}>
               <label
-                style={{fontSize: "34px", fontWeight: "200"}}
+                style={{fontSize: "30px", fontWeight: "200"}}
                 htmlFor="signupFormEmail">E-mail Address</label>
               <input
-                style={{height: "74px", fontSize:"32px"}}
+                style={{height: "68px", fontSize:"32px"}}
                 className="badge-pill"
                 type="email"
                 name="email"
@@ -72,10 +84,10 @@ function Signup(props) {
 
             <div  style={{display: "flex", flexDirection: "column"}}>
               <label
-                style={{fontSize: "34px", fontWeight: "200"}}
+                style={{fontSize: "30px", fontWeight: "200"}}
                 htmlFor="signupFormPassword">Password</label>
               <input
-                style={{height: "74px", fontSize:"26px"}}
+                style={{height: "68px", fontSize:"26px"}}
                 className="badge-pill"
                 type="password"
                 name="password"
@@ -106,6 +118,7 @@ function Signup(props) {
         </div>
       </div>
     </div>
+   </div>
   );
 }
 

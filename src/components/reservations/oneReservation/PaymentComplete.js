@@ -20,14 +20,14 @@ const PaymentComplete = (props) => {
       </div>
 
       <div style={{height:"70%", width: "100%",  backgroundColor:"white"}}>
-        <div style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", height:"100%", width:"100%"}} >
-          <div>
-            <h2 style={{fontWeight: '400', fontSize: "32px", paddingBottom:"16px"}}>CHECK-OUT CONFIRMED!</h2>
+        <div style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", height:"100%", width:"100%", backgroundColor:"white"}} >
+          <div style={{backgroundColor:"white"}}>
+            <h2 style={{fontWeight: '400', fontSize: "32px", paddingBottom:"12px"}}>CHECK-OUT CONFIRMED!</h2>
           </div>
           <div style={{display: "flex", justifyContent: "center", alignItems: "center", paddingTop: "6px"}}>
             <img style={{width: "150px", height: "150px"}} src={CheckOutIcon} alt="checkouticon"/>
           </div>
-          <div style={{paddingTop: "26px",  display: "flex", justifyContent: "center",
+          <div style={{paddingTop: "22px",  display: "flex", justifyContent: "center",
               alignContent: "center"}}>
             <div style={{border: "1px solid black", width: "314px", height: "114px",
                 borderRadius: "16px", textAlign: "center", paddingTop: "14px",

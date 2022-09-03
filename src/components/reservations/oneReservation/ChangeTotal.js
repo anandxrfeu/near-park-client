@@ -13,7 +13,7 @@ const ChangeTotal = (props) => {
 
 
   return (
-    <div style={{display: "flex", justifyContent: "center", alignContent: "center", height:"100%", width: "100%", border: "3px solid red"}} >
+    <div style={{display: "flex", justifyContent: "center", alignContent: "center", height:"100%", width: "100%"}} >
       <div style={{height:"100%", width:"100%", display: "flex", alignItems:"center", justifyContent:"center"}} >
         <div style={{border: "2px solid black", borderRadius: "22px", width: "340px", display: "flex", justifyContent: "center",
         textAlign: "center", height: "13em", backgroundColor: "white"}}>

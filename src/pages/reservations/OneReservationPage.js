@@ -165,8 +165,8 @@ const calculatePrice = (pricing, durationInHours) => {
         <div style={{height: "22%", width:"100%"}}>
           <OneReservationForm reservation={reservation} updateReservation={updateReservation}/>
         </div>
-        <div style={{height: "78%", width:"100%", border: "1px solid black", display: "flex", flexDirection:"row"}}>
-            <div style={{height: "100%", width:"100%", border: "3px solid black", display:"flex", flexDirection:"column"}}>
+        <div style={{height: "78%", width:"100%", border: "1px solid black", display: "flex", flexDirection:"row", borderBottom: "none"}}>
+            <div style={{height: "100%", width:"100%", border: "2px solid black", display:"flex", flexDirection:"column"}}>
               <div style={{height: "69%", width:"100%"}}>
                 <OneReservationDetail updateReservation={updateReservation} reservation={reservation}/>
               </div>
@@ -175,7 +175,7 @@ const calculatePrice = (pricing, durationInHours) => {
               </div>
             </div>
 
-            <div style={{height: "100%", width:"100%", border: "3px solid black"}}>
+            <div style={{height: "100%", width:"100%", border: "2px solid black", borderBottom: "none"}}>
                 <div style={{display: "flex", justifyContent: "right", backgroundColor: "black", color: "white", height: "9%", width:"100%"}}>
                      <h2 style={{paddingRight:"0.8em", paddingTop:"1%", display: "flex", height: "100%"}}>PAYMENT</h2>
                 </div>

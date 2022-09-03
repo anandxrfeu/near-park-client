@@ -51,14 +51,14 @@ function Login(props) {
           <div style={{display: "flex", flexDirection: "row", marginTop:"6px"}}>
             <div style={{marginRight:"16px"}}>
               <Link to="/auth/signup">
-                <button className='badge-pill' style={{width: "140px", height:"46px", border: "1px solid white", backgroundColor: "black", color: "white"}}>Signup</button>
+                <button className='badge-pill login'>Signup</button>
               </Link>
             </div>
           </div>
         </nav>
       </navbar>
       <div className="text-center">
-        <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginTop: "160px"}}>
+        <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginTop: "100px"}}>
           <div style={{width:"38%"}}>
             <form onSubmit={handleSubmit}>
               <div className="text-center">
@@ -95,7 +95,7 @@ function Login(props) {
               </div>
 
               <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginTop: "58px"}}>
-                <button className="badge-pill"
+                <button className="badge-pill mainLogin"
                   style={{width: "280px", height:"72px",
                   fontSize: "34px", marginBottom: "20px",
                   backgroundColor: "black", color: "white"
