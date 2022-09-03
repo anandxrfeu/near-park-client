@@ -35,7 +35,7 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors("");
-      navigate("/saas/reservations");
+      navigate("/saas/profile");
     } catch (err) {
       console.error("err", err);
       console.error("err.response.data.errors", err.response.data.msg );
