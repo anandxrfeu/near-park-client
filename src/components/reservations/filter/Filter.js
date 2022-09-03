@@ -19,10 +19,10 @@ console.log(reservationsByCard)
         {/* <button value="CASH" className="filter2 badge-pill " onClick={clickHandler} >
           CASH<span className="badge badge-success rounded-circle" style={{textAlign: "center", display: "flex", justifyContent:"center", marginBottom: "20px"}}>{reservationsByCash}</span>
         </button> */}
-        <button value="CASH" className="filter3 badge-pill " onClick={clickHandler} type="button" style={{ display: "flex", justifyContent:"baseline", flexDirection: "row", paddingTop: "12px"}}>
+        <button value="CASH" className="filter3 badge-pill " onClick={clickHandler} type="button" style={{ display: "flex", justifyContent:"baseline", flexDirection: "row", paddingTop: "9px"}}>
           CASH<span className="badge badge-success rounded-circle" style={{textAlign: "center", display: "flex", justifyContent:"center", marginBottom: "20px"}}>{reservationsByCash}</span>
         </button>
-        <button  value="CARD" onClick={clickHandler} type="button" className="filter3 badge-pill" style={{ display: "flex", justifyContent:"baseline", flexDirection: "row", paddingTop: "12px"}} >
+        <button  value="CARD" onClick={clickHandler} type="button" className="filter3 badge-pill" style={{ display: "flex", justifyContent:"baseline", flexDirection: "row", paddingTop: "9px"}} >
             CARD <span className="badge badge-success rounded-circle" style={{textAlign: "center", display: "flex", justifyContent:"center", marginBottom: "20px"}}>{reservationsByCard}</span>
         </button>
         <button value="CLOSED"  onClick={clickHandler} className="filter4 badge-pill">

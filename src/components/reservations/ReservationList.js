@@ -15,7 +15,7 @@ const ReservationList = (props) => {
               <tr style={{border: "1px solid black", display: "flex", flexDirection: "row", justifyContent: 'space-between', height:"42px", paddingTop: "6px", paddingRight:"1.2%" , fontSize:"1.06em"}}>
                 <th  style={{width:"10.2%", textAlign:"left", paddingLeft:"0.5%"}}>TICKET #</th>
                 <th  style={{width:"11%", textAlign:"center", paddingLeft:"0.2%"}}>CHECK-IN</th>
-                <th  style={{width:"18%",  textAlign:"left", paddingLeft:"0.1%", border:"1px solid red"}}>LICENSE PLATE</th>
+                <th  style={{width:"18%",  textAlign:"left", paddingLeft:"0.1%"}}>LICENSE PLATE</th>
                 <th  style={{width:"16%",  textAlign:"left", paddingLeft:"0.1%"}}>TYPE</th>
                 <th  style={{width:"32%", textAlign:"left", paddingLeft:"0.5%"}}>DESCRIPTION</th>
                 <th style={{ width:"6.6%", textAlign:"center", marginRight:"0.5%", paddingRight:"1.5%"}}>STATUS</th>
@@ -32,7 +32,7 @@ const ReservationList = (props) => {
                         <tr style={{paddingRight:"0.1%",  height: "50px", border: "1px solid grey", width: "100%", display: "flex", flexDirection:"row", justifyContent: "space-between"}}>
                             <td style={{width: "10.2%", textAlign: "left", paddingLeft:"0.5%"}}><span style={{ width: "10.2%", fontSize: "1.6em", fontWeight: "bold"}}>{reservation.ticket}</span></td>
                             <td style={{width: "10%", textAlign: "center"}}><span style={{ width: "10%", fontSize: "1.6em"}}>{reservation.startTime}</span></td>
-                            <td style={{width: "18%", textAlign: "left", border: "1px solid red"}}><span style={{border: "1px solid blue", width: "18%", fontSize: "1.6em", fontWeight: "bold"}}>{reservation.vehicle.licensePlate}</span></td>
+                            <td style={{width: "18%", textAlign: "left"}}><span style={{ width: "18%", fontSize: "1.6em", fontWeight: "bold"}}>{reservation.vehicle.licensePlate}</span></td>
                             <td style={{width: "16%", textAlign: "left"}}><span style={{ width: "16%", fontSize: "1.4em"}}>{reservation.vehicle.type}</span></td>
                             <td style={{width: "32%", textAlign: "left"}}><span style={{width: "32%",  fontSize: "1.4em"}}>{reservation.vehicle.description}</span></td>
                             <td style={{ width: "6.6%", paddingLeft: "0.4%"}}>

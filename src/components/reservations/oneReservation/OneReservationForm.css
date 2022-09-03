@@ -34,3 +34,12 @@
   padding-right: 1em;
   height: 3.2em
 }
+
+
+.formBtnOne.badge-pill:hover {
+  background-color: #FED000;
+  color: black;
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 3.2em
+}

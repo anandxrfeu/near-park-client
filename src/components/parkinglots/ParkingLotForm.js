@@ -54,6 +54,9 @@ const ParkingLotForm = (props) => {
 
   return (
 <>
+      <div style={{display:"flex", alignItems:"left", justifyContent: "left", marginLeft:"10px"}}>
+          {showQRCode && parkingLotSelect && <QrcodeComponent url={`${process.env.REACT_APP_MOBILE_APP}/parkinglots/${parkingLotSelect._id}`} />}
+      </div>
       <form className="parkinglot-controls">
 
         <div>
@@ -176,9 +179,9 @@ const ParkingLotForm = (props) => {
 
      </form>
 
-      <div style={{marginTop: "16px"}}>
+      {/* <div style={{display:"flex", alignItems:"center", justifyContent: "center", marginLeft: "98px"}}>
           {showQRCode && parkingLotSelect && <QrcodeComponent url={`${process.env.REACT_APP_MOBILE_APP}/parkinglots/${parkingLotSelect._id}`} />}
-       </div>
+       </div> */}
 
 
 

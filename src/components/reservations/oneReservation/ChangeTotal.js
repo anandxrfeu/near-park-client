@@ -13,11 +13,11 @@ const ChangeTotal = (props) => {
 
 
   return (
-    <div style={{display: "flex", justifyContent: "center", alignContent: "center"}} >
-      <div style={{marginTop: "90px"}}>
+    <div style={{display: "flex", justifyContent: "center", alignContent: "center", height:"100%", width: "100%", border: "3px solid red"}} >
+      <div style={{height:"100%", width:"100%", display: "flex", alignItems:"center", justifyContent:"center"}} >
         <div style={{border: "2px solid black", borderRadius: "22px", width: "340px", display: "flex", justifyContent: "center",
-        textAlign: "center", height: "250px"}}>
-          <div>
+        textAlign: "center", height: "13em", backgroundColor: "white"}}>
+          <div style={{height:"100%"}}>
               <div style={{backgroundColor: "black", color: "white", border: "0.1px solid black",
               borderRadius: "8px", height: "38px", width:"280px", marginTop: "22px"}}>
                 <h3 style={{paddingTop: "2px"}}>TROCO</h3>

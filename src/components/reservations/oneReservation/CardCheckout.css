@@ -1,0 +1,18 @@
+
+
+.confirmBtn {
+  color: white;
+  background-color: green;
+  border: 2px solid green;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  font-weight: 700 ;
+  font-size: 16px ;
+}
+
+.confirmBtn:hover {
+  background-color: #1A4D2E;
+  border: 2px solid #1A4D2E;
+
+}

@@ -1,8 +1,8 @@
 const DashboardPage = (props) => {
     return (
 
-      <div>
-            <p>DashboardPage..</p>
+      <div style={{width:"100%", height: "100%", display:"flex", justifyContent:"center", alignItems:"center"}}>
+            <p style={{fontSize:"72px", fontWeight:"bold"}}>COMING SOON</p>
 
       </div>
 

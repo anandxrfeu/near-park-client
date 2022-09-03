@@ -32,12 +32,12 @@ const ReservationPLOForm = (props) => {
 
   return (
 
-     <div className="PLOFormContainer" style={{border: "2px solid yellow"}}>
-      <form className="FormCreateStyle" onSubmit={(onSubmitHandler)} style={{border: "2px solid red"}}>
-        <div className="FormCreate" style={{border: "2px solid green", width:"100%", fontSize:"1em"}}>
-            <div style={{border: "1px solid red", width:"18%", marginLeft:"0.3%", display:"flex", justifyContent:"center"}}>
+     <div className="PLOFormContainer" style={{border: "1px solid black"}}>
+      <form className="FormCreateStyle" onSubmit={(onSubmitHandler)} >
+        <div className="FormCreate" style={{ width:"100%", fontSize:"1em"}}>
+            <div style={{ width:"18%", marginLeft:"0.3%", display:"flex", justifyContent:"center"}}>
               <input className="badge-pill"
-                style={{width:"98%"}}
+                style={{width:"98%", fontWeight:"bold"}}
                 placeholder = "LICENSE PLATE"
                 type="text"
                 name="LicensePlate"
@@ -46,7 +46,7 @@ const ReservationPLOForm = (props) => {
                 value={licensePlate}
               />
             </div>
-              <div className='vehicleType' style={{border: "1px solid blue", width:"20.2%", display:"flex", justifyContent:"center", marginLeft:"0.3%"}}>
+              <div className='vehicleType' style={{width:"20.2%", display:"flex", justifyContent:"center", marginLeft:"0.3%"}}>
                 <select value={vehicleType} className="vehicleType  badge-pill"
                 style={{width:"98%"}}
                 onChange={(e) => setVehicleType(e.target.value) }>
@@ -55,17 +55,17 @@ const ReservationPLOForm = (props) => {
                   <option className='vehicleType' value="MOTORBIKE">Moto</option>
                 </select>
               </div>
-              <div style={{border: "1px solid red", width: "30%", display:"flex", justifyContent:"center", marginLeft:"0.3%"}}>
+              <div style={{ width: "30%", display:"flex", justifyContent:"center", marginLeft:"0.3%"}}>
                   <input className="Vehicle-Description badge-pill" style={{width: "98%"}}
                     placeholder = "VEHICLE DESCRIPTION"
                     type="text"
-                    maxLength={"27"}
+                    maxLength={"20"}
                     name="VehicleDescription"
                     onChange={(e) => setVehicleDescription(e.target.value)}
                     value={vehicleDescription}
                   />
                 </div>
-              <div style={{border: "1px solid blue", width:"25.8%", display:"flex", justifyContent:"center", marginLeft:"0.3%"}}>
+              <div style={{width:"25.8%", display:"flex", justifyContent:"center", marginLeft:"0.3%"}}>
                   <input className="GuestUserPhoneForm badge-pill"
                     style={{textAlign: "center", width:"98%"}}
                     placeholder = "CELLPHONE NUMBER"
@@ -77,7 +77,7 @@ const ReservationPLOForm = (props) => {
                 </div>
 
 
-            <div  style={{ border: "1px solid red", width:"13%", display:"flex", justifyContent:"left", marginLeft:"0.3%"}}>
+            <div  style={{width:"13%", display:"flex", justifyContent:"left", marginLeft:"0.3%"}}>
               <button className='formBtn badge-pill' type="submit">SUBMIT</button>
             </div>
           </div>

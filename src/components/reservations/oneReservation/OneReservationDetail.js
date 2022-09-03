@@ -60,14 +60,15 @@ const OneReservationDetail = (props) => {
 
   }
   return (
-    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginTop: "3.4%", height:"100%", width:"100%"}}>
-      <div style={{height:"21%", width: "100%"}}>
-        <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginLeft: "12px"}}>
+    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center",  height:"100%", width:"100%", backgroundColor:"white"}}>
+      <div style={{height:"38%", width: "100%", display:"flex", flexDirection:"column", alignItems:"center"}}>
+        <div style={{display: "flex", justifyContent: "center", alignItems: "center", paddingTop:"8%"}}>
           <h5 style={{fontSize:"16px", fontWeight: "lighter" }}>CELLPHONE NUMBER</h5>
         </div>
-        <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginLeft: "116px"}}>
+        <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginLeft: "116px"}}>
           <form onSubmit={editHandler}>
             <input className="guestUserPhoneUpdate badge-pill"
+              style={{textAlign: "center"}}
               placeholder = "CellPhone Number"
               type="number"
               name="GuestUserPhone"
@@ -75,39 +76,43 @@ const OneReservationDetail = (props) => {
               onChange={(e) => setUpdateGuestUserPhone(e.target.value)}
               value={updateGuestUserPhone}
             />
-            <button className="badge-pill" style={{marginLeft: "30px", width: "80px",
-            height:"40px", backgroundColor: "black", color: "white", border: "black"}}>EDIT</button>
+            <button className="badge-pill" style={{marginLeft: "16px", width: "80px",
+            height:"40px", backgroundColor: "black", color: "white", border: "1px solid black"}}>EDIT</button>
           </form>
 
         </div>
 
       </div>
-      <div style={{marginTop: "54px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-        <div style={{color: "#FED000", backgroundColor: "black", width: "200px",
-        paddingTop:"6px", paddingBottom:"2px", textAlign: "center", border: "1px solid black", borderRadius: "10px"}}>
-          <h1>{reservation.status !== "CLOSED" ? "ACTIVE" : "CLOSED"}</h1>
-        </div>
-        {/* <div style={{color: "green", backgroundColor: "black", width: "200px",
-        paddingTop:"6px", paddingBottom:"2px", textAlign: "center", border: "1px solid black", borderRadius: "10px"}}>
-          <h1>CLOSED</h1>
-        </div> */}
-        <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginLeft: "35px"}}>
-          <div style={{display: "flex", justifyContent: 'space-between', border: "1px solid black",
-          width: "310px", height:"100px", paddingLeft: "32px",  paddingRight: "32px",
-          paddingTop: "14px", borderRadius: "10px", marginTop: "26px",
-          marginLeft: "-45px"}}>
-            <div>
-              <h5>DURATION</h5>
-              <h2 style={{fontWeight: "bold"}}>{duration} H</h2>
-            </div>
-            <div>
-              <h5>TOTAL</h5>
-              <h2 style={{fontWeight: "bold"}}>R$ {price}</h2>
+      <div style={{width:"100%", height:"72%"}}>
+        <div style={{marginTop: "8%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+          <div style={{color: "#FED000", backgroundColor: "black", width: "200px",
+          paddingTop:"6px", paddingBottom:"2px", textAlign: "center", border: "1px solid black", borderRadius: "10px"}}>
+            <h1>{reservation.status !== "CLOSED" ? "ACTIVE" : "CLOSED"}</h1>
+          </div>
+          {/* <div style={{color: "green", backgroundColor: "black", width: "200px",
+          paddingTop:"6px", paddingBottom:"2px", textAlign: "center", border: "1px solid black", borderRadius: "10px"}}>
+            <h1>CLOSED</h1>
+          </div> */}
+          <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginLeft: "35px"}}>
+            <div style={{display: "flex", justifyContent: 'space-between', border: "1px solid black",
+            width: "310px", height:"100px", paddingLeft: "32px",  paddingRight: "32px",
+            paddingTop: "14px", borderRadius: "10px", marginTop: "26px",
+            marginLeft: "-45px"}}>
+              <div>
+                <h5>DURATION</h5>
+                <h2 style={{fontWeight: "bold"}}>{duration} H</h2>
+              </div>
+              <div>
+                <h5>TOTAL</h5>
+                <h2 style={{fontWeight: "bold"}}>R$ {price}</h2>
+              </div>
             </div>
           </div>
+
         </div>
 
       </div>
+
 
     </div>
 

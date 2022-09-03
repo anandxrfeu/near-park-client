@@ -1,7 +1,7 @@
-.plusButton{
+/* .plusButton{
     height: 80px;
-  line-height: 80px;  
-  width: 80px;  
+  line-height: 80px;
+  width: 80px;
   font-size: 3em;
   font-weight: bold;
   border-radius: 50%;
@@ -9,4 +9,34 @@
   color: white;
   text-align: center;
   cursor: pointer;
+} */
+
+.plusButton {
+  height: 80px;
+  background-color: #3D3C42;
+  width: 80px;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  border:2px solid black
+}
+
+.insidePlusButton {
+  font-size: 3em;
+  color: white;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.plusButton:hover {
+  border: 2px solid blue;
+  text-decoration: none;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+
 }

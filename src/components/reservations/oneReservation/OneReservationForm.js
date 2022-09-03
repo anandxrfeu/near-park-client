@@ -51,36 +51,36 @@ if (isLoading) {
 
 
   return (
-    <div style={{width:"100%", height:"100%", border:" 3px solid red", display:"flex", flexDirection:"column"}}>
-      <div style={{width:"100%", height:"40%", border:" 3px solid blue"}}>
-        <table style={{border: "3px solid green", width: "100%", height: "100%"}}>
-           <thead style={{height: "100%", width: "100%", paddingTop: "0.2%"}}>
-              <tr style={{border: "1px solid black", display: "flex", flexDirection: "row",
-              justifyContent: 'space-between', fontSize:"1.2em", height:"100%", width:"100%", paddingTop:"0.3%"}}>
-                <th  style={{border: "1px solid blue", width:"10%", textAlign:"center", paddingLeft:"0.5%", height:"100%"}}>TICKET #</th>
-                <th  style={{border: "1px solid blue", width:"10%", textAlign:"center", height:"100%"}}>CHECK-IN</th>
-                <th  style={{border: "1px solid blue", width:"18%",  textAlign:"center", height:"100%"}}>LICENSE PLATE</th>
-                <th  style={{border: "1px solid blue", width:"14%",  textAlign:"center", height:"100%"}}>TYPE</th>
-                <th  style={{border: "1px solid blue", width:"26%", textAlign:"center", height:"100%" }}>DESCRIPTION</th>
-                <th  style={{border: "1px solid blue", width:"11%", textAlign:"left", height:"100%"}}></th>
+    <div style={{width:"100%", height:"100%", display:"flex", flexDirection:"column", backgroundColor: "white"}}>
+      <div style={{width:"100%", height:"42%", border:" 1px solid black", backgroundColor: "white", marginTop: "4px"}}>
+        <table style={{width: "100%", height: "100%"}}>
+           <thead style={{height: "100%", width: "100%", paddingTop: "0.3%"}}>
+              <tr style={{display: "flex", flexDirection: "row",
+              justifyContent: 'space-between', fontSize:"1.2em", height:"100%", width:"100%", paddingTop:"0.9%"}}>
+                <th  style={{ width:"14%", textAlign:"center", height:"100%"}}>TICKET #</th>
+                <th  style={{ width:"12%", textAlign:"center", height:"100%"}}>CHECK-IN</th>
+                <th  style={{ width:"19%",  textAlign:"center", height:"100%"}}>LICENSE PLATE</th>
+                <th  style={{ width:"14%",  textAlign:"center", height:"100%"}}>TYPE</th>
+                <th  style={{ width:"26%", textAlign:"center", height:"100%" }}>DESCRIPTION</th>
+                <th  style={{ width:"11%",  height:"100%"}}></th>
               </tr>
             </thead>
           </table>
       </div>
-      <div style={{width:"100%", height:"60%", border:" 3px solid yellow"}}>
-        <div style={{width:"100%", height:"100%", border:" 3px solid blue", paddingTop: "0.3%"}}>
-             <form style={{width: "100%", height:"90%", border: "3px solid green", display: "flex",
-                flexDirection: "row", justifyContent: "space-between", minHeight: "70%"
+      <div style={{width:"100%", height:"68%", backgroundColor: "white", marginTop: "6px", marginBottom: "8px"}}>
+        <div style={{width:"100%", height:"100%",  backgroundColor: "white"}}>
+             <form style={{width: "100%", height:"100%", display: "flex", border: "1px solid black",
+                flexDirection: "row", justifyContent: "space-between", backgroundColor: "white", alignItems: "baseline", paddingTop:"1.2%"
                 }} onSubmit={editHandler}>
-                <div style={{border: "1px solid blue", width: "10%", height:"100%"}} >
-                  <p style={{border: "1px solid red",fontSize: "2em", fontWeight: "bold", width: "100%", height:"94%",  textAlign: "center"}}>{ticketCode}</p>
+                <div style={{ width: "14%", height:"100%"}} >
+                  <p style={{fontSize: " 1.6em", fontWeight: "bold", width: "100%", height:"68%",  textAlign: "center"}}>{ticketCode}</p>
                 </div>
-                <div style={{border: "1px solid blue", width: "10%", height:"100%"}}>
-                  <p style={{border: "1px solid red", fontSize: "2em",  width: "100%", height:"94%", textAlign: "center"}}>{checkIn}</p>
+                <div style={{width: "12%", height:"100%"}}>
+                  <p style={{fontSize: "1.6em",  width: "100%", height:"62px", textAlign: "center"}}>{checkIn}</p>
                 </div>
-                <div style={{border: "1px solid blue", width: "18%", height:"100%"}}>
+                <div style={{width: "19%"}}>
                     <input className="LicensePlateOne badge-pill"
-                      style={{ width: "100%" , fontWeight: "bold", fontSize: "1.6em", height: "94%"}}
+                      style={{ width: "100%", height:"3.1em" }}
                       placeholder = "LICENSE PLATE"
                       type="text"
                       name="LicensePlate"
@@ -89,18 +89,18 @@ if (isLoading) {
                       value={licensePlate}
                     />
                 </div>
-                <div className='vehicleType' style={{border: "1px solid blue", width: "14%", height:"100%"}}>
+                <div className='vehicleType' style={{ width: "14%", height:"100%"}}>
                   <select value={vehicleType} className="vehicleType  badge-pill"
-                    style={{width: "100%", textAlign: "center", height: "94%"}}
+                    style={{width: "100%", height:"3.1em"}}
                     onChange={(e) => setVehicleType(e.target.value) }>
                       <option className='vehicleType'>VEHICLE TYPE</option>
                       <option className='vehicleType' value="CAR">Carro</option>
                       <option className='vehicleType' value="MOTORBIKE">Moto</option>
                   </select>
                 </div>
-                <div style={{border: "1px solid blue", width: "26%", height:"100%"}}>
+                <div style={{ width: "26%", height:"100%"}}>
                     <input className="Vehicle-DescriptionOne badge-pill"
-                          style={{width: "100%", height: "94%"}}
+                          style={{width: "100%", height:"3.1em"}}
                           placeholder = "VEHICLE DESCRIPTION"
                           type="text"
                           maxLength={"27"}
@@ -109,8 +109,8 @@ if (isLoading) {
                           value={vehicleDescription}
                         />
                 </div>
-                <div style={{border: "1px solid blue", width: "10%", marginRight: "10px", height:"100%"}} >
-                  <button className='formBtnOne badge-pill' style={{border: "1px solid black", width: "100%",  height: "94%"}} type="submit">EDIT</button>
+                <div style={{width: "10%", marginRight: "10px", height:"100%"}} >
+                  <button className='formBtnOne badge-pill' style={{border: "1px solid black", width: "100%",  height:"3.1em"}} type="submit">EDIT</button>
                 </div>
              </form>
 

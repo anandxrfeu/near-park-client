@@ -57,3 +57,10 @@
   color: white;
   width: 96%;
 }
+
+
+.formBtn.badge-pill:hover {
+  background-color: #FED000;
+  color: black;
+  width: 96%;
+}

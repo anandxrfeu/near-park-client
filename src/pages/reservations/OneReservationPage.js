@@ -161,36 +161,29 @@ const calculatePrice = (pricing, durationInHours) => {
     }
     return (
 
-      <div style={{marginLeft: '-20px',  width:"100%", height:"100%", border: "4px solid purple", display: "flex", flexDirection: "column"}}>
-        <div style={{height: "22%", width:"100%", border: "4px solid blue"}}>
+      <div style={{marginLeft: '-20px',  width:"100%", height:"100%", display: "flex", flexDirection: "column"}}>
+        <div style={{height: "22%", width:"100%"}}>
           <OneReservationForm reservation={reservation} updateReservation={updateReservation}/>
         </div>
-        <div style={{height: "78%", width:"100%", border: "4px solid yellow", display: "flex", flexDirection:"row"}}>
-            <div style={{height: "100%", width:"100%", border: "4px solid yellow"}}>
+        <div style={{height: "78%", width:"100%", border: "1px solid black", display: "flex", flexDirection:"row"}}>
+            <div style={{height: "100%", width:"100%", border: "3px solid black", display:"flex", flexDirection:"column"}}>
               <div style={{height: "69%", width:"100%"}}>
                 <OneReservationDetail updateReservation={updateReservation} reservation={reservation}/>
               </div>
-              <div style={{height: "31%", width:"100%", border: "3px solid blue"}}>
+              <div style={{height: "31%", width:"100%"}}>
                 {showPayByCash && <ChangeCashCalc calculateChange={calculateChange} reservationPrice={reservationPrice}/>}
               </div>
-
-
             </div>
-            <div style={{height: "100%", width:"100%", border: "4px solid yellow"}}>
-                <div style={{display: "flex", justifyContent: "right", backgroundColor: "black", color: "white"}}>
-                     <h2 style={{paddingRight: "20px", display: "flex"}}>PAYMENT</h2>
+
+            <div style={{height: "100%", width:"100%", border: "3px solid black"}}>
+                <div style={{display: "flex", justifyContent: "right", backgroundColor: "black", color: "white", height: "9%", width:"100%"}}>
+                     <h2 style={{paddingRight:"0.8em", paddingTop:"1%", display: "flex", height: "100%"}}>PAYMENT</h2>
                 </div>
-                <div style={{height: "100%", width:"100%"}}>
-                  <div>
+                <div style={{height: "91%", width:"100%"}}>
+                  <div style={{height: "100%", width:"100%"}}>
                     {showPaymentSelect && <PaymentSelect updatePaymentMethod={updatePaymentMethod} /> }
-                  </div>
-                  <div>
                     {showCardCheckout && <CardCheckout reservation={reservation} confirmPaymentByCard={confirmPaymentByCard}/>}
-                  </div>
-                  <div>
                     {showPaymentComplete && <PaymentComplete reservation={reservation}/>}
-                  </div>
-                  <div>
                     {showChangeTotal && <ChangeTotal change={change} updateReservation={updateReservation} confirmPaymentByCash={confirmPaymentByCash}/>}
                   </div>
                 </div>

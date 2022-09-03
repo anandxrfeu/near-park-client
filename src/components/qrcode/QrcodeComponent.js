@@ -15,14 +15,15 @@ const QrcodeComponent  = (props) => {
     }, [props.url])
 
     return (<div style={{display: "flex", flexDirection: "column", alignItems: "center",
-     border: "1px solid black", borderRadius: "12px", width:'220px', height: "220px", padding: "2px"}}>
-              <div>
+     border: "1px solid black", borderRadius: "12px", width:'280px', height: "260px", paddingTop: "8px"}}>
+              <div style={{marginTop:"10px"}}>
                 <img src={src} alt="url"/>
               </div>
               <div>
                  <a style={{textDecoration: "none"}}
                      href={src} download={src}>
-                    <button className="badge-pill" type="submit">Download</button>
+                    <button className="badge-pill" style={{width:"160px", marginTop:"10px",
+                    border: "1px solid grey", fontWeight:"300", color: "black"}} type="submit">Download</button>
                 </a>
               </div>
             </div>)
