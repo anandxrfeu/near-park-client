@@ -64,7 +64,7 @@ To get a local copy up and running follow these simple example steps.
 
 4. Configure environment variables
 
-5. In your package.json, change start comment to below line 
+5. In your package.json, change start command to below line 
   ```sh
    "start": "react-scripts start"
   ```
