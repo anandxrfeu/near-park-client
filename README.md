@@ -64,7 +64,16 @@ To get a local copy up and running follow these simple example steps.
 
 4. Configure environment variables
 
-5. Run locally
+5. In your package.json, change start comment to below line 
+  ```sh
+   "start": "react-scripts start"
+  ```
+
+  ```sh
+   "start": "react-scripts --openssl-legacy-provider start"
+  ```
+
+6. Run locally
    ```sh
    npm run dev
    ```
